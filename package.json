@@ -58,7 +58,8 @@
     "request": "2.27.0",
     "adal-node": "~0.1.5",
     "through": "2.3.4",
-    "wordwrap": "0.0.2"
+    "wordwrap": "0.0.2",
+    "openssl-wrapper": "0.2.1"
   },
   "devDependencies": {
     "mocha": "1.16.0",
