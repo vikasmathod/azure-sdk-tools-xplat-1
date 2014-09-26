@@ -38,7 +38,7 @@ describe('cli', function() {
       timeout,
       location,
       retry,
-      vmsize = 'Small',
+      vmsize = 'small',
       sshPort = '223',
       username = 'azureuser';
 

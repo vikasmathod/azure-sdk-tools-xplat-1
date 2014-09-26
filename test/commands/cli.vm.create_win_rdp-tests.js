@@ -32,9 +32,7 @@ describe('cli', function() {
       vmImgName,
       username = 'azureuser',
       password = 'PassW0rd$',
-      location, retry = 5,
-      ripName = 'clitestrip',
-      ripCreate = false;
+      location, retry = 5;
 
     var vmToUse = {
       Name: null,
@@ -49,13 +47,7 @@ describe('cli', function() {
     });
 
     after(function(done) {
-      if (ripCreate) {
-        deleterip(function() {
-          suite.teardownSuite(done);
-        });
-      } else {
-        suite.teardownSuite(done);
-      }
+      suite.teardownSuite(done);
     });
 
     beforeEach(function(done) {
@@ -90,19 +82,16 @@ describe('cli', function() {
 
     //create a vm with windows image
     describe('Create:', function() {
-      it('Windows Vm with reserved Ip', function(done) {
+      it('Windows Vm', function(done) {
         getImageName('Windows', function(ImageName) {
-          createReservedIp(location, function(ripName) {
-            var cmd = util.format('vm create %s %s %s %s -R %s -r --json',
-              vmName, ImageName, username, password, ripName).split(' ');
-            cmd.push('-l');
-            cmd.push(location);
-            testUtils.executeCommand(suite, retry, cmd, function(result) {
-              result.exitStatus.should.equal(0);
-              setTimeout(done, timeout);
-            });
+          var cmd = util.format('vm create %s %s %s %s -r --json',
+            vmName, ImageName, username, password).split(' ');
+          cmd.push('-l');
+          cmd.push(location);
+          testUtils.executeCommand(suite, retry, cmd, function(result) {
+            result.exitStatus.should.equal(0);
+            setTimeout(done, timeout);
           });
-
         });
       });
     });
@@ -164,45 +153,6 @@ describe('cli', function() {
           callBack(process.env.VM_WIN_IMAGE);
         });
       }
-    }
-
-    function createReservedIp(location, callback) {
-      if (createReservedIp.ripName) {
-        callback(createReservedIp.ripName);
-      } else {
-        var cmd;
-        cmd = util.format('network reserved-ip list --json').split(' ');
-        testUtils.executeCommand(suite, retry, cmd, function(result) {
-          result.exitStatus.should.equal(0);
-          var ripList = JSON.parse(result.text);
-          var ripfound = ripList.some(function(ripObj) {
-            if (!ripObj.inUse && ripObj.location.toLowerCase() === location.toLowerCase()) {
-              createReservedIp.ripName = ripObj.name;
-              return true;
-            }
-          });
-          if (ripfound) {
-            callback(createReservedIp.ripName);
-          } else {
-            cmd = util.format('network reserved-ip create %s %s --json', ripName, location).split(' ');
-            testUtils.executeCommand(suite, retry, cmd, function(result) {
-              result.exitStatus.should.equal(0);
-              ripCreate = true;
-              createReservedIp.ripName = ripObj.name;
-              callback(createReservedIp.ripName);
-            });
-          }
-        });
-      }
-    }
-
-    function deleterip(callback) {
-      var cmd = util.format('network reserved-ip delete %s -q --json', ripName).split(' ');
-      testUtils.executeCommand(suite, retry, cmd, function(result) {
-        result.exitStatus.should.equal(0);
-        ripCreate = false;
-        callback();
-      });
     }
   });
 });
