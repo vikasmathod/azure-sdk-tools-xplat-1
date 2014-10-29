@@ -20,14 +20,12 @@ var CLITest = require('../framework/cli-test');
 var networkconfig = 'netconfig.json';
 var suite;
 var testPrefix = 'cli.network-tests';
-
 var retry = 5;
 var requiredEnvironment = [{
     name : 'AZURE_SITE_TEST_LOCATION',
     defaultValue : 'West US'
   }
 ];
-
 var testSite;
 
 describe('cli', function () {
