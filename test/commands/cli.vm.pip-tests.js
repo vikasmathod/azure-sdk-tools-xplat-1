@@ -93,9 +93,9 @@ describe('cli', function() {
       it('List the public ip address set on a VM', function(done) {
         var cmd = util.format('vm public-ip list %s --json', vmName).split(' ');
         testUtils.executeCommand(suite, retry, cmd, function(result) {
+		  result.exitStatus.should.equal(0);
           var publicipList = JSON.parse(result.text);
-          publicipList[0].name.should.not.be.null;
-          result.exitStatus.should.equal(0);
+          publicipList[0].name.should.not.be.null;       
           done();
         });
       });
@@ -118,9 +118,9 @@ describe('cli', function() {
           result.exitStatus.should.equal(0);
           var cmd = util.format('vm public-ip list %s --json', vmName).split(' ');
           testUtils.executeCommand(suite, retry, cmd, function(result) {
+		    result.exitStatus.should.equal(0);
             var publicipList = JSON.parse(result.text);
-            publicipList[0].name.should.not.be.null;
-            result.exitStatus.should.equal(0);
+            publicipList[0].name.should.not.be.null;           
             done();
           });
         });
