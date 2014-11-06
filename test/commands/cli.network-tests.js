@@ -17,19 +17,23 @@ var should = require('should');
 var util = require('util');
 var testUtils = require('../util/util');
 var CLITest = require('../framework/cli-test');
-var networkconfig = 'netconfig.json';
 var suite;
 var testPrefix = 'cli.network-tests';
+
 var retry = 5;
 var requiredEnvironment = [{
     name : 'AZURE_SITE_TEST_LOCATION',
     defaultValue : 'West US'
   }
 ];
+
 var testSite;
 
 describe('cli', function () {
   describe('network', function () {
+    var networkconfig = 'netconfig.json';
+    var dnsIp = '66.77.88.99';
+    var dnsId = 'dns-cli-0';
     testUtils.TIMEOUT_INTERVAL = 5000;
     before(function (done) {
       suite = new CLITest(testPrefix, requiredEnvironment);
@@ -90,19 +94,17 @@ describe('cli', function () {
       it('should create vnet, show , import and list', function (done) {
         suite.execute('network vnet create %s --address-space 10.0.0.0 --json --location %s',
           vnetName, testSite, function (result) {
-
           result.exitStatus.should.equal(0);
-
           suite.execute('network vnet list --json', function (outerresult) {
-            result.exitStatus.should.equal(0);
-            result.text.should.not.be.null;
+            outerresult.exitStatus.should.equal(0);
+            outerresult.text.should.not.be.null;
 
             suite.execute('network export %s --json', networkconfig, function (result) {
               result.exitStatus.should.equal(0);
               cmd = util.format('network vnet delete %s --quiet --json', vnetName).split(' ');
               testUtils.executeCommand(suite, retry, cmd, function (result) {
-                  result.exitStatus.should.equal(0);
-                  suite.execute('network import %s --json', networkconfig, function (result) {
+                result.exitStatus.should.equal(0);
+                suite.execute('network import %s --json', networkconfig, function (result) {
                   result.exitStatus.should.equal(0);
 
                   var vnets = JSON.parse(outerresult.text);
@@ -137,9 +139,6 @@ describe('cli', function () {
       });
 
       it('should create vnet with dns-server-id option and show', function (done) {
-        var dnsIp = '66.77.88.99';
-        var dnsId = 'dns-cli-0';
-
         suite.execute('network dnsserver register %s --json --dns-id %s', dnsIp, dnsId, function (result) {
           result.exitStatus.should.equal(0);
 
@@ -154,7 +153,8 @@ describe('cli', function () {
             dnsServer.should.not.equal(null);
 
             suite.execute('network vnet create %s --address-space 10.0.0.0 --json --location %s --dns-server-id %s',
-              vnetName, testSite, dnsId, function (result) {
+              vnetName, testSite, dnsId,
+              function (result) {
 
               result.text.should.not.be.null;
               result.exitStatus.should.equal(0);
