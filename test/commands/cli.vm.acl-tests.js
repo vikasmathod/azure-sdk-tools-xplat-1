@@ -17,7 +17,7 @@ var util = require('util');
 var fs = require('fs');
 var testUtils = require('../util/util');
 var CLITest = require('../framework/cli-test');
-
+var vmUtility = require('../util/VMTestUtil');
 var suite;
 var vmPrefix = 'clitestvm';
 var testPrefix = 'cli.vm.acl-tests';
@@ -81,9 +81,8 @@ describe('cli', function() {
     });
 
     describe('ACL :', function() {
-
       it('Create a VM', function(done) {
-        getImageName('Windows', function(ImageName) {
+        vmUtility.getImageName('Windows', function(ImageName) {
           var cmd = util.format('vm create %s %s %s %s -r --json',
             vmName, ImageName, username, password).split(' ');
           cmd.push('-l');
@@ -146,25 +145,5 @@ describe('cli', function() {
         });
       });
     });
-
-    // Get name of an image of the given category
-    function getImageName(category, callBack) {
-      if (process.env.VM_WIN_IMAGE) {
-        callBack(process.env.VM_WIN_IMAGE);
-      } else {
-        var cmd = util.format('vm image list --json').split(' ');
-        testUtils.executeCommand(suite, retry, cmd, function(result) {
-          result.exitStatus.should.equal(0);
-          var imageList = JSON.parse(result.text);
-          imageList.some(function(image) {
-            if ((image.operatingSystemType || image.oSDiskConfiguration.operatingSystem).toLowerCase() === category.toLowerCase() && image.category.toLowerCase() === 'public') {
-              process.env.VM_WIN_IMAGE = image.name;
-              return true;
-            }
-          });
-          callBack(process.env.VM_WIN_IMAGE);
-        });
-      }
-    }
   });
 });

@@ -16,7 +16,7 @@ var should = require('should');
 var util = require('util');
 var testUtils = require('../util/util');
 var CLITest = require('../framework/cli-test');
-
+var vmUtility = require('../util/VMTestUtil');
 var suite;
 var vmPrefix = 'ClitestVm';
 var testPrefix = 'cli.vm.create_win_rdp-tests';
@@ -92,7 +92,7 @@ describe('cli', function() {
     //create a vm with windows image
     describe('Create:', function() {
       it('Windows Vm with reserved Ip', function(done) {
-        getImageName('Windows', function(ImageName) {
+        vmUtility.getImageName('Windows', function(ImageName) {
           createReservedIp(location, function(ripName) {
             var cmd = util.format('vm create %s %s %s %s -R %s -r --json',
               vmName, ImageName, username, password, ripName).split(' ');
@@ -110,7 +110,7 @@ describe('cli', function() {
     //create a vm with connect option
     describe('Create:', function() {
       it('with Connect', function(done) {
-        getImageName('Windows', function(vmImgName) {
+        vmUtility.getImageName('Windows', function(vmImgName) {
           var vmConnect = vmName + '-2';
           var cmd = util.format('vm create -l %s --connect %s %s %s %s --json',
             'someLoc', vmName, vmImgName, username, password).split(' ');
@@ -129,7 +129,7 @@ describe('cli', function() {
     // Negative Test Case by specifying VM Name Twice
     describe('Negative test case:', function() {
       it('Specifying Vm Name Twice', function(done) {
-        getImageName('Windows', function(vmImgName) {
+        vmUtility.getImageName('Windows', function(vmImgName) {
           var cmd = util.format('vm create %s %s %s %s --json',
             vmName, vmImgName, username, password).split(' ');
           cmd.push('-l');

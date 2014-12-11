@@ -17,16 +17,21 @@ var util = require('util');
 var path = require('path');
 var fs = require('fs');
 var testUtils = require('../util/util');
+var vmUtility = require('../util/VMTestUtil');
 var CLITest = require('../framework/cli-test');
-
+var sinon = require('sinon');
+var crypto = require('crypto');
 var suite;
 var vmPrefix = 'clitestvm';
 var testPrefix = 'cli.vm.create_docker-tests';
 var requiredEnvironment = [{
   name: 'AZURE_VM_TEST_LOCATION',
   defaultValue: 'West US'
+}, {
+  name: 'AZURE_COMMUNITY_IMAGE_ID',
+  defaultValue: null
 }];
-
+var currentRandom = 0;
 describe('cli', function() {
   describe('vm', function() {
     var vmName,
@@ -49,10 +54,18 @@ describe('cli', function() {
 
     before(function(done) {
       suite = new CLITest(testPrefix, requiredEnvironment);
+	   if (suite.isMocked) {
+        sinon.stub(crypto, 'randomBytes', function() {
+          return (++currentRandom).toString();
+        });
+      }
       suite.setupSuite(done);
     });
 
     after(function(done) {
+	 if (suite.isMocked) {
+        crypto.randomBytes.restore();
+      }
       if (ripCreate) {
         deleterip(function() {
           suite.teardownSuite(done);
@@ -66,6 +79,7 @@ describe('cli', function() {
       suite.setupTest(function() {
         location = process.env.AZURE_VM_TEST_LOCATION;
         vmName = suite.isMocked ? 'XplattestVm' : suite.generateId(vmPrefix, null);
+		communityImageId = process.env.AZURE_COMMUNITY_IMAGE_ID;
         timeout = suite.isMocked ? 0 : testUtils.TIMEOUT_INTERVAL;
         homePath = process.env[(process.platform === 'win32') ? 'USERPROFILE' : 'HOME'];
         done();
@@ -119,11 +133,27 @@ describe('cli', function() {
     });
 
     describe('Vm Create: ', function() {
+	  it('Create Docker VM with community', function(done) {
+        vmUtility.getImageName('Linux', function(ImageName) { 
+          var cmd = util.format('vm docker create %s -o %s %s %s -l %s',
+            vmName, communityImageId, username, password).split(' ');
+          cmd.push('--location');
+          cmd.push(location);
+          testUtils.executeCommand(suite, retry, cmd, function(result) {
+             result.exitStatus.should.equal(0);
+			  vmToUse.Name = vmName;
+              vmToUse.Created = true;
+              vmToUse.Delete = true;
+            setTimeout(done, timeout);
+          });
+        });
+      });
+	  
       it('Create Docker VM with default values and reserved Ip should pass', function(done) {
         dockerCertDir = path.join(homePath, '.docker');
         var dockerPort = 4243;
 
-        getImageName('Linux', function(ImageName) {
+        vmUtility.getImageName('Linux', function(ImageName) {
           createReservedIp(location, function(ripName) {
             var cmd = util.format('vm docker create %s %s %s %s -R %s --json --ssh',
               vmName, ImageName, username, password, ripName).split(' ');
@@ -154,7 +184,7 @@ describe('cli', function() {
         dockerCertDir = path.join(homePath, '.docker2');
         var dockerPort = 4113;
 
-        getImageName('Linux', function(ImageName) {
+        vmUtility.getImageName('Linux', function(ImageName) {
           var cmd = util.format('vm docker create %s %s %s %s --json --ssh --docker-cert-dir %s --docker-port %s',
             vmName, ImageName, username, password, dockerCertDir, dockerPort).split(' ');
           cmd.push('--location');
@@ -180,7 +210,7 @@ describe('cli', function() {
       });
 
       it('Create Docker VM with duplicate docker port should throw error', function(done) {
-        getImageName('Linux', function(ImageName) {
+        vmUtility.getImageName('Linux', function(ImageName) {
           var cmd = util.format('vm docker create %s %s %s %s --json --ssh 22 --docker-port 22',
             vmName, ImageName, username, password).split(' ');
           cmd.push('--location');
@@ -192,9 +222,9 @@ describe('cli', function() {
           });
         });
       });
-
-      it('Create Docker VM with invalid docker port should throw error', function(done) {
-        getImageName('Linux', function(ImageName) {
+	  
+	  it('Create Docker VM with invalid docker port should throw error', function(done) {
+        vmUtility.getImageName('Linux', function(ImageName) {
           var cmd = util.format('vm docker create %s %s %s %s --json --ssh 22 --docker-port 3.2',
             vmName, ImageName, username, password).split(' ');
           cmd.push('--location');
@@ -208,7 +238,7 @@ describe('cli', function() {
       });
 
       it('Create Docker VM with invalid docker cert dir should throw error', function(done) {
-        getImageName('Linux', function(ImageName) {
+        vmUtility.getImageName('Linux', function(ImageName) {
           var cmd = util.format('vm docker create %s %s %s %s --json --ssh 22 --docker-cert-dir D:/foo/bar',
             vmName, ImageName, username, password).split(' ');
           cmd.push('--location');
@@ -219,28 +249,8 @@ describe('cli', function() {
             setTimeout(done, timeout);
           });
         });
-      });
+      });	  
     });
-
-    // Get name of an image of the given category
-    function getImageName(category, callBack) {
-      if (process.env.VM_LINUX_IMAGE) {
-        callBack(process.env.VM_LINUX_IMAGE);
-      } else {
-        var cmd = util.format('vm image list --json').split(' ');
-        testUtils.executeCommand(suite, retry, cmd, function(result) {
-          result.exitStatus.should.equal(0);
-          var imageList = JSON.parse(result.text);
-          imageList.some(function(image) {
-            if ((image.operatingSystemType || image.oSDiskConfiguration.operatingSystem).toLowerCase() === category.toLowerCase() && image.category.toLowerCase() === 'public') {
-              process.env.VM_LINUX_IMAGE = image.name;
-              return true;
-            }
-          });
-          callBack(process.env.VM_LINUX_IMAGE);
-        });
-      }
-    }
 
     function checkForDockerPort(createdVM, dockerPort) {
       var result = false;

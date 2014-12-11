@@ -16,7 +16,7 @@ var should = require('should');
 var util = require('util');
 var testUtils = require('../util/util');
 var CLITest = require('../framework/cli-test');
-
+var vmUtility = require('../util/VMTestUtil');
 var suite;
 var vmPrefix = 'clitestvm';
 var testPrefix = 'cli.vm.create_affin_vnet_vm-tests';
@@ -89,8 +89,8 @@ describe('cli', function() {
     //create a vm with affinity group, vnet and availibilty set
     describe('Create:', function() {
       it('Vm with affinity, vnet and availibilty set', function(done) {
-        getImageName('Linux', function(imageName) {
-          getVnet('Created', function(virtualnetName, affinityName) {
+        vmUtility.getImageName('Linux', function(imageName) {
+          vmUtility.getVnet('Created', function(virtualnetName, affinityName) {
             var cmd = util.format('vm create -A %s -n %s -a %s -w %s %s %s %s %s --json',
               availSetName, vmVnetName, affinityName, virtualnetName, vmVnetName, imageName, userName, password).split(' ');
             testUtils.executeCommand(suite, retry, cmd, function(result) {
@@ -103,108 +103,6 @@ describe('cli', function() {
           });
         });
       });
-
-      //edge case for vm failure
-      //https://github.com/MSOpenTech/azure-xplat-cli/issues/7#issuecomment-47410767
-      it('should delete cloud service on vm create failure', function(done) {
-        getImageName('Linux', function(imageName) {
-          var cmd = util.format('vm create -a %s -w %s %s %s %s %s --json',
-            'some_name', 'some_name', vmVnetName, imageName, userName, password).split(' ');
-          testUtils.executeCommand(suite, retry, cmd, function(result) {
-            result.exitStatus.should.equal(1);
-            cmd = util.format('service show %s --json', vmVnetName).split(' ')
-            testUtils.executeCommand(suite, retry, cmd, function(result) {
-              result.exitStatus.should.equal(1);
-              done();
-            });
-          });
-        });
-      });
     });
-
-    // Get name of an image of the given category
-    function getImageName(category, callBack) {
-      if (process.env.VM_LINUX_IMAGE) {
-        callBack(process.env.VM_LINUX_IMAGE);
-      } else {
-        var cmd = util.format('vm image list --json').split(' ');
-        testUtils.executeCommand(suite, retry, cmd, function(result) {
-          result.exitStatus.should.equal(0);
-          var imageList = JSON.parse(result.text);
-          imageList.some(function(image) {
-            if ((image.operatingSystemType || image.oSDiskConfiguration.operatingSystem).toLowerCase() === category.toLowerCase() && image.category.toLowerCase() === 'public') {
-              process.env.VM_LINUX_IMAGE = image.name;
-              return true;
-            }
-          });
-          callBack(process.env.VM_LINUX_IMAGE);
-        });
-      }
-    }
-
-    //get name of a vnet
-    function getVnet(status, callback) {
-      var cmd;
-      if (getVnet.vnetName) {
-        callback(getVnet.vnetName, getVnet.affinityName);
-      } else {
-        cmd = util.format('network vnet list --json').split(' ');
-        testUtils.executeCommand(suite, retry, cmd, function(result) {
-          result.exitStatus.should.equal(0);
-          var vnetName = JSON.parse(result.text);
-          var found = vnetName.some(function(vnet) {
-            if (vnet.state.toLowerCase() === status.toLowerCase() && vnet.affinityGroup !== undefined) {
-              getVnet.vnetName = vnet.name;
-              getVnet.affinityName = vnet.affinityGroup;
-              return true;
-            }
-          });
-
-          if (!found) {
-            getAffinityGroup(location, function(affinGrpName) {
-              cmd = util.format('network vnet create %s -a %s --json', vnetName, affinGrpName).split(' ');
-              testUtils.executeCommand(suite, retry, cmd, function(result) {
-                result.exitStatus.should.equal(0);
-                getVnet.vnetName = vnetName;
-                getVnet.affinityName = affinGrpName;
-                callback(getVnet.vnetName, getVnet.affinityName);
-              });
-            });
-          } else {
-            callback(getVnet.vnetName, getVnet.affinityName);
-          }
-        });
-      }
-    }
-
-    // Get name of an image of the given category
-    function getAffinityGroup(location, callBack) {
-      var cmd;
-      if (getAffinityGroup.affinGrpName) {
-        callBack(getAffinityGroup.affinGrpName);
-      } else {
-        cmd = util.format('account affinity-group list --json').split(' ');
-        testUtils.executeCommand(suite, retry, cmd, function(result) {
-          result.exitStatus.should.equal(0);
-          var affinList = JSON.parse(result.text);
-          var found = affinList.some(function(affinGrp) {
-            if (affinGrp.location.toLowerCase() === location.toLowerCase()) {
-              getAffinityGroup.affinGrpName = affinGrp.name;
-              return true;
-            }
-          });
-          if (!found) {
-            cmd = util.format('account affinity-group create -l %s -e %s -d %s %s --json',
-              location, affinLabel, affinDesc, affinityName).split(' ');
-            testUtils.executeCommand(suite, retry, cmd, function(result) {
-              result.exitStatus.should.equal(0);
-              getAffinityGroup.affinGrpName = affinityName;
-              callBack(affinityName);
-            });
-          } else
-            callBack(getAffinityGroup.affinGrpName);
-        });
-      }
-    }
   });
 });

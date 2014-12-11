@@ -17,7 +17,7 @@ var util = require('util');
 var fs = require('fs');
 var testUtils = require('../util/util');
 var CLITest = require('../framework/cli-test');
-
+var vmUtility = require('../util/VMTestUtil');
 var suite;
 var vmPrefix = 'clitestvm';
 var testPrefix = 'cli.vm.create_custom-tests';
@@ -94,7 +94,7 @@ describe('cli', function() {
     //Create vm with custom data
     describe('Create:', function() {
       it('with custom data', function(done) {
-        getImageName('Linux', function(vmImgName) {
+        vmUtility.getImageName('Linux', function(vmImgName) {
           generateFile(fileName, null, 'nodejs,python,wordpress');
           var cmd = util.format('vm create -e %s -z %s --ssh-cert %s --no-ssh-password %s %s %s -d %s --json --verbose',
             sshPort, vmsize, certFile, customVmName, vmImgName, username, fileName).split(' ');
@@ -114,26 +114,6 @@ describe('cli', function() {
         });
       });
     });
-
-    // Get name of an image of the given category
-    function getImageName(category, callBack) {
-      if (process.env.VM_LINUX_IMAGE) {
-        callBack(process.env.VM_LINUX_IMAGE);
-      } else {
-        var cmd = util.format('vm image list --json').split(' ');
-        testUtils.executeCommand(suite, retry, cmd, function(result) {
-          result.exitStatus.should.equal(0);
-          var imageList = JSON.parse(result.text);
-          imageList.some(function(image) {
-            if ((image.operatingSystemType || image.oSDiskConfiguration.operatingSystem).toLowerCase() === category.toLowerCase() && image.category.toLowerCase() === 'public') {
-              process.env.VM_LINUX_IMAGE = image.name;
-              return true;
-            }
-          });
-          callBack(process.env.VM_LINUX_IMAGE);
-        });
-      }
-    }
 
     //create a file and write desired data given as input
     function generateFile(filename, fileSizeinBytes, data) {

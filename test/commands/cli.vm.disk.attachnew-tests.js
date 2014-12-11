@@ -16,7 +16,7 @@ var should = require('should');
 var util = require('util');
 var testUtils = require('../util/util');
 var CLITest = require('../framework/cli-test');
-
+var vmUtility = require('../util/VMTestUtil');
 var suite;
 var vmPrefix = 'clitestvm';
 var testPrefix = 'cli.vm.disk.attachnew-tests';
@@ -102,7 +102,7 @@ describe('cli', function () {
     }
 
     function createVM(callback) {
-      getImageName('Linux', function (imagename) {
+      vmUtility.getImageName('Linux', function (imagename) {
         var cmd = util.format('vm create %s %s %s %s --json', vmName, imagename, username, password).split(' ');
         cmd.push('-l');
         cmd.push(location);
@@ -111,26 +111,6 @@ describe('cli', function () {
           setTimeout(callback, timeout);
         });
       });
-    }
-    // Get name of an image of the given category
-
-    function getImageName(category, callBack) {
-      if (process.env.VM_LINUX_IMAGE) {
-        callBack(process.env.VM_LINUX_IMAGE);
-      } else {
-        var cmd = util.format('vm image list --json').split(' ');
-        testUtils.executeCommand(suite, retry, cmd, function (result) {
-          result.exitStatus.should.equal(0);
-          var imageList = JSON.parse(result.text);
-          imageList.some(function (image) {
-            if ((image.operatingSystemType || image.oSDiskConfiguration.operatingSystem).toLowerCase() === category.toLowerCase() && image.category.toLowerCase() === 'public') {
-              process.env.VM_LINUX_IMAGE = image.name;
-              return true;
-            }
-          });
-          callBack(process.env.VM_LINUX_IMAGE);
-        });
-      }
     }
 
     function ListDisk(OS, callback) {

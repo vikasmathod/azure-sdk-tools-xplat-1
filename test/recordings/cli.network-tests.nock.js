@@ -28,35 +28,25 @@ exports.scopes = [[function (nock) {
 var result = 
 nock('https://management.core.windows.net:443')
   .put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services?service=sqlserver&action=register')
-  .reply(307, "", { 'content-length': '0',
-  location: 'https://ussouth.management.core.windows.net/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services?service=sqlserver&action=register',
-  server: 'Microsoft-HTTPAPI/2.0',
-  'x-ms-servedbyregion': 'ussouth2',
-  date: 'Tue, 18 Nov 2014 06:49:42 GMT' });
- return result; },
-function (nock) { 
-var result = 
-nock('https://ussouth.management.core.windows.net:443')
-  .put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services?service=sqlserver&action=register')
   .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
   'content-length': '193',
   'content-type': 'application/xml; charset=utf-8',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
-  'x-ms-servedbyregion': 'ussouth',
-  'x-ms-request-id': '51f2aa3a01c2350d8b3931287c7a7562',
-  date: 'Tue, 18 Nov 2014 06:49:44 GMT' });
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth2',
+  'x-ms-request-id': '169ef1fc698c338db787487816235edc',
+  date: 'Thu, 04 Dec 2014 09:39:57 GMT' });
  return result; },
 function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
   .get('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services/networking/media')
-  .reply(200, "﻿<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<NetworkConfiguration xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://schemas.microsoft.com/ServiceHosting/2011/07/NetworkConfiguration\">\r\n  <VirtualNetworkConfiguration>\r\n    <Dns>\r\n      <DnsServers>\r\n        <DnsServer name=\"demodns\" IPAddress=\"172.16.77.66\" />\r\n        <DnsServer name=\"googledns\" IPAddress=\"8.8.8.8\" />\r\n      </DnsServers>\r\n    </Dns>\r\n    <VirtualNetworkSites>\r\n      <VirtualNetworkSite name=\"googlednssvnet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/26</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/27</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"googledns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"Group SampleCRP-RP SampleCRP-VNet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>192.168.30.0/24</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>192.168.30.0/24</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"mynetwork\" AffinityGroup=\"affinity1\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.4.0.0/16</AddressPrefix>\r\n          <AddressPrefix>10.1.0.0/16</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.4.2.0/19</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>10.4.32.0/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"ne@@wvnet$$%10\" AffinityGroup=\"NewAffinityGroup01\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.8.7/24</AddressPrefix>\r\n        </AddressSpace>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"nenet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/20</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/23</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"demodns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"newnet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/20</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/23</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"Subnet-2\">\r\n            <AddressPrefix>10.0.2.0/23</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"demodns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"newvnet$$%10\" AffinityGroup=\"NewAffinityGroup01\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.8.7/24</AddressPrefix>\r\n        </AddressSpace>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"testy\" AffinityGroup=\"affinity1\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.11/8</AddressPrefix>\r\n          <AddressPrefix>172.16.77.0/12</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/11</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>10.32.0.0/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"Vnet\" AffinityGroup=\"EastAsia\">\r\n        <AddressSpace>\r\n          <AddressPrefix>172.16.0.0/28</AddressPrefix>\r\n          <AddressPrefix>192.168.29.0/24</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>172.16.0.0/29</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>172.16.0.8/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n    </VirtualNetworkSites>\r\n  </VirtualNetworkConfiguration>\r\n</NetworkConfiguration>", { 'cache-control': 'no-cache',
-  'content-length': '4416',
+  .reply(200, "﻿<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<NetworkConfiguration xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://schemas.microsoft.com/ServiceHosting/2011/07/NetworkConfiguration\">\r\n  <VirtualNetworkConfiguration>\r\n    <Dns>\r\n      <DnsServers>\r\n        <DnsServer name=\"demodns\" IPAddress=\"172.16.77.66\" />\r\n        <DnsServer name=\"googledns\" IPAddress=\"8.8.8.8\" />\r\n      </DnsServers>\r\n    </Dns>\r\n    <VirtualNetworkSites>\r\n      <VirtualNetworkSite name=\"googlednssvnet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/26</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"subnet-1\">\r\n            <AddressPrefix>10.0.0.0/27</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"googledns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"mynetwork\" AffinityGroup=\"affinity1\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.4.0.0/16</AddressPrefix>\r\n          <AddressPrefix>10.1.0.0/16</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.4.2.0/19</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>10.4.32.0/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"ne@@wvnet$$%10\" AffinityGroup=\"NewAffinityGroup01\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.8.7/24</AddressPrefix>\r\n        </AddressSpace>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"newnet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/20</AddressPrefix>\r\n          <AddressPrefix>10.0.16.0/20</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/23</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"Subnet-2\">\r\n            <AddressPrefix>10.0.2.0/23</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"Subnet-3\">\r\n            <AddressPrefix>10.0.16.0/23</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"demodns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"newvnet$$%10\" AffinityGroup=\"NewAffinityGroup01\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.8.7/24</AddressPrefix>\r\n        </AddressSpace>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"testvnet\" Location=\"North Europe\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/8</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/11</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"testy\" AffinityGroup=\"affinity1\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.11/8</AddressPrefix>\r\n          <AddressPrefix>172.16.77.0/12</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/11</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>10.32.0.0/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"Vnet\" AffinityGroup=\"EastAsia\">\r\n        <AddressSpace>\r\n          <AddressPrefix>172.16.0.0/28</AddressPrefix>\r\n          <AddressPrefix>192.168.29.0/24</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>172.16.0.0/29</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>172.16.0.8/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n    </VirtualNetworkSites>\r\n  </VirtualNetworkConfiguration>\r\n</NetworkConfiguration>", { 'cache-control': 'no-cache',
+  'content-length': '4118',
   'content-type': 'text/plain',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
   'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': 'e3aff06b92ed3c3b8b7315d84473d44c',
-  date: 'Tue, 18 Nov 2014 06:49:46 GMT' });
+  'x-ms-request-id': '464e46e91d81363082a5cdb2993c570b',
+  date: 'Thu, 04 Dec 2014 09:39:59 GMT' });
  return result; },
 function (nock) { 
 var result = 
@@ -65,10 +55,10 @@ nock('https://management.core.windows.net:443')
   .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
   'content-length': '193',
   'content-type': 'application/xml; charset=utf-8',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
   'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': 'd1e5affebc97385f90e4ca02c45ce4ab',
-  date: 'Tue, 18 Nov 2014 06:49:48 GMT' });
+  'x-ms-request-id': 'cdf7625b7c3b36bab5348df90298bbc7',
+  date: 'Thu, 04 Dec 2014 09:40:01 GMT' });
  return result; },
 function (nock) { 
 var result = 
@@ -77,10 +67,10 @@ nock('https://management.core.windows.net:443')
 .put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services/networking/media', '*')
   .reply(202, "", { 'cache-control': 'no-cache',
   'content-length': '0',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
   'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': '8bdad636527f3faab7d2662cac251320',
-  date: 'Tue, 18 Nov 2014 06:49:50 GMT' });
+  'x-ms-request-id': '50201677569f33e2bea5ed34ac30eeb2',
+  date: 'Thu, 04 Dec 2014 09:40:04 GMT' });
  return result; },
 function (nock) { 
 var result = 
@@ -89,22 +79,22 @@ nock('https://management.core.windows.net:443')
   .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
   'content-length': '193',
   'content-type': 'application/xml; charset=utf-8',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
   'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': '6d7a28da43d9330c987daac501127122',
-  date: 'Tue, 18 Nov 2014 06:50:23 GMT' });
+  'x-ms-request-id': '0f6d11fbe1e4340b82b98459ce201ed4',
+  date: 'Thu, 04 Dec 2014 09:40:36 GMT' });
  return result; },
 function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
-  .get('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/operations/8bdad636527f3faab7d2662cac251320')
-  .reply(200, "<Operation xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><ID>8bdad636-527f-3faa-b7d2-662cac251320</ID><Status>Succeeded</Status><HttpStatusCode>200</HttpStatusCode></Operation>", { 'cache-control': 'no-cache',
+  .get('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/operations/50201677569f33e2bea5ed34ac30eeb2')
+  .reply(200, "<Operation xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><ID>50201677-569f-33e2-bea5-ed34ac30eeb2</ID><Status>Succeeded</Status><HttpStatusCode>200</HttpStatusCode></Operation>", { 'cache-control': 'no-cache',
   'content-length': '232',
   'content-type': 'application/xml; charset=utf-8',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
   'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': 'a8bb43ce365b3bcbaef114265d0fdaf1',
-  date: 'Tue, 18 Nov 2014 06:50:26 GMT' });
+  'x-ms-request-id': '661839f10dd23d73a67f3e41cd7e20cc',
+  date: 'Thu, 04 Dec 2014 09:40:38 GMT' });
  return result; },
 function (nock) { 
 var result = 
@@ -113,56 +103,46 @@ nock('https://management.core.windows.net:443')
   .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
   'content-length': '193',
   'content-type': 'application/xml; charset=utf-8',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
   'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': 'b62dd5f81f133af2bbbc696a52855f63',
-  date: 'Tue, 18 Nov 2014 06:50:28 GMT' });
+  'x-ms-request-id': 'dd15104846fe3e59950a74c7a838d217',
+  date: 'Thu, 04 Dec 2014 09:40:41 GMT' });
  return result; },
 function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
   .get('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services/networking/media')
-  .reply(200, "﻿<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<NetworkConfiguration xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://schemas.microsoft.com/ServiceHosting/2011/07/NetworkConfiguration\">\r\n  <VirtualNetworkConfiguration>\r\n    <Dns>\r\n      <DnsServers>\r\n        <DnsServer name=\"demodns\" IPAddress=\"172.16.77.66\" />\r\n        <DnsServer name=\"DNS-aa25daf1c87d74e6\" IPAddress=\"10.0.0.1\" />\r\n        <DnsServer name=\"googledns\" IPAddress=\"8.8.8.8\" />\r\n      </DnsServers>\r\n    </Dns>\r\n    <VirtualNetworkSites>\r\n      <VirtualNetworkSite name=\"googlednssvnet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/26</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/27</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"googledns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"Group SampleCRP-RP SampleCRP-VNet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>192.168.30.0/24</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>192.168.30.0/24</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"mynetwork\" AffinityGroup=\"affinity1\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.4.0.0/16</AddressPrefix>\r\n          <AddressPrefix>10.1.0.0/16</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.4.2.0/19</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>10.4.32.0/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"ne@@wvnet$$%10\" AffinityGroup=\"NewAffinityGroup01\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.8.7/24</AddressPrefix>\r\n        </AddressSpace>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"nenet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/20</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/23</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"demodns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"newnet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/20</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/23</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"Subnet-2\">\r\n            <AddressPrefix>10.0.2.0/23</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"demodns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"newvnet$$%10\" AffinityGroup=\"NewAffinityGroup01\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.8.7/24</AddressPrefix>\r\n        </AddressSpace>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"testy\" AffinityGroup=\"affinity1\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.11/8</AddressPrefix>\r\n          <AddressPrefix>172.16.77.0/12</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/11</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>10.32.0.0/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"Vnet\" AffinityGroup=\"EastAsia\">\r\n        <AddressSpace>\r\n          <AddressPrefix>172.16.0.0/28</AddressPrefix>\r\n          <AddressPrefix>192.168.29.0/24</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>172.16.0.0/29</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>172.16.0.8/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n    </VirtualNetworkSites>\r\n  </VirtualNetworkConfiguration>\r\n</NetworkConfiguration>", { 'cache-control': 'no-cache',
-  'content-length': '4488',
+  .reply(200, "﻿<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<NetworkConfiguration xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://schemas.microsoft.com/ServiceHosting/2011/07/NetworkConfiguration\">\r\n  <VirtualNetworkConfiguration>\r\n    <Dns>\r\n      <DnsServers>\r\n        <DnsServer name=\"demodns\" IPAddress=\"172.16.77.66\" />\r\n        <DnsServer name=\"DNS-d8a9b561b4b5945c\" IPAddress=\"10.0.0.1\" />\r\n        <DnsServer name=\"googledns\" IPAddress=\"8.8.8.8\" />\r\n      </DnsServers>\r\n    </Dns>\r\n    <VirtualNetworkSites>\r\n      <VirtualNetworkSite name=\"googlednssvnet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/26</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"subnet-1\">\r\n            <AddressPrefix>10.0.0.0/27</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"googledns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"mynetwork\" AffinityGroup=\"affinity1\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.4.0.0/16</AddressPrefix>\r\n          <AddressPrefix>10.1.0.0/16</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.4.2.0/19</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>10.4.32.0/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"ne@@wvnet$$%10\" AffinityGroup=\"NewAffinityGroup01\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.8.7/24</AddressPrefix>\r\n        </AddressSpace>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"newnet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/20</AddressPrefix>\r\n          <AddressPrefix>10.0.16.0/20</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/23</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"Subnet-2\">\r\n            <AddressPrefix>10.0.2.0/23</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"Subnet-3\">\r\n            <AddressPrefix>10.0.16.0/23</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"demodns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"newvnet$$%10\" AffinityGroup=\"NewAffinityGroup01\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.8.7/24</AddressPrefix>\r\n        </AddressSpace>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"testvnet\" Location=\"North Europe\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/8</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/11</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"testy\" AffinityGroup=\"affinity1\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.11/8</AddressPrefix>\r\n          <AddressPrefix>172.16.77.0/12</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/11</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>10.32.0.0/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"Vnet\" AffinityGroup=\"EastAsia\">\r\n        <AddressSpace>\r\n          <AddressPrefix>172.16.0.0/28</AddressPrefix>\r\n          <AddressPrefix>192.168.29.0/24</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>172.16.0.0/29</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>172.16.0.8/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n    </VirtualNetworkSites>\r\n  </VirtualNetworkConfiguration>\r\n</NetworkConfiguration>", { 'cache-control': 'no-cache',
+  'content-length': '4190',
   'content-type': 'text/plain',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
   'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': '5e767433fad032c99681902ceb3f9f0c',
-  date: 'Tue, 18 Nov 2014 06:50:31 GMT' });
+  'x-ms-request-id': '5015c0c12c353f40a0438a5fdaaa9a29',
+  date: 'Thu, 04 Dec 2014 09:40:42 GMT' });
  return result; },
 function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
   .put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services?service=sqlserver&action=register')
-  .reply(307, "", { 'content-length': '0',
-  location: 'https://ussouth.management.core.windows.net/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services?service=sqlserver&action=register',
-  server: 'Microsoft-HTTPAPI/2.0',
-  'x-ms-servedbyregion': 'ussouth2',
-  date: 'Tue, 18 Nov 2014 06:50:33 GMT' });
- return result; },
-function (nock) { 
-var result = 
-nock('https://ussouth.management.core.windows.net:443')
-  .put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services?service=sqlserver&action=register')
   .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
   'content-length': '193',
   'content-type': 'application/xml; charset=utf-8',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
-  'x-ms-servedbyregion': 'ussouth',
-  'x-ms-request-id': 'aeebe2554e373ac3b1a7859dd85e93a6',
-  date: 'Tue, 18 Nov 2014 06:50:38 GMT' });
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth2',
+  'x-ms-request-id': '5bb6b79139663aabb903f7c48f660f1c',
+  date: 'Thu, 04 Dec 2014 09:40:44 GMT' });
  return result; },
 function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
   .get('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services/networking/media')
-  .reply(200, "﻿<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<NetworkConfiguration xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://schemas.microsoft.com/ServiceHosting/2011/07/NetworkConfiguration\">\r\n  <VirtualNetworkConfiguration>\r\n    <Dns>\r\n      <DnsServers>\r\n        <DnsServer name=\"demodns\" IPAddress=\"172.16.77.66\" />\r\n        <DnsServer name=\"DNS-aa25daf1c87d74e6\" IPAddress=\"10.0.0.1\" />\r\n        <DnsServer name=\"googledns\" IPAddress=\"8.8.8.8\" />\r\n      </DnsServers>\r\n    </Dns>\r\n    <VirtualNetworkSites>\r\n      <VirtualNetworkSite name=\"googlednssvnet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/26</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/27</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"googledns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"Group SampleCRP-RP SampleCRP-VNet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>192.168.30.0/24</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>192.168.30.0/24</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"mynetwork\" AffinityGroup=\"affinity1\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.4.0.0/16</AddressPrefix>\r\n          <AddressPrefix>10.1.0.0/16</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.4.2.0/19</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>10.4.32.0/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"ne@@wvnet$$%10\" AffinityGroup=\"NewAffinityGroup01\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.8.7/24</AddressPrefix>\r\n        </AddressSpace>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"nenet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/20</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/23</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"demodns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"newnet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/20</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/23</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"Subnet-2\">\r\n            <AddressPrefix>10.0.2.0/23</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"demodns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"newvnet$$%10\" AffinityGroup=\"NewAffinityGroup01\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.8.7/24</AddressPrefix>\r\n        </AddressSpace>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"testy\" AffinityGroup=\"affinity1\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.11/8</AddressPrefix>\r\n          <AddressPrefix>172.16.77.0/12</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/11</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>10.32.0.0/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"Vnet\" AffinityGroup=\"EastAsia\">\r\n        <AddressSpace>\r\n          <AddressPrefix>172.16.0.0/28</AddressPrefix>\r\n          <AddressPrefix>192.168.29.0/24</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>172.16.0.0/29</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>172.16.0.8/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n    </VirtualNetworkSites>\r\n  </VirtualNetworkConfiguration>\r\n</NetworkConfiguration>", { 'cache-control': 'no-cache',
-  'content-length': '4488',
+  .reply(200, "﻿<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<NetworkConfiguration xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://schemas.microsoft.com/ServiceHosting/2011/07/NetworkConfiguration\">\r\n  <VirtualNetworkConfiguration>\r\n    <Dns>\r\n      <DnsServers>\r\n        <DnsServer name=\"demodns\" IPAddress=\"172.16.77.66\" />\r\n        <DnsServer name=\"DNS-d8a9b561b4b5945c\" IPAddress=\"10.0.0.1\" />\r\n        <DnsServer name=\"googledns\" IPAddress=\"8.8.8.8\" />\r\n      </DnsServers>\r\n    </Dns>\r\n    <VirtualNetworkSites>\r\n      <VirtualNetworkSite name=\"googlednssvnet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/26</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"subnet-1\">\r\n            <AddressPrefix>10.0.0.0/27</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"googledns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"mynetwork\" AffinityGroup=\"affinity1\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.4.0.0/16</AddressPrefix>\r\n          <AddressPrefix>10.1.0.0/16</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.4.2.0/19</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>10.4.32.0/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"ne@@wvnet$$%10\" AffinityGroup=\"NewAffinityGroup01\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.8.7/24</AddressPrefix>\r\n        </AddressSpace>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"newnet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/20</AddressPrefix>\r\n          <AddressPrefix>10.0.16.0/20</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/23</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"Subnet-2\">\r\n            <AddressPrefix>10.0.2.0/23</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"Subnet-3\">\r\n            <AddressPrefix>10.0.16.0/23</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"demodns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"newvnet$$%10\" AffinityGroup=\"NewAffinityGroup01\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.8.7/24</AddressPrefix>\r\n        </AddressSpace>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"testvnet\" Location=\"North Europe\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/8</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/11</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"testy\" AffinityGroup=\"affinity1\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.11/8</AddressPrefix>\r\n          <AddressPrefix>172.16.77.0/12</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/11</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>10.32.0.0/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"Vnet\" AffinityGroup=\"EastAsia\">\r\n        <AddressSpace>\r\n          <AddressPrefix>172.16.0.0/28</AddressPrefix>\r\n          <AddressPrefix>192.168.29.0/24</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>172.16.0.0/29</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>172.16.0.8/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n    </VirtualNetworkSites>\r\n  </VirtualNetworkConfiguration>\r\n</NetworkConfiguration>", { 'cache-control': 'no-cache',
+  'content-length': '4190',
   'content-type': 'text/plain',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
   'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': '1695f7e63f4b3b9e9524573cfa3ebd2d',
-  date: 'Tue, 18 Nov 2014 06:50:39 GMT' });
+  'x-ms-request-id': '6b3a6b86043831d9a6b6ae326793304f',
+  date: 'Thu, 04 Dec 2014 09:40:46 GMT' });
  return result; },
 function (nock) { 
 var result = 
@@ -171,10 +151,10 @@ nock('https://management.core.windows.net:443')
   .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
   'content-length': '193',
   'content-type': 'application/xml; charset=utf-8',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
   'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': '7d438607b1003acab9d93e899dc94130',
-  date: 'Tue, 18 Nov 2014 06:50:42 GMT' });
+  'x-ms-request-id': '4d728fa94027338d9fff14fbd57f216a',
+  date: 'Thu, 04 Dec 2014 09:40:48 GMT' });
  return result; },
 function (nock) { 
 var result = 
@@ -183,10 +163,10 @@ nock('https://management.core.windows.net:443')
 .put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services/networking/media', '*')
   .reply(202, "", { 'cache-control': 'no-cache',
   'content-length': '0',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
   'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': '525b981a7d29378d921cf904fec08e16',
-  date: 'Tue, 18 Nov 2014 06:50:44 GMT' });
+  'x-ms-request-id': 'cb26d346d7f53d7d9c99bd445ab4f6e2',
+  date: 'Thu, 04 Dec 2014 09:40:52 GMT' });
  return result; },
 function (nock) { 
 var result = 
@@ -195,22 +175,22 @@ nock('https://management.core.windows.net:443')
   .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
   'content-length': '193',
   'content-type': 'application/xml; charset=utf-8',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
   'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': '3264ade632b4366e9b198f7cf899412f',
-  date: 'Tue, 18 Nov 2014 06:51:16 GMT' });
+  'x-ms-request-id': '5e9097d2da913a5eb500ee9bdb1f232a',
+  date: 'Thu, 04 Dec 2014 09:41:24 GMT' });
  return result; },
 function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
-  .get('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/operations/525b981a7d29378d921cf904fec08e16')
-  .reply(200, "<Operation xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><ID>525b981a-7d29-378d-921c-f904fec08e16</ID><Status>Succeeded</Status><HttpStatusCode>200</HttpStatusCode></Operation>", { 'cache-control': 'no-cache',
+  .get('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/operations/cb26d346d7f53d7d9c99bd445ab4f6e2')
+  .reply(200, "<Operation xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><ID>cb26d346-d7f5-3d7d-9c99-bd445ab4f6e2</ID><Status>Succeeded</Status><HttpStatusCode>200</HttpStatusCode></Operation>", { 'cache-control': 'no-cache',
   'content-length': '232',
   'content-type': 'application/xml; charset=utf-8',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
   'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': '6b3dd2a2817b3defbefa05ead257a1cf',
-  date: 'Tue, 18 Nov 2014 06:51:18 GMT' });
+  'x-ms-request-id': '57b15cb4c79a3901be41d7c648788126',
+  date: 'Thu, 04 Dec 2014 09:41:26 GMT' });
  return result; }],
 [function (nock) { 
 var result = 
@@ -219,22 +199,22 @@ nock('https://management.core.windows.net:443')
   .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
   'content-length': '193',
   'content-type': 'application/xml; charset=utf-8',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
   'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': '439b4611bfa9310d813b63ad45214079',
-  date: 'Tue, 18 Nov 2014 06:51:20 GMT' });
+  'x-ms-request-id': 'cb404e4db4e33812b53d8d6e32bb7940',
+  date: 'Thu, 04 Dec 2014 09:41:28 GMT' });
  return result; },
 function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
   .get('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services/networking/media')
-  .reply(200, "﻿<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<NetworkConfiguration xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://schemas.microsoft.com/ServiceHosting/2011/07/NetworkConfiguration\">\r\n  <VirtualNetworkConfiguration>\r\n    <Dns>\r\n      <DnsServers>\r\n        <DnsServer name=\"demodns\" IPAddress=\"172.16.77.66\" />\r\n        <DnsServer name=\"googledns\" IPAddress=\"8.8.8.8\" />\r\n      </DnsServers>\r\n    </Dns>\r\n    <VirtualNetworkSites>\r\n      <VirtualNetworkSite name=\"googlednssvnet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/26</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/27</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"googledns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"Group SampleCRP-RP SampleCRP-VNet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>192.168.30.0/24</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>192.168.30.0/24</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"mynetwork\" AffinityGroup=\"affinity1\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.4.0.0/16</AddressPrefix>\r\n          <AddressPrefix>10.1.0.0/16</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.4.2.0/19</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>10.4.32.0/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"ne@@wvnet$$%10\" AffinityGroup=\"NewAffinityGroup01\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.8.7/24</AddressPrefix>\r\n        </AddressSpace>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"nenet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/20</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/23</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"demodns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"newnet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/20</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/23</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"Subnet-2\">\r\n            <AddressPrefix>10.0.2.0/23</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"demodns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"newvnet$$%10\" AffinityGroup=\"NewAffinityGroup01\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.8.7/24</AddressPrefix>\r\n        </AddressSpace>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"testy\" AffinityGroup=\"affinity1\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.11/8</AddressPrefix>\r\n          <AddressPrefix>172.16.77.0/12</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/11</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>10.32.0.0/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"Vnet\" AffinityGroup=\"EastAsia\">\r\n        <AddressSpace>\r\n          <AddressPrefix>172.16.0.0/28</AddressPrefix>\r\n          <AddressPrefix>192.168.29.0/24</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>172.16.0.0/29</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>172.16.0.8/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n    </VirtualNetworkSites>\r\n  </VirtualNetworkConfiguration>\r\n</NetworkConfiguration>", { 'cache-control': 'no-cache',
-  'content-length': '4416',
+  .reply(200, "﻿<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<NetworkConfiguration xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://schemas.microsoft.com/ServiceHosting/2011/07/NetworkConfiguration\">\r\n  <VirtualNetworkConfiguration>\r\n    <Dns>\r\n      <DnsServers>\r\n        <DnsServer name=\"demodns\" IPAddress=\"172.16.77.66\" />\r\n        <DnsServer name=\"googledns\" IPAddress=\"8.8.8.8\" />\r\n      </DnsServers>\r\n    </Dns>\r\n    <VirtualNetworkSites>\r\n      <VirtualNetworkSite name=\"googlednssvnet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/26</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"subnet-1\">\r\n            <AddressPrefix>10.0.0.0/27</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"googledns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"mynetwork\" AffinityGroup=\"affinity1\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.4.0.0/16</AddressPrefix>\r\n          <AddressPrefix>10.1.0.0/16</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.4.2.0/19</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>10.4.32.0/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"ne@@wvnet$$%10\" AffinityGroup=\"NewAffinityGroup01\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.8.7/24</AddressPrefix>\r\n        </AddressSpace>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"newnet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/20</AddressPrefix>\r\n          <AddressPrefix>10.0.16.0/20</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/23</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"Subnet-2\">\r\n            <AddressPrefix>10.0.2.0/23</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"Subnet-3\">\r\n            <AddressPrefix>10.0.16.0/23</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"demodns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"newvnet$$%10\" AffinityGroup=\"NewAffinityGroup01\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.8.7/24</AddressPrefix>\r\n        </AddressSpace>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"testvnet\" Location=\"North Europe\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/8</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/11</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"testy\" AffinityGroup=\"affinity1\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.11/8</AddressPrefix>\r\n          <AddressPrefix>172.16.77.0/12</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/11</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>10.32.0.0/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"Vnet\" AffinityGroup=\"EastAsia\">\r\n        <AddressSpace>\r\n          <AddressPrefix>172.16.0.0/28</AddressPrefix>\r\n          <AddressPrefix>192.168.29.0/24</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>172.16.0.0/29</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>172.16.0.8/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n    </VirtualNetworkSites>\r\n  </VirtualNetworkConfiguration>\r\n</NetworkConfiguration>", { 'cache-control': 'no-cache',
+  'content-length': '4118',
   'content-type': 'text/plain',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
   'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': '38fe6bb9f01537f2b159a1a828af038b',
-  date: 'Tue, 18 Nov 2014 06:51:21 GMT' });
+  'x-ms-request-id': '01b4b519481d3301b97e598560542647',
+  date: 'Thu, 04 Dec 2014 09:41:34 GMT' });
  return result; },
 function (nock) { 
 var result = 
@@ -243,10 +223,10 @@ nock('https://management.core.windows.net:443')
   .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
   'content-length': '193',
   'content-type': 'application/xml; charset=utf-8',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
   'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': 'e3390a279b88349d991d772c0ddad5a9',
-  date: 'Tue, 18 Nov 2014 06:51:24 GMT' });
+  'x-ms-request-id': '900e4d3689d33617adaf097851df5ee6',
+  date: 'Thu, 04 Dec 2014 09:41:37 GMT' });
  return result; },
 function (nock) { 
 var result = 
@@ -255,10 +235,10 @@ nock('https://management.core.windows.net:443')
   .reply(200, "<Locations xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Location><Name>North Europe</Name><DisplayName>North Europe</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>A8</RoleSize><RoleSize>A9</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>A8</RoleSize><RoleSize>A9</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location><Location><Name>West Europe</Name><DisplayName>West Europe</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>A8</RoleSize><RoleSize>A9</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>A8</RoleSize><RoleSize>A9</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location><Location><Name>East US 2</Name><DisplayName>East US 2</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location><Location><Name>Central US</Name><DisplayName>Central US</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location><Location><Name>South Central US</Name><DisplayName>South Central US</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>A8</RoleSize><RoleSize>A9</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>A8</RoleSize><RoleSize>A9</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location><Location><Name>West US</Name><DisplayName>West US</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>A8</RoleSize><RoleSize>A9</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>A8</RoleSize><RoleSize>A9</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location><Location><Name>North Central US</Name><DisplayName>North Central US</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>A8</RoleSize><RoleSize>A9</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>A8</RoleSize><RoleSize>A9</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location><Location><Name>East US</Name><DisplayName>East US</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>A8</RoleSize><RoleSize>A9</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>A8</RoleSize><RoleSize>A9</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location><Location><Name>Southeast Asia</Name><DisplayName>Southeast Asia</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location><Location><Name>East Asia</Name><DisplayName>East Asia</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location><Location><Name>Japan West</Name><DisplayName>Japan West</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location><Location><Name>Japan East</Name><DisplayName>Japan East</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>A8</RoleSize><RoleSize>A9</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>A8</RoleSize><RoleSize>A9</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location><Location><Name>Brazil South</Name><DisplayName>Brazil South</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location><Location><Name>Australia Southeast</Name><DisplayName>Australia Southeast</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location><Location><Name>Australia East</Name><DisplayName>Australia East</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location></Locations>", { 'cache-control': 'no-cache',
   'content-length': '21691',
   'content-type': 'application/xml; charset=utf-8',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
   'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': '30422f704b0d3c908d71b9a1b3735823',
-  date: 'Tue, 18 Nov 2014 06:51:27 GMT' });
+  'x-ms-request-id': '8b99125d02973b93ae88f108692fa593',
+  date: 'Thu, 04 Dec 2014 09:41:40 GMT' });
  return result; },
 function (nock) { 
 var result = 
@@ -267,34 +247,441 @@ nock('https://management.core.windows.net:443')
   .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
   'content-length': '193',
   'content-type': 'application/xml; charset=utf-8',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
   'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': '0ac62ad6d6fe3ec1b42946948f665f11',
-  date: 'Tue, 18 Nov 2014 06:51:28 GMT' });
+  'x-ms-request-id': '5886ee350bd13e3e8393ab944d4c39e6',
+  date: 'Thu, 04 Dec 2014 09:41:42 GMT' });
  return result; },
 function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
-  .filteringRequestBody(function (path) { return '*';})
-.post('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/affinitygroups', '*')
-  .reply(307, "", { 'content-length': '0',
-  location: 'https://ussouth.management.core.windows.net/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/affinitygroups',
-  server: 'Microsoft-HTTPAPI/2.0',
-  'x-ms-servedbyregion': 'ussouth2',
-  date: 'Tue, 18 Nov 2014 06:51:32 GMT' });
- return result; },
-function (nock) { 
-var result = 
-nock('https://ussouth.management.core.windows.net:443')
   .filteringRequestBody(function (path) { return '*';})
 .post('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/affinitygroups', '*')
   .reply(201, "", { 'cache-control': 'no-cache',
   'content-length': '0',
-  location: 'https://ussouth.management.core.windows.net/subscriptions/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/affinitygroup/AG-CLI-c6fcfaefea4a1f76',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
+  location: 'https://management.core.windows.net/subscriptions/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/affinitygroup/AG-CLI-df8420b73282a495',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth2',
+  'x-ms-request-id': '14a6e3957a56303294ce7ad7226062e9',
+  date: 'Thu, 04 Dec 2014 09:41:44 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services?service=sqlserver&action=register')
+  .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
+  'content-length': '193',
+  'content-type': 'application/xml; charset=utf-8',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth2',
+  'x-ms-request-id': '6c97b0a4caf83e64acd49ad916135c3d',
+  date: 'Thu, 04 Dec 2014 09:41:48 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .filteringRequestBody(function (path) { return '*';})
+.put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services/networking/media', '*')
+  .reply(202, "", { 'cache-control': 'no-cache',
+  'content-length': '0',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth2',
+  'x-ms-request-id': '93b35f5d6d143cc5aff9c15fa1b3519a',
+  date: 'Thu, 04 Dec 2014 09:41:49 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services?service=sqlserver&action=register')
+  .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
+  'content-length': '193',
+  'content-type': 'application/xml; charset=utf-8',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth2',
+  'x-ms-request-id': '5e65623a905236d4926aeb38c5cb8c58',
+  date: 'Thu, 04 Dec 2014 09:42:22 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .get('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/operations/93b35f5d6d143cc5aff9c15fa1b3519a')
+  .reply(200, "<Operation xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><ID>93b35f5d-6d14-3cc5-aff9-c15fa1b3519a</ID><Status>Succeeded</Status><HttpStatusCode>200</HttpStatusCode></Operation>", { 'cache-control': 'no-cache',
+  'content-length': '232',
+  'content-type': 'application/xml; charset=utf-8',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth2',
+  'x-ms-request-id': '67d297cdfe0339f59682b1d8449663de',
+  date: 'Thu, 04 Dec 2014 09:42:24 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services?service=sqlserver&action=register')
+  .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
+  'content-length': '193',
+  'content-type': 'application/xml; charset=utf-8',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth2',
+  'x-ms-request-id': 'b3b14b615d0333489b8223061f3773d1',
+  date: 'Thu, 04 Dec 2014 09:42:27 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .get('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services/networking/virtualnetwork')
+  .reply(200, "<VirtualNetworkSites xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><VirtualNetworkSite><Name>googlednssvnet</Name><Id>67ece927-3976-4d3f-a004-5e5174260a21</Id><State>Created</State><AddressSpace><AddressPrefixes><AddressPrefix>10.0.0.0/26</AddressPrefix></AddressPrefixes></AddressSpace><Subnets><Subnet><Name>subnet-1</Name><AddressPrefix>10.0.0.0/27</AddressPrefix></Subnet></Subnets><Dns><DnsServers><DnsServer><Name>googledns</Name><Address>8.8.8.8</Address></DnsServer></DnsServers></Dns><Location>West US</Location></VirtualNetworkSite><VirtualNetworkSite><Name>mynetwork</Name><Id>386452bd-5cef-4eea-a889-a6e5d0635381</Id><AffinityGroup>affinity1</AffinityGroup><State>Created</State><InUse>true</InUse><AddressSpace><AddressPrefixes><AddressPrefix>10.4.0.0/16</AddressPrefix><AddressPrefix>10.1.0.0/16</AddressPrefix></AddressPrefixes></AddressSpace><Subnets><Subnet><Name>Subnet-1</Name><AddressPrefix>10.4.2.0/19</AddressPrefix></Subnet><Subnet><Name>GatewaySubnet</Name><AddressPrefix>10.4.32.0/29</AddressPrefix></Subnet></Subnets></VirtualNetworkSite><VirtualNetworkSite><Name>ne@@wvnet$$%10</Name><Id>c27720fe-1c7c-429b-85ec-09cf605307e2</Id><AffinityGroup>NewAffinityGroup01</AffinityGroup><State>Creating</State><AddressSpace><AddressPrefixes><AddressPrefix>10.0.8.7/24</AddressPrefix></AddressPrefixes></AddressSpace><Subnets/></VirtualNetworkSite><VirtualNetworkSite><Name>newnet</Name><Id>896573a5-9904-4d66-99ca-580645fd98be</Id><State>Created</State><AddressSpace><AddressPrefixes><AddressPrefix>10.0.0.0/20</AddressPrefix><AddressPrefix>10.0.16.0/20</AddressPrefix></AddressPrefixes></AddressSpace><Subnets><Subnet><Name>Subnet-1</Name><AddressPrefix>10.0.0.0/23</AddressPrefix></Subnet><Subnet><Name>Subnet-2</Name><AddressPrefix>10.0.2.0/23</AddressPrefix></Subnet><Subnet><Name>Subnet-3</Name><AddressPrefix>10.0.16.0/23</AddressPrefix></Subnet></Subnets><Dns><DnsServers><DnsServer><Name>demodns</Name><Address>172.16.77.66</Address></DnsServer></DnsServers></Dns><Location>West US</Location></VirtualNetworkSite><VirtualNetworkSite><Name>newvnet$$%10</Name><Id>1e045b27-4b5a-42f6-8399-23a85df51702</Id><AffinityGroup>NewAffinityGroup01</AffinityGroup><State>Creating</State><AddressSpace><AddressPrefixes><AddressPrefix>10.0.8.7/24</AddressPrefix></AddressPrefixes></AddressSpace><Subnets/></VirtualNetworkSite><VirtualNetworkSite><Name>testvnet</Name><Id>f7198058-3da1-4d26-973c-1dad914de0a0</Id><State>Created</State><AddressSpace><AddressPrefixes><AddressPrefix>10.0.0.0/8</AddressPrefix></AddressPrefixes></AddressSpace><Subnets><Subnet><Name>Subnet-1</Name><AddressPrefix>10.0.0.0/11</AddressPrefix></Subnet></Subnets><Location>North Europe</Location></VirtualNetworkSite><VirtualNetworkSite><Name>testy</Name><Id>06bb8c56-83da-499e-8585-2609db606247</Id><AffinityGroup>affinity1</AffinityGroup><State>Created</State><InUse>true</InUse><AddressSpace><AddressPrefixes><AddressPrefix>10.0.0.11/8</AddressPrefix><AddressPrefix>172.16.77.0/12</AddressPrefix></AddressPrefixes></AddressSpace><Subnets><Subnet><Name>Subnet-1</Name><AddressPrefix>10.0.0.0/11</AddressPrefix></Subnet><Subnet><Name>GatewaySubnet</Name><AddressPrefix>10.32.0.0/29</AddressPrefix></Subnet></Subnets></VirtualNetworkSite><VirtualNetworkSite><Name>Vnet</Name><Id>a9001b93-75cc-4580-94b4-a200654da28e</Id><AffinityGroup>EastAsia</AffinityGroup><State>Created</State><InUse>true</InUse><AddressSpace><AddressPrefixes><AddressPrefix>172.16.0.0/28</AddressPrefix><AddressPrefix>192.168.29.0/24</AddressPrefix></AddressPrefixes></AddressSpace><Subnets><Subnet><Name>Subnet-1</Name><AddressPrefix>172.16.0.0/29</AddressPrefix></Subnet><Subnet><Name>GatewaySubnet</Name><AddressPrefix>172.16.0.8/29</AddressPrefix></Subnet></Subnets></VirtualNetworkSite><VirtualNetworkSite><Name>vnet1</Name><Id>eb9ca16b-1812-470b-a3fe-62f6cf0d14ba</Id><AffinityGroup>AG-CLI-df8420b73282a495</AffinityGroup><State>Created</State><AddressSpace><AddressPrefixes><AddressPrefix>10.0.0.0/8</AddressPrefix></AddressPrefixes></AddressSpace><Subnets><Subnet><Name>Subnet-1</Name><AddressPrefix>10.0.0.0/11</AddressPrefix></Subnet></Subnets></VirtualNetworkSite></VirtualNetworkSites>", { 'cache-control': 'no-cache',
+  'content-length': '4212',
+  'content-type': 'application/xml; charset=utf-8',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth2',
+  'x-ms-request-id': '013dd8c8fdbd374ab15090ee28934855',
+  date: 'Thu, 04 Dec 2014 09:42:30 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services?service=sqlserver&action=register')
+  .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
+  'content-length': '193',
+  'content-type': 'application/xml; charset=utf-8',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth2',
+  'x-ms-request-id': '57c3e47fa0383c70abdce8c812c27e2f',
+  date: 'Thu, 04 Dec 2014 09:42:33 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .get('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services/networking/media')
+  .reply(200, "﻿<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<NetworkConfiguration xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://schemas.microsoft.com/ServiceHosting/2011/07/NetworkConfiguration\">\r\n  <VirtualNetworkConfiguration>\r\n    <Dns>\r\n      <DnsServers>\r\n        <DnsServer name=\"demodns\" IPAddress=\"172.16.77.66\" />\r\n        <DnsServer name=\"googledns\" IPAddress=\"8.8.8.8\" />\r\n      </DnsServers>\r\n    </Dns>\r\n    <VirtualNetworkSites>\r\n      <VirtualNetworkSite name=\"googlednssvnet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/26</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"subnet-1\">\r\n            <AddressPrefix>10.0.0.0/27</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"googledns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"mynetwork\" AffinityGroup=\"affinity1\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.4.0.0/16</AddressPrefix>\r\n          <AddressPrefix>10.1.0.0/16</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.4.2.0/19</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>10.4.32.0/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"ne@@wvnet$$%10\" AffinityGroup=\"NewAffinityGroup01\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.8.7/24</AddressPrefix>\r\n        </AddressSpace>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"newnet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/20</AddressPrefix>\r\n          <AddressPrefix>10.0.16.0/20</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/23</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"Subnet-2\">\r\n            <AddressPrefix>10.0.2.0/23</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"Subnet-3\">\r\n            <AddressPrefix>10.0.16.0/23</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"demodns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"newvnet$$%10\" AffinityGroup=\"NewAffinityGroup01\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.8.7/24</AddressPrefix>\r\n        </AddressSpace>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"testvnet\" Location=\"North Europe\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/8</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/11</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"testy\" AffinityGroup=\"affinity1\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.11/8</AddressPrefix>\r\n          <AddressPrefix>172.16.77.0/12</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/11</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>10.32.0.0/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"Vnet\" AffinityGroup=\"EastAsia\">\r\n        <AddressSpace>\r\n          <AddressPrefix>172.16.0.0/28</AddressPrefix>\r\n          <AddressPrefix>192.168.29.0/24</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>172.16.0.0/29</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>172.16.0.8/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"vnet1\" AffinityGroup=\"AG-CLI-df8420b73282a495\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/8</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/11</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n    </VirtualNetworkSites>\r\n  </VirtualNetworkConfiguration>\r\n</NetworkConfiguration>", { 'cache-control': 'no-cache',
+  'content-length': '4482',
+  'content-type': 'text/plain',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth2',
+  'x-ms-request-id': 'a1ad11afe9623337884b02619ecbbb8d',
+  date: 'Thu, 04 Dec 2014 09:42:35 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services?service=sqlserver&action=register')
+  .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
+  'content-length': '193',
+  'content-type': 'application/xml; charset=utf-8',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth2',
+  'x-ms-request-id': '65a4f3ceb3e63f44b6742e61a1fca65b',
+  date: 'Thu, 04 Dec 2014 09:42:38 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .get('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services/networking/media')
+  .reply(200, "﻿<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<NetworkConfiguration xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://schemas.microsoft.com/ServiceHosting/2011/07/NetworkConfiguration\">\r\n  <VirtualNetworkConfiguration>\r\n    <Dns>\r\n      <DnsServers>\r\n        <DnsServer name=\"demodns\" IPAddress=\"172.16.77.66\" />\r\n        <DnsServer name=\"googledns\" IPAddress=\"8.8.8.8\" />\r\n      </DnsServers>\r\n    </Dns>\r\n    <VirtualNetworkSites>\r\n      <VirtualNetworkSite name=\"googlednssvnet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/26</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"subnet-1\">\r\n            <AddressPrefix>10.0.0.0/27</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"googledns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"mynetwork\" AffinityGroup=\"affinity1\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.4.0.0/16</AddressPrefix>\r\n          <AddressPrefix>10.1.0.0/16</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.4.2.0/19</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>10.4.32.0/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"ne@@wvnet$$%10\" AffinityGroup=\"NewAffinityGroup01\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.8.7/24</AddressPrefix>\r\n        </AddressSpace>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"newnet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/20</AddressPrefix>\r\n          <AddressPrefix>10.0.16.0/20</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/23</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"Subnet-2\">\r\n            <AddressPrefix>10.0.2.0/23</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"Subnet-3\">\r\n            <AddressPrefix>10.0.16.0/23</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"demodns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"newvnet$$%10\" AffinityGroup=\"NewAffinityGroup01\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.8.7/24</AddressPrefix>\r\n        </AddressSpace>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"testvnet\" Location=\"North Europe\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/8</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/11</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"testy\" AffinityGroup=\"affinity1\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.11/8</AddressPrefix>\r\n          <AddressPrefix>172.16.77.0/12</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/11</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>10.32.0.0/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"Vnet\" AffinityGroup=\"EastAsia\">\r\n        <AddressSpace>\r\n          <AddressPrefix>172.16.0.0/28</AddressPrefix>\r\n          <AddressPrefix>192.168.29.0/24</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>172.16.0.0/29</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>172.16.0.8/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"vnet1\" AffinityGroup=\"AG-CLI-df8420b73282a495\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/8</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/11</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n    </VirtualNetworkSites>\r\n  </VirtualNetworkConfiguration>\r\n</NetworkConfiguration>", { 'cache-control': 'no-cache',
+  'content-length': '4482',
+  'content-type': 'text/plain',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth2',
+  'x-ms-request-id': 'eab41055247b307dafdd3f3a8864c7ef',
+  date: 'Thu, 04 Dec 2014 09:42:41 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services?service=sqlserver&action=register')
+  .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
+  'content-length': '193',
+  'content-type': 'application/xml; charset=utf-8',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth2',
+  'x-ms-request-id': '7bcacd9c096c36fc9b11a78c642eed26',
+  date: 'Thu, 04 Dec 2014 09:42:42 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .filteringRequestBody(function (path) { return '*';})
+.put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services/networking/media', '*')
+  .reply(202, "", { 'cache-control': 'no-cache',
+  'content-length': '0',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth2',
+  'x-ms-request-id': '290cf68c825336ff954694a0806ec95c',
+  date: 'Thu, 04 Dec 2014 09:42:45 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services?service=sqlserver&action=register')
+  .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
+  'content-length': '193',
+  'content-type': 'application/xml; charset=utf-8',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth2',
+  'x-ms-request-id': '770a6596efc33541822ed1d7d1159af3',
+  date: 'Thu, 04 Dec 2014 09:43:18 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .get('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/operations/290cf68c825336ff954694a0806ec95c')
+  .reply(200, "<Operation xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><ID>290cf68c-8253-36ff-9546-94a0806ec95c</ID><Status>Succeeded</Status><HttpStatusCode>200</HttpStatusCode></Operation>", { 'cache-control': 'no-cache',
+  'content-length': '232',
+  'content-type': 'application/xml; charset=utf-8',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth2',
+  'x-ms-request-id': 'e96403d26bbe3c5eb77fd967283187cc',
+  date: 'Thu, 04 Dec 2014 09:43:20 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services?service=sqlserver&action=register')
+  .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
+  'content-length': '193',
+  'content-type': 'application/xml; charset=utf-8',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth2',
+  'x-ms-request-id': 'a96c87db643336b581ea9e2970b521fe',
+  date: 'Thu, 04 Dec 2014 09:43:22 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .filteringRequestBody(function (path) { return '*';})
+.put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services/networking/media', '*')
+  .reply(202, "", { 'cache-control': 'no-cache',
+  'content-length': '0',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth2',
+  'x-ms-request-id': 'd1d59bb3b9e3391fa46b43a61a3db9e0',
+  date: 'Thu, 04 Dec 2014 09:43:25 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services?service=sqlserver&action=register')
+  .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
+  'content-length': '193',
+  'content-type': 'application/xml; charset=utf-8',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth2',
+  'x-ms-request-id': '54654f57e88b34b3b070a818272e0135',
+  date: 'Thu, 04 Dec 2014 09:43:57 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .get('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/operations/d1d59bb3b9e3391fa46b43a61a3db9e0')
+  .reply(200, "<Operation xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><ID>d1d59bb3-b9e3-391f-a46b-43a61a3db9e0</ID><Status>Succeeded</Status><HttpStatusCode>200</HttpStatusCode></Operation>", { 'cache-control': 'no-cache',
+  'content-length': '232',
+  'content-type': 'application/xml; charset=utf-8',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth2',
+  'x-ms-request-id': 'f027e5d0db143e59b99d693381c3efa7',
+  date: 'Thu, 04 Dec 2014 09:44:00 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services?service=sqlserver&action=register')
+  .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
+  'content-length': '193',
+  'content-type': 'application/xml; charset=utf-8',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth2',
+  'x-ms-request-id': '8f2683b6102c3e72b3324f9c53ba5f76',
+  date: 'Thu, 04 Dec 2014 09:44:01 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .get('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services/networking/virtualnetwork')
+  .reply(200, "<VirtualNetworkSites xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><VirtualNetworkSite><Name>googlednssvnet</Name><Id>67ece927-3976-4d3f-a004-5e5174260a21</Id><State>Created</State><AddressSpace><AddressPrefixes><AddressPrefix>10.0.0.0/26</AddressPrefix></AddressPrefixes></AddressSpace><Subnets><Subnet><Name>subnet-1</Name><AddressPrefix>10.0.0.0/27</AddressPrefix></Subnet></Subnets><Dns><DnsServers><DnsServer><Name>googledns</Name><Address>8.8.8.8</Address></DnsServer></DnsServers></Dns><Location>West US</Location></VirtualNetworkSite><VirtualNetworkSite><Name>mynetwork</Name><Id>386452bd-5cef-4eea-a889-a6e5d0635381</Id><AffinityGroup>affinity1</AffinityGroup><State>Created</State><InUse>true</InUse><AddressSpace><AddressPrefixes><AddressPrefix>10.4.0.0/16</AddressPrefix><AddressPrefix>10.1.0.0/16</AddressPrefix></AddressPrefixes></AddressSpace><Subnets><Subnet><Name>Subnet-1</Name><AddressPrefix>10.4.2.0/19</AddressPrefix></Subnet><Subnet><Name>GatewaySubnet</Name><AddressPrefix>10.4.32.0/29</AddressPrefix></Subnet></Subnets></VirtualNetworkSite><VirtualNetworkSite><Name>ne@@wvnet$$%10</Name><Id>c27720fe-1c7c-429b-85ec-09cf605307e2</Id><AffinityGroup>NewAffinityGroup01</AffinityGroup><State>Creating</State><AddressSpace><AddressPrefixes><AddressPrefix>10.0.8.7/24</AddressPrefix></AddressPrefixes></AddressSpace><Subnets/></VirtualNetworkSite><VirtualNetworkSite><Name>newnet</Name><Id>896573a5-9904-4d66-99ca-580645fd98be</Id><State>Created</State><AddressSpace><AddressPrefixes><AddressPrefix>10.0.0.0/20</AddressPrefix><AddressPrefix>10.0.16.0/20</AddressPrefix></AddressPrefixes></AddressSpace><Subnets><Subnet><Name>Subnet-1</Name><AddressPrefix>10.0.0.0/23</AddressPrefix></Subnet><Subnet><Name>Subnet-2</Name><AddressPrefix>10.0.2.0/23</AddressPrefix></Subnet><Subnet><Name>Subnet-3</Name><AddressPrefix>10.0.16.0/23</AddressPrefix></Subnet></Subnets><Dns><DnsServers><DnsServer><Name>demodns</Name><Address>172.16.77.66</Address></DnsServer></DnsServers></Dns><Location>West US</Location></VirtualNetworkSite><VirtualNetworkSite><Name>newvnet$$%10</Name><Id>1e045b27-4b5a-42f6-8399-23a85df51702</Id><AffinityGroup>NewAffinityGroup01</AffinityGroup><State>Creating</State><AddressSpace><AddressPrefixes><AddressPrefix>10.0.8.7/24</AddressPrefix></AddressPrefixes></AddressSpace><Subnets/></VirtualNetworkSite><VirtualNetworkSite><Name>testvnet</Name><Id>f7198058-3da1-4d26-973c-1dad914de0a0</Id><State>Created</State><AddressSpace><AddressPrefixes><AddressPrefix>10.0.0.0/8</AddressPrefix></AddressPrefixes></AddressSpace><Subnets><Subnet><Name>Subnet-1</Name><AddressPrefix>10.0.0.0/11</AddressPrefix></Subnet></Subnets><Location>North Europe</Location></VirtualNetworkSite><VirtualNetworkSite><Name>testy</Name><Id>06bb8c56-83da-499e-8585-2609db606247</Id><AffinityGroup>affinity1</AffinityGroup><State>Created</State><InUse>true</InUse><AddressSpace><AddressPrefixes><AddressPrefix>10.0.0.11/8</AddressPrefix><AddressPrefix>172.16.77.0/12</AddressPrefix></AddressPrefixes></AddressSpace><Subnets><Subnet><Name>Subnet-1</Name><AddressPrefix>10.0.0.0/11</AddressPrefix></Subnet><Subnet><Name>GatewaySubnet</Name><AddressPrefix>10.32.0.0/29</AddressPrefix></Subnet></Subnets></VirtualNetworkSite><VirtualNetworkSite><Name>Vnet</Name><Id>a9001b93-75cc-4580-94b4-a200654da28e</Id><AffinityGroup>EastAsia</AffinityGroup><State>Created</State><InUse>true</InUse><AddressSpace><AddressPrefixes><AddressPrefix>172.16.0.0/28</AddressPrefix><AddressPrefix>192.168.29.0/24</AddressPrefix></AddressPrefixes></AddressSpace><Subnets><Subnet><Name>Subnet-1</Name><AddressPrefix>172.16.0.0/29</AddressPrefix></Subnet><Subnet><Name>GatewaySubnet</Name><AddressPrefix>172.16.0.8/29</AddressPrefix></Subnet></Subnets></VirtualNetworkSite><VirtualNetworkSite><Name>vnet1</Name><Id>4d9b3c23-fdcd-4e6c-b331-8eeab88912de</Id><AffinityGroup>AG-CLI-df8420b73282a495</AffinityGroup><State>Created</State><AddressSpace><AddressPrefixes><AddressPrefix>10.0.0.0/8</AddressPrefix></AddressPrefixes></AddressSpace><Subnets><Subnet><Name>Subnet-1</Name><AddressPrefix>10.0.0.0/11</AddressPrefix></Subnet></Subnets></VirtualNetworkSite></VirtualNetworkSites>", { 'cache-control': 'no-cache',
+  'content-length': '4212',
+  'content-type': 'application/xml; charset=utf-8',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth2',
+  'x-ms-request-id': 'a51f0a072e0e359a82d09074abe8eeba',
+  date: 'Thu, 04 Dec 2014 09:44:04 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services?service=sqlserver&action=register')
+  .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
+  'content-length': '193',
+  'content-type': 'application/xml; charset=utf-8',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth2',
+  'x-ms-request-id': '5a0f4ccd03973fcabfcadfa486d1cc98',
+  date: 'Thu, 04 Dec 2014 09:44:06 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .get('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services/networking/media')
+  .reply(200, "﻿<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<NetworkConfiguration xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://schemas.microsoft.com/ServiceHosting/2011/07/NetworkConfiguration\">\r\n  <VirtualNetworkConfiguration>\r\n    <Dns>\r\n      <DnsServers>\r\n        <DnsServer name=\"demodns\" IPAddress=\"172.16.77.66\" />\r\n        <DnsServer name=\"googledns\" IPAddress=\"8.8.8.8\" />\r\n      </DnsServers>\r\n    </Dns>\r\n    <VirtualNetworkSites>\r\n      <VirtualNetworkSite name=\"googlednssvnet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/26</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"subnet-1\">\r\n            <AddressPrefix>10.0.0.0/27</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"googledns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"mynetwork\" AffinityGroup=\"affinity1\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.4.0.0/16</AddressPrefix>\r\n          <AddressPrefix>10.1.0.0/16</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.4.2.0/19</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>10.4.32.0/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"ne@@wvnet$$%10\" AffinityGroup=\"NewAffinityGroup01\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.8.7/24</AddressPrefix>\r\n        </AddressSpace>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"newnet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/20</AddressPrefix>\r\n          <AddressPrefix>10.0.16.0/20</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/23</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"Subnet-2\">\r\n            <AddressPrefix>10.0.2.0/23</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"Subnet-3\">\r\n            <AddressPrefix>10.0.16.0/23</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"demodns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"newvnet$$%10\" AffinityGroup=\"NewAffinityGroup01\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.8.7/24</AddressPrefix>\r\n        </AddressSpace>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"testvnet\" Location=\"North Europe\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/8</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/11</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"testy\" AffinityGroup=\"affinity1\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.11/8</AddressPrefix>\r\n          <AddressPrefix>172.16.77.0/12</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/11</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>10.32.0.0/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"Vnet\" AffinityGroup=\"EastAsia\">\r\n        <AddressSpace>\r\n          <AddressPrefix>172.16.0.0/28</AddressPrefix>\r\n          <AddressPrefix>192.168.29.0/24</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>172.16.0.0/29</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>172.16.0.8/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"vnet1\" AffinityGroup=\"AG-CLI-df8420b73282a495\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/8</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/11</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n    </VirtualNetworkSites>\r\n  </VirtualNetworkConfiguration>\r\n</NetworkConfiguration>", { 'cache-control': 'no-cache',
+  'content-length': '4482',
+  'content-type': 'text/plain',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth2',
+  'x-ms-request-id': '7ea1f7e309cf3c94a267a392a94808d5',
+  date: 'Thu, 04 Dec 2014 09:44:08 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services?service=sqlserver&action=register')
+  .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
+  'content-length': '193',
+  'content-type': 'application/xml; charset=utf-8',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth2',
+  'x-ms-request-id': '3216183612a435f38d7c04c3841b0eb4',
+  date: 'Thu, 04 Dec 2014 09:44:10 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .filteringRequestBody(function (path) { return '*';})
+.put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services/networking/media', '*')
+  .reply(202, "", { 'cache-control': 'no-cache',
+  'content-length': '0',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth2',
+  'x-ms-request-id': '66282c7f91ef3ae5aa706b017e1bade7',
+  date: 'Thu, 04 Dec 2014 09:44:13 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services?service=sqlserver&action=register')
+  .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
+  'content-length': '193',
+  'content-type': 'application/xml; charset=utf-8',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth2',
+  'x-ms-request-id': 'c40a60faa1353c42b76b4d91cbc7bc80',
+  date: 'Thu, 04 Dec 2014 09:44:46 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .get('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/operations/66282c7f91ef3ae5aa706b017e1bade7')
+  .reply(200, "<Operation xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><ID>66282c7f-91ef-3ae5-aa70-6b017e1bade7</ID><Status>Succeeded</Status><HttpStatusCode>200</HttpStatusCode></Operation>", { 'cache-control': 'no-cache',
+  'content-length': '232',
+  'content-type': 'application/xml; charset=utf-8',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth2',
+  'x-ms-request-id': '6a2212bcaf013dae9bfb47ec3d900951',
+  date: 'Thu, 04 Dec 2014 09:44:47 GMT' });
+ return result; }],
+[function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services?service=sqlserver&action=register')
+  .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
+  'content-length': '193',
+  'content-type': 'application/xml; charset=utf-8',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth2',
+  'x-ms-request-id': '139d7e11b5b03dcab9e15ef668159fce',
+  date: 'Thu, 04 Dec 2014 09:44:50 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .get('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services/networking/media')
+  .reply(200, "﻿<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<NetworkConfiguration xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://schemas.microsoft.com/ServiceHosting/2011/07/NetworkConfiguration\">\r\n  <VirtualNetworkConfiguration>\r\n    <Dns>\r\n      <DnsServers>\r\n        <DnsServer name=\"demodns\" IPAddress=\"172.16.77.66\" />\r\n        <DnsServer name=\"googledns\" IPAddress=\"8.8.8.8\" />\r\n      </DnsServers>\r\n    </Dns>\r\n    <VirtualNetworkSites>\r\n      <VirtualNetworkSite name=\"googlednssvnet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/26</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"subnet-1\">\r\n            <AddressPrefix>10.0.0.0/27</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"googledns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"mynetwork\" AffinityGroup=\"affinity1\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.4.0.0/16</AddressPrefix>\r\n          <AddressPrefix>10.1.0.0/16</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.4.2.0/19</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>10.4.32.0/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"ne@@wvnet$$%10\" AffinityGroup=\"NewAffinityGroup01\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.8.7/24</AddressPrefix>\r\n        </AddressSpace>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"newnet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/20</AddressPrefix>\r\n          <AddressPrefix>10.0.16.0/20</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/23</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"Subnet-2\">\r\n            <AddressPrefix>10.0.2.0/23</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"Subnet-3\">\r\n            <AddressPrefix>10.0.16.0/23</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"demodns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"newvnet$$%10\" AffinityGroup=\"NewAffinityGroup01\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.8.7/24</AddressPrefix>\r\n        </AddressSpace>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"testvnet\" Location=\"North Europe\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/8</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/11</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"testy\" AffinityGroup=\"affinity1\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.11/8</AddressPrefix>\r\n          <AddressPrefix>172.16.77.0/12</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/11</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>10.32.0.0/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"Vnet\" AffinityGroup=\"EastAsia\">\r\n        <AddressSpace>\r\n          <AddressPrefix>172.16.0.0/28</AddressPrefix>\r\n          <AddressPrefix>192.168.29.0/24</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>172.16.0.0/29</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>172.16.0.8/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n    </VirtualNetworkSites>\r\n  </VirtualNetworkConfiguration>\r\n</NetworkConfiguration>", { 'cache-control': 'no-cache',
+  'content-length': '4118',
+  'content-type': 'text/plain',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth2',
+  'x-ms-request-id': '19d0b831479f3f88861eaa14bae6e059',
+  date: 'Thu, 04 Dec 2014 09:44:52 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services?service=sqlserver&action=register')
+  .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
+  'content-length': '193',
+  'content-type': 'application/xml; charset=utf-8',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth2',
+  'x-ms-request-id': '1db7174c60a235149447a700d3b58c85',
+  date: 'Thu, 04 Dec 2014 09:44:55 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .get('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/locations')
+  .reply(200, "<Locations xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Location><Name>North Europe</Name><DisplayName>North Europe</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>A8</RoleSize><RoleSize>A9</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>A8</RoleSize><RoleSize>A9</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location><Location><Name>West Europe</Name><DisplayName>West Europe</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>A8</RoleSize><RoleSize>A9</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>A8</RoleSize><RoleSize>A9</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location><Location><Name>East US 2</Name><DisplayName>East US 2</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location><Location><Name>Central US</Name><DisplayName>Central US</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location><Location><Name>South Central US</Name><DisplayName>South Central US</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>A8</RoleSize><RoleSize>A9</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>A8</RoleSize><RoleSize>A9</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location><Location><Name>West US</Name><DisplayName>West US</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>A8</RoleSize><RoleSize>A9</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>A8</RoleSize><RoleSize>A9</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location><Location><Name>North Central US</Name><DisplayName>North Central US</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>A8</RoleSize><RoleSize>A9</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>A8</RoleSize><RoleSize>A9</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location><Location><Name>East US</Name><DisplayName>East US</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>A8</RoleSize><RoleSize>A9</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>A8</RoleSize><RoleSize>A9</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location><Location><Name>Southeast Asia</Name><DisplayName>Southeast Asia</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location><Location><Name>East Asia</Name><DisplayName>East Asia</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location><Location><Name>Japan West</Name><DisplayName>Japan West</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location><Location><Name>Japan East</Name><DisplayName>Japan East</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>A8</RoleSize><RoleSize>A9</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>A8</RoleSize><RoleSize>A9</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location><Location><Name>Brazil South</Name><DisplayName>Brazil South</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location><Location><Name>Australia Southeast</Name><DisplayName>Australia Southeast</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location><Location><Name>Australia East</Name><DisplayName>Australia East</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location></Locations>", { 'cache-control': 'no-cache',
+  'content-length': '21691',
+  'content-type': 'application/xml; charset=utf-8',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth2',
+  'x-ms-request-id': '45fb81f16df83aeaa32f1faa01ae5ffd',
+  date: 'Thu, 04 Dec 2014 09:44:57 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services?service=sqlserver&action=register')
+  .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
+  'content-length': '193',
+  'content-type': 'application/xml; charset=utf-8',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth2',
+  'x-ms-request-id': '93a9cd2cebf83c22901a597be185808f',
+  date: 'Thu, 04 Dec 2014 09:45:00 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .filteringRequestBody(function (path) { return '*';})
+.put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services/networking/media', '*')
+  .reply(202, "", { 'cache-control': 'no-cache',
+  'content-length': '0',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth2',
+  'x-ms-request-id': 'd543c9e67b943311add2a82b6ee08ad0',
+  date: 'Thu, 04 Dec 2014 09:45:02 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services?service=sqlserver&action=register')
+  .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
+  'content-length': '193',
+  'content-type': 'application/xml; charset=utf-8',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth2',
+  'x-ms-request-id': '79e3b0347949340aa24266e014e7a6a3',
+  date: 'Thu, 04 Dec 2014 09:45:35 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .get('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/operations/d543c9e67b943311add2a82b6ee08ad0')
+  .reply(307, "", { 'content-length': '0',
+  location: 'https://ussouth.management.core.windows.net/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/operations/d543c9e67b943311add2a82b6ee08ad0',
+  server: 'Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth2',
+  date: 'Thu, 04 Dec 2014 09:45:37 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://ussouth.management.core.windows.net:443')
+  .get('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/operations/d543c9e67b943311add2a82b6ee08ad0')
+  .reply(200, "<Operation xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><ID>d543c9e6-7b94-3311-add2-a82b6ee08ad0</ID><Status>Succeeded</Status><HttpStatusCode>200</HttpStatusCode></Operation>", { 'cache-control': 'no-cache',
+  'content-length': '232',
+  'content-type': 'application/xml; charset=utf-8',
+  server: '1.0.6198.167 (rd_rdfe_stable.141203-1417) Microsoft-HTTPAPI/2.0',
   'x-ms-servedbyregion': 'ussouth',
-  'x-ms-request-id': '6284528e379a338681ec96eccd7a58fd',
-  date: 'Tue, 18 Nov 2014 06:51:35 GMT' });
+  'x-ms-request-id': 'b618b68278b23d6f826c2dbbee5ca5af',
+  date: 'Thu, 04 Dec 2014 09:45:39 GMT' });
  return result; },
 function (nock) { 
 var result = 
@@ -303,70 +690,22 @@ nock('https://management.core.windows.net:443')
   .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
   'content-length': '193',
   'content-type': 'application/xml; charset=utf-8',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
   'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': 'cc5c3db64a023b7891dcfba26c9eb854',
-  date: 'Tue, 18 Nov 2014 06:51:36 GMT' });
- return result; },
-function (nock) { 
-var result = 
-nock('https://management.core.windows.net:443')
-  .filteringRequestBody(function (path) { return '*';})
-.put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services/networking/media', '*')
-  .reply(202, "", { 'cache-control': 'no-cache',
-  'content-length': '0',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
-  'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': '45e44730e44c391f8b9475dd5de0300c',
-  date: 'Tue, 18 Nov 2014 06:51:39 GMT' });
- return result; },
-function (nock) { 
-var result = 
-nock('https://management.core.windows.net:443')
-  .put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services?service=sqlserver&action=register')
-  .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '193',
-  'content-type': 'application/xml; charset=utf-8',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
-  'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': '207a24d6164631db845ac570f127191b',
-  date: 'Tue, 18 Nov 2014 06:52:11 GMT' });
- return result; },
-function (nock) { 
-var result = 
-nock('https://management.core.windows.net:443')
-  .get('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/operations/45e44730e44c391f8b9475dd5de0300c')
-  .reply(200, "<Operation xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><ID>45e44730-e44c-391f-8b94-75dd5de0300c</ID><Status>Succeeded</Status><HttpStatusCode>200</HttpStatusCode></Operation>", { 'cache-control': 'no-cache',
-  'content-length': '232',
-  'content-type': 'application/xml; charset=utf-8',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
-  'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': '149122e7419637a78a562be745602e7f',
-  date: 'Tue, 18 Nov 2014 06:52:14 GMT' });
- return result; },
-function (nock) { 
-var result = 
-nock('https://management.core.windows.net:443')
-  .put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services?service=sqlserver&action=register')
-  .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '193',
-  'content-type': 'application/xml; charset=utf-8',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
-  'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': 'ef9a2884788733b3b78d26c64acfc672',
-  date: 'Tue, 18 Nov 2014 06:52:17 GMT' });
+  'x-ms-request-id': 'c48f4ff5ed853c8c985c71e5979dbf24',
+  date: 'Thu, 04 Dec 2014 09:45:43 GMT' });
  return result; },
 function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
   .get('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services/networking/virtualnetwork')
-  .reply(200, "<VirtualNetworkSites xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><VirtualNetworkSite><Name>googlednssvnet</Name><Id>67ece927-3976-4d3f-a004-5e5174260a21</Id><State>Created</State><InUse>true</InUse><AddressSpace><AddressPrefixes><AddressPrefix>10.0.0.0/26</AddressPrefix></AddressPrefixes></AddressSpace><Subnets><Subnet><Name>Subnet-1</Name><AddressPrefix>10.0.0.0/27</AddressPrefix></Subnet></Subnets><Dns><DnsServers><DnsServer><Name>googledns</Name><Address>8.8.8.8</Address></DnsServer></DnsServers></Dns><Location>West US</Location></VirtualNetworkSite><VirtualNetworkSite><Name>Group SampleCRP-RP SampleCRP-VNet</Name><Id>0a1354ee-4fd7-45b2-b858-2c648ad2b73c</Id><State>Created</State><AddressSpace><AddressPrefixes><AddressPrefix>192.168.30.0/24</AddressPrefix></AddressPrefixes></AddressSpace><Subnets><Subnet><Name>Subnet-1</Name><AddressPrefix>192.168.30.0/24</AddressPrefix></Subnet></Subnets><Location>West US</Location></VirtualNetworkSite><VirtualNetworkSite><Name>mynetwork</Name><Id>386452bd-5cef-4eea-a889-a6e5d0635381</Id><AffinityGroup>affinity1</AffinityGroup><State>Created</State><InUse>true</InUse><AddressSpace><AddressPrefixes><AddressPrefix>10.4.0.0/16</AddressPrefix><AddressPrefix>10.1.0.0/16</AddressPrefix></AddressPrefixes></AddressSpace><Subnets><Subnet><Name>Subnet-1</Name><AddressPrefix>10.4.2.0/19</AddressPrefix></Subnet><Subnet><Name>GatewaySubnet</Name><AddressPrefix>10.4.32.0/29</AddressPrefix></Subnet></Subnets></VirtualNetworkSite><VirtualNetworkSite><Name>ne@@wvnet$$%10</Name><Id>c27720fe-1c7c-429b-85ec-09cf605307e2</Id><AffinityGroup>NewAffinityGroup01</AffinityGroup><State>Creating</State><AddressSpace><AddressPrefixes><AddressPrefix>10.0.8.7/24</AddressPrefix></AddressPrefixes></AddressSpace><Subnets/></VirtualNetworkSite><VirtualNetworkSite><Name>nenet</Name><Id>8da0f5de-21d4-4a4f-baa0-8bde037d5f0f</Id><State>Created</State><AddressSpace><AddressPrefixes><AddressPrefix>10.0.0.0/20</AddressPrefix></AddressPrefixes></AddressSpace><Subnets><Subnet><Name>Subnet-1</Name><AddressPrefix>10.0.0.0/23</AddressPrefix></Subnet></Subnets><Dns><DnsServers><DnsServer><Name>demodns</Name><Address>172.16.77.66</Address></DnsServer></DnsServers></Dns><Location>West US</Location></VirtualNetworkSite><VirtualNetworkSite><Name>newnet</Name><Id>896573a5-9904-4d66-99ca-580645fd98be</Id><State>Created</State><AddressSpace><AddressPrefixes><AddressPrefix>10.0.0.0/20</AddressPrefix></AddressPrefixes></AddressSpace><Subnets><Subnet><Name>Subnet-1</Name><AddressPrefix>10.0.0.0/23</AddressPrefix></Subnet><Subnet><Name>Subnet-2</Name><AddressPrefix>10.0.2.0/23</AddressPrefix></Subnet></Subnets><Dns><DnsServers><DnsServer><Name>demodns</Name><Address>172.16.77.66</Address></DnsServer></DnsServers></Dns><Location>West US</Location></VirtualNetworkSite><VirtualNetworkSite><Name>newvnet$$%10</Name><Id>1e045b27-4b5a-42f6-8399-23a85df51702</Id><AffinityGroup>NewAffinityGroup01</AffinityGroup><State>Creating</State><AddressSpace><AddressPrefixes><AddressPrefix>10.0.8.7/24</AddressPrefix></AddressPrefixes></AddressSpace><Subnets/></VirtualNetworkSite><VirtualNetworkSite><Name>testy</Name><Id>06bb8c56-83da-499e-8585-2609db606247</Id><AffinityGroup>affinity1</AffinityGroup><State>Created</State><InUse>true</InUse><AddressSpace><AddressPrefixes><AddressPrefix>10.0.0.11/8</AddressPrefix><AddressPrefix>172.16.77.0/12</AddressPrefix></AddressPrefixes></AddressSpace><Subnets><Subnet><Name>Subnet-1</Name><AddressPrefix>10.0.0.0/11</AddressPrefix></Subnet><Subnet><Name>GatewaySubnet</Name><AddressPrefix>10.32.0.0/29</AddressPrefix></Subnet></Subnets></VirtualNetworkSite><VirtualNetworkSite><Name>Vnet</Name><Id>a9001b93-75cc-4580-94b4-a200654da28e</Id><AffinityGroup>EastAsia</AffinityGroup><State>Created</State><InUse>true</InUse><AddressSpace><AddressPrefixes><AddressPrefix>172.16.0.0/28</AddressPrefix><AddressPrefix>192.168.29.0/24</AddressPrefix></AddressPrefixes></AddressSpace><Subnets><Subnet><Name>Subnet-1</Name><AddressPrefix>172.16.0.0/29</AddressPrefix></Subnet><Subnet><Name>GatewaySubnet</Name><AddressPrefix>172.16.0.8/29</AddressPrefix></Subnet></Subnets></VirtualNetworkSite><VirtualNetworkSite><Name>vnet1</Name><Id>6d94e983-6b8f-4087-b486-ad40fd118c31</Id><AffinityGroup>AG-CLI-c6fcfaefea4a1f76</AffinityGroup><State>Created</State><AddressSpace><AddressPrefixes><AddressPrefix>10.0.0.0/8</AddressPrefix></AddressPrefixes></AddressSpace><Subnets><Subnet><Name>Subnet-1</Name><AddressPrefix>10.0.0.0/11</AddressPrefix></Subnet></Subnets></VirtualNetworkSite></VirtualNetworkSites>", { 'cache-control': 'no-cache',
-  'content-length': '4605',
+  .reply(200, "<VirtualNetworkSites xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><VirtualNetworkSite><Name>googlednssvnet</Name><Id>67ece927-3976-4d3f-a004-5e5174260a21</Id><State>Created</State><AddressSpace><AddressPrefixes><AddressPrefix>10.0.0.0/26</AddressPrefix></AddressPrefixes></AddressSpace><Subnets><Subnet><Name>subnet-1</Name><AddressPrefix>10.0.0.0/27</AddressPrefix></Subnet></Subnets><Dns><DnsServers><DnsServer><Name>googledns</Name><Address>8.8.8.8</Address></DnsServer></DnsServers></Dns><Location>West US</Location></VirtualNetworkSite><VirtualNetworkSite><Name>mynetwork</Name><Id>386452bd-5cef-4eea-a889-a6e5d0635381</Id><AffinityGroup>affinity1</AffinityGroup><State>Created</State><InUse>true</InUse><AddressSpace><AddressPrefixes><AddressPrefix>10.4.0.0/16</AddressPrefix><AddressPrefix>10.1.0.0/16</AddressPrefix></AddressPrefixes></AddressSpace><Subnets><Subnet><Name>Subnet-1</Name><AddressPrefix>10.4.2.0/19</AddressPrefix></Subnet><Subnet><Name>GatewaySubnet</Name><AddressPrefix>10.4.32.0/29</AddressPrefix></Subnet></Subnets></VirtualNetworkSite><VirtualNetworkSite><Name>ne@@wvnet$$%10</Name><Id>c27720fe-1c7c-429b-85ec-09cf605307e2</Id><AffinityGroup>NewAffinityGroup01</AffinityGroup><State>Creating</State><AddressSpace><AddressPrefixes><AddressPrefix>10.0.8.7/24</AddressPrefix></AddressPrefixes></AddressSpace><Subnets/></VirtualNetworkSite><VirtualNetworkSite><Name>newnet</Name><Id>896573a5-9904-4d66-99ca-580645fd98be</Id><State>Created</State><AddressSpace><AddressPrefixes><AddressPrefix>10.0.0.0/20</AddressPrefix><AddressPrefix>10.0.16.0/20</AddressPrefix></AddressPrefixes></AddressSpace><Subnets><Subnet><Name>Subnet-1</Name><AddressPrefix>10.0.0.0/23</AddressPrefix></Subnet><Subnet><Name>Subnet-2</Name><AddressPrefix>10.0.2.0/23</AddressPrefix></Subnet><Subnet><Name>Subnet-3</Name><AddressPrefix>10.0.16.0/23</AddressPrefix></Subnet></Subnets><Dns><DnsServers><DnsServer><Name>demodns</Name><Address>172.16.77.66</Address></DnsServer></DnsServers></Dns><Location>West US</Location></VirtualNetworkSite><VirtualNetworkSite><Name>newvnet$$%10</Name><Id>1e045b27-4b5a-42f6-8399-23a85df51702</Id><AffinityGroup>NewAffinityGroup01</AffinityGroup><State>Creating</State><AddressSpace><AddressPrefixes><AddressPrefix>10.0.8.7/24</AddressPrefix></AddressPrefixes></AddressSpace><Subnets/></VirtualNetworkSite><VirtualNetworkSite><Name>testvnet</Name><Id>f7198058-3da1-4d26-973c-1dad914de0a0</Id><State>Created</State><AddressSpace><AddressPrefixes><AddressPrefix>10.0.0.0/8</AddressPrefix></AddressPrefixes></AddressSpace><Subnets><Subnet><Name>Subnet-1</Name><AddressPrefix>10.0.0.0/11</AddressPrefix></Subnet></Subnets><Location>North Europe</Location></VirtualNetworkSite><VirtualNetworkSite><Name>testy</Name><Id>06bb8c56-83da-499e-8585-2609db606247</Id><AffinityGroup>affinity1</AffinityGroup><State>Created</State><InUse>true</InUse><AddressSpace><AddressPrefixes><AddressPrefix>10.0.0.11/8</AddressPrefix><AddressPrefix>172.16.77.0/12</AddressPrefix></AddressPrefixes></AddressSpace><Subnets><Subnet><Name>Subnet-1</Name><AddressPrefix>10.0.0.0/11</AddressPrefix></Subnet><Subnet><Name>GatewaySubnet</Name><AddressPrefix>10.32.0.0/29</AddressPrefix></Subnet></Subnets></VirtualNetworkSite><VirtualNetworkSite><Name>Vnet</Name><Id>a9001b93-75cc-4580-94b4-a200654da28e</Id><AffinityGroup>EastAsia</AffinityGroup><State>Created</State><InUse>true</InUse><AddressSpace><AddressPrefixes><AddressPrefix>172.16.0.0/28</AddressPrefix><AddressPrefix>192.168.29.0/24</AddressPrefix></AddressPrefixes></AddressSpace><Subnets><Subnet><Name>Subnet-1</Name><AddressPrefix>172.16.0.0/29</AddressPrefix></Subnet><Subnet><Name>GatewaySubnet</Name><AddressPrefix>172.16.0.8/29</AddressPrefix></Subnet></Subnets></VirtualNetworkSite><VirtualNetworkSite><Name>vnetLoc</Name><Id>58492800-f230-44ab-a90c-ba4b234307a6</Id><State>Created</State><AddressSpace><AddressPrefixes><AddressPrefix>10.0.0.0/8</AddressPrefix></AddressPrefixes></AddressSpace><Subnets><Subnet><Name>Subnet-1</Name><AddressPrefix>10.0.0.0/11</AddressPrefix></Subnet></Subnets><Location>West US</Location></VirtualNetworkSite></VirtualNetworkSites>", { 'cache-control': 'no-cache',
+  'content-length': '4188',
   'content-type': 'application/xml; charset=utf-8',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
   'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': '291eff64d28f35b6b9c399962fca74ca',
-  date: 'Tue, 18 Nov 2014 06:52:20 GMT' });
+  'x-ms-request-id': '6a4dd69b520334859865865f0e366dd2',
+  date: 'Thu, 04 Dec 2014 09:45:47 GMT' });
  return result; },
 function (nock) { 
 var result = 
@@ -375,46 +714,32 @@ nock('https://management.core.windows.net:443')
   .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
   'content-length': '193',
   'content-type': 'application/xml; charset=utf-8',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
   'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': '9f2fbf80e47d38a88700f2f50d20633c',
-  date: 'Tue, 18 Nov 2014 06:52:23 GMT' });
+  'x-ms-request-id': '9fb144747d33360daa8d99608c490642',
+  date: 'Thu, 04 Dec 2014 09:45:49 GMT' });
  return result; },
 function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
   .get('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services/networking/media')
-  .reply(200, "﻿<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<NetworkConfiguration xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://schemas.microsoft.com/ServiceHosting/2011/07/NetworkConfiguration\">\r\n  <VirtualNetworkConfiguration>\r\n    <Dns>\r\n      <DnsServers>\r\n        <DnsServer name=\"demodns\" IPAddress=\"172.16.77.66\" />\r\n        <DnsServer name=\"googledns\" IPAddress=\"8.8.8.8\" />\r\n      </DnsServers>\r\n    </Dns>\r\n    <VirtualNetworkSites>\r\n      <VirtualNetworkSite name=\"googlednssvnet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/26</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/27</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"googledns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"Group SampleCRP-RP SampleCRP-VNet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>192.168.30.0/24</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>192.168.30.0/24</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"mynetwork\" AffinityGroup=\"affinity1\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.4.0.0/16</AddressPrefix>\r\n          <AddressPrefix>10.1.0.0/16</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.4.2.0/19</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>10.4.32.0/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"ne@@wvnet$$%10\" AffinityGroup=\"NewAffinityGroup01\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.8.7/24</AddressPrefix>\r\n        </AddressSpace>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"nenet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/20</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/23</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"demodns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"newnet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/20</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/23</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"Subnet-2\">\r\n            <AddressPrefix>10.0.2.0/23</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"demodns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"newvnet$$%10\" AffinityGroup=\"NewAffinityGroup01\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.8.7/24</AddressPrefix>\r\n        </AddressSpace>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"testy\" AffinityGroup=\"affinity1\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.11/8</AddressPrefix>\r\n          <AddressPrefix>172.16.77.0/12</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/11</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>10.32.0.0/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"Vnet\" AffinityGroup=\"EastAsia\">\r\n        <AddressSpace>\r\n          <AddressPrefix>172.16.0.0/28</AddressPrefix>\r\n          <AddressPrefix>192.168.29.0/24</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>172.16.0.0/29</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>172.16.0.8/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"vnet1\" AffinityGroup=\"AG-CLI-c6fcfaefea4a1f76\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/8</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/11</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n    </VirtualNetworkSites>\r\n  </VirtualNetworkConfiguration>\r\n</NetworkConfiguration>", { 'cache-control': 'no-cache',
-  'content-length': '4780',
-  'content-type': 'text/plain',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
+  .reply(307, "", { 'content-length': '0',
+  location: 'https://ussouth.management.core.windows.net/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services/networking/media',
+  server: 'Microsoft-HTTPAPI/2.0',
   'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': 'c43fc38bdc8036d0ad1c6a35b5d1da61',
-  date: 'Tue, 18 Nov 2014 06:52:25 GMT' });
+  date: 'Thu, 04 Dec 2014 09:45:52 GMT' });
  return result; },
 function (nock) { 
 var result = 
-nock('https://management.core.windows.net:443')
-  .put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services?service=sqlserver&action=register')
-  .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '193',
-  'content-type': 'application/xml; charset=utf-8',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
-  'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': '91eb90469a3231c3afc0c4d9f3f06f0f',
-  date: 'Tue, 18 Nov 2014 06:52:28 GMT' });
- return result; },
-function (nock) { 
-var result = 
-nock('https://management.core.windows.net:443')
+nock('https://ussouth.management.core.windows.net:443')
   .get('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services/networking/media')
-  .reply(200, "﻿<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<NetworkConfiguration xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://schemas.microsoft.com/ServiceHosting/2011/07/NetworkConfiguration\">\r\n  <VirtualNetworkConfiguration>\r\n    <Dns>\r\n      <DnsServers>\r\n        <DnsServer name=\"demodns\" IPAddress=\"172.16.77.66\" />\r\n        <DnsServer name=\"googledns\" IPAddress=\"8.8.8.8\" />\r\n      </DnsServers>\r\n    </Dns>\r\n    <VirtualNetworkSites>\r\n      <VirtualNetworkSite name=\"googlednssvnet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/26</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/27</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"googledns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"Group SampleCRP-RP SampleCRP-VNet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>192.168.30.0/24</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>192.168.30.0/24</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"mynetwork\" AffinityGroup=\"affinity1\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.4.0.0/16</AddressPrefix>\r\n          <AddressPrefix>10.1.0.0/16</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.4.2.0/19</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>10.4.32.0/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"ne@@wvnet$$%10\" AffinityGroup=\"NewAffinityGroup01\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.8.7/24</AddressPrefix>\r\n        </AddressSpace>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"nenet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/20</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/23</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"demodns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"newnet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/20</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/23</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"Subnet-2\">\r\n            <AddressPrefix>10.0.2.0/23</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"demodns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"newvnet$$%10\" AffinityGroup=\"NewAffinityGroup01\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.8.7/24</AddressPrefix>\r\n        </AddressSpace>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"testy\" AffinityGroup=\"affinity1\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.11/8</AddressPrefix>\r\n          <AddressPrefix>172.16.77.0/12</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/11</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>10.32.0.0/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"Vnet\" AffinityGroup=\"EastAsia\">\r\n        <AddressSpace>\r\n          <AddressPrefix>172.16.0.0/28</AddressPrefix>\r\n          <AddressPrefix>192.168.29.0/24</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>172.16.0.0/29</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>172.16.0.8/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"vnet1\" AffinityGroup=\"AG-CLI-c6fcfaefea4a1f76\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/8</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/11</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n    </VirtualNetworkSites>\r\n  </VirtualNetworkConfiguration>\r\n</NetworkConfiguration>", { 'cache-control': 'no-cache',
-  'content-length': '4780',
+  .reply(200, "﻿<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<NetworkConfiguration xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://schemas.microsoft.com/ServiceHosting/2011/07/NetworkConfiguration\">\r\n  <VirtualNetworkConfiguration>\r\n    <Dns>\r\n      <DnsServers>\r\n        <DnsServer name=\"demodns\" IPAddress=\"172.16.77.66\" />\r\n        <DnsServer name=\"googledns\" IPAddress=\"8.8.8.8\" />\r\n      </DnsServers>\r\n    </Dns>\r\n    <VirtualNetworkSites>\r\n      <VirtualNetworkSite name=\"googlednssvnet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/26</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"subnet-1\">\r\n            <AddressPrefix>10.0.0.0/27</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"googledns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"mynetwork\" AffinityGroup=\"affinity1\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.4.0.0/16</AddressPrefix>\r\n          <AddressPrefix>10.1.0.0/16</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.4.2.0/19</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>10.4.32.0/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"ne@@wvnet$$%10\" AffinityGroup=\"NewAffinityGroup01\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.8.7/24</AddressPrefix>\r\n        </AddressSpace>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"newnet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/20</AddressPrefix>\r\n          <AddressPrefix>10.0.16.0/20</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/23</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"Subnet-2\">\r\n            <AddressPrefix>10.0.2.0/23</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"Subnet-3\">\r\n            <AddressPrefix>10.0.16.0/23</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"demodns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"newvnet$$%10\" AffinityGroup=\"NewAffinityGroup01\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.8.7/24</AddressPrefix>\r\n        </AddressSpace>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"testvnet\" Location=\"North Europe\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/8</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/11</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"testy\" AffinityGroup=\"affinity1\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.11/8</AddressPrefix>\r\n          <AddressPrefix>172.16.77.0/12</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/11</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>10.32.0.0/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"Vnet\" AffinityGroup=\"EastAsia\">\r\n        <AddressSpace>\r\n          <AddressPrefix>172.16.0.0/28</AddressPrefix>\r\n          <AddressPrefix>192.168.29.0/24</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>172.16.0.0/29</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>172.16.0.8/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"vnetLoc\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/8</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/11</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n    </VirtualNetworkSites>\r\n  </VirtualNetworkConfiguration>\r\n</NetworkConfiguration>", { 'cache-control': 'no-cache',
+  'content-length': '4463',
   'content-type': 'text/plain',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
-  'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': '595fb3d1524d38e28bf11347fbf2ed49',
-  date: 'Tue, 18 Nov 2014 06:52:29 GMT' });
+  server: '1.0.6198.167 (rd_rdfe_stable.141203-1417) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth',
+  'x-ms-request-id': 'b7ca4ddbb38630e6b7ecbd3865e101ee',
+  date: 'Thu, 04 Dec 2014 09:45:54 GMT' });
  return result; },
 function (nock) { 
 var result = 
@@ -423,10 +748,10 @@ nock('https://management.core.windows.net:443')
   .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
   'content-length': '193',
   'content-type': 'application/xml; charset=utf-8',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
   'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': '0a6c978f53733dd190314b34438dba9e',
-  date: 'Tue, 18 Nov 2014 06:52:31 GMT' });
+  'x-ms-request-id': '88ad8f9cb30e3b549eba018627f167a3',
+  date: 'Thu, 04 Dec 2014 09:45:55 GMT' });
  return result; },
 function (nock) { 
 var result = 
@@ -435,10 +760,10 @@ nock('https://management.core.windows.net:443')
 .put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services/networking/media', '*')
   .reply(202, "", { 'cache-control': 'no-cache',
   'content-length': '0',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
   'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': '0515a45bc5b13919a49072f7fa36bb44',
-  date: 'Tue, 18 Nov 2014 06:52:34 GMT' });
+  'x-ms-request-id': 'ddec9528d01932ccaa184d87acc40ce3',
+  date: 'Thu, 04 Dec 2014 09:46:00 GMT' });
  return result; },
 function (nock) { 
 var result = 
@@ -447,22 +772,22 @@ nock('https://management.core.windows.net:443')
   .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
   'content-length': '193',
   'content-type': 'application/xml; charset=utf-8',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
   'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': '6b0bd35c8c9e3d49a924d6c7ed43b3b3',
-  date: 'Tue, 18 Nov 2014 06:53:07 GMT' });
+  'x-ms-request-id': '596052ee099e3e0b80126a347e04dc20',
+  date: 'Thu, 04 Dec 2014 09:46:32 GMT' });
  return result; },
 function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
-  .get('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/operations/0515a45bc5b13919a49072f7fa36bb44')
-  .reply(200, "<Operation xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><ID>0515a45b-c5b1-3919-a490-72f7fa36bb44</ID><Status>Succeeded</Status><HttpStatusCode>200</HttpStatusCode></Operation>", { 'cache-control': 'no-cache',
+  .get('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/operations/ddec9528d01932ccaa184d87acc40ce3')
+  .reply(200, "<Operation xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><ID>ddec9528-d019-32cc-aa18-4d87acc40ce3</ID><Status>Succeeded</Status><HttpStatusCode>200</HttpStatusCode></Operation>", { 'cache-control': 'no-cache',
   'content-length': '232',
   'content-type': 'application/xml; charset=utf-8',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
   'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': 'be313004427c3d00b081aa14ec7ba616',
-  date: 'Tue, 18 Nov 2014 06:53:09 GMT' });
+  'x-ms-request-id': 'e82ad939154831e5b891ea9ae59cef34',
+  date: 'Thu, 04 Dec 2014 09:46:35 GMT' });
  return result; },
 function (nock) { 
 var result = 
@@ -471,10 +796,58 @@ nock('https://management.core.windows.net:443')
   .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
   'content-length': '193',
   'content-type': 'application/xml; charset=utf-8',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
   'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': '89507cfe91d83d8d9bd5496272e73255',
-  date: 'Tue, 18 Nov 2014 06:53:10 GMT' });
+  'x-ms-request-id': '4053ce650ee53edb983942f77af26b0c',
+  date: 'Thu, 04 Dec 2014 09:46:38 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .get('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services/networking/media')
+  .reply(200, "﻿<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<NetworkConfiguration xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://schemas.microsoft.com/ServiceHosting/2011/07/NetworkConfiguration\">\r\n  <VirtualNetworkConfiguration>\r\n    <Dns>\r\n      <DnsServers>\r\n        <DnsServer name=\"demodns\" IPAddress=\"172.16.77.66\" />\r\n        <DnsServer name=\"googledns\" IPAddress=\"8.8.8.8\" />\r\n      </DnsServers>\r\n    </Dns>\r\n    <VirtualNetworkSites>\r\n      <VirtualNetworkSite name=\"googlednssvnet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/26</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"subnet-1\">\r\n            <AddressPrefix>10.0.0.0/27</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"googledns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"mynetwork\" AffinityGroup=\"affinity1\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.4.0.0/16</AddressPrefix>\r\n          <AddressPrefix>10.1.0.0/16</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.4.2.0/19</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>10.4.32.0/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"ne@@wvnet$$%10\" AffinityGroup=\"NewAffinityGroup01\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.8.7/24</AddressPrefix>\r\n        </AddressSpace>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"newnet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/20</AddressPrefix>\r\n          <AddressPrefix>10.0.16.0/20</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/23</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"Subnet-2\">\r\n            <AddressPrefix>10.0.2.0/23</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"Subnet-3\">\r\n            <AddressPrefix>10.0.16.0/23</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"demodns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"newvnet$$%10\" AffinityGroup=\"NewAffinityGroup01\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.8.7/24</AddressPrefix>\r\n        </AddressSpace>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"testvnet\" Location=\"North Europe\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/8</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/11</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"testy\" AffinityGroup=\"affinity1\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.11/8</AddressPrefix>\r\n          <AddressPrefix>172.16.77.0/12</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/11</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>10.32.0.0/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"Vnet\" AffinityGroup=\"EastAsia\">\r\n        <AddressSpace>\r\n          <AddressPrefix>172.16.0.0/28</AddressPrefix>\r\n          <AddressPrefix>192.168.29.0/24</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>172.16.0.0/29</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>172.16.0.8/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n    </VirtualNetworkSites>\r\n  </VirtualNetworkConfiguration>\r\n</NetworkConfiguration>", { 'cache-control': 'no-cache',
+  'content-length': '4118',
+  'content-type': 'text/plain',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth2',
+  'x-ms-request-id': '66ad10dc65653accb95ea189b69ca6be',
+  date: 'Thu, 04 Dec 2014 09:46:41 GMT' });
+ return result; }],
+[function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services?service=sqlserver&action=register')
+  .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
+  'content-length': '193',
+  'content-type': 'application/xml; charset=utf-8',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth2',
+  'x-ms-request-id': 'ffdb11af0f46356bbb4242d1eec9617b',
+  date: 'Thu, 04 Dec 2014 09:46:42 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .get('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services/networking/media')
+  .reply(200, "﻿<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<NetworkConfiguration xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://schemas.microsoft.com/ServiceHosting/2011/07/NetworkConfiguration\">\r\n  <VirtualNetworkConfiguration>\r\n    <Dns>\r\n      <DnsServers>\r\n        <DnsServer name=\"demodns\" IPAddress=\"172.16.77.66\" />\r\n        <DnsServer name=\"googledns\" IPAddress=\"8.8.8.8\" />\r\n      </DnsServers>\r\n    </Dns>\r\n    <VirtualNetworkSites>\r\n      <VirtualNetworkSite name=\"googlednssvnet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/26</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"subnet-1\">\r\n            <AddressPrefix>10.0.0.0/27</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"googledns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"mynetwork\" AffinityGroup=\"affinity1\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.4.0.0/16</AddressPrefix>\r\n          <AddressPrefix>10.1.0.0/16</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.4.2.0/19</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>10.4.32.0/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"ne@@wvnet$$%10\" AffinityGroup=\"NewAffinityGroup01\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.8.7/24</AddressPrefix>\r\n        </AddressSpace>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"newnet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/20</AddressPrefix>\r\n          <AddressPrefix>10.0.16.0/20</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/23</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"Subnet-2\">\r\n            <AddressPrefix>10.0.2.0/23</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"Subnet-3\">\r\n            <AddressPrefix>10.0.16.0/23</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"demodns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"newvnet$$%10\" AffinityGroup=\"NewAffinityGroup01\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.8.7/24</AddressPrefix>\r\n        </AddressSpace>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"testvnet\" Location=\"North Europe\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/8</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/11</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"testy\" AffinityGroup=\"affinity1\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.11/8</AddressPrefix>\r\n          <AddressPrefix>172.16.77.0/12</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/11</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>10.32.0.0/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"Vnet\" AffinityGroup=\"EastAsia\">\r\n        <AddressSpace>\r\n          <AddressPrefix>172.16.0.0/28</AddressPrefix>\r\n          <AddressPrefix>192.168.29.0/24</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>172.16.0.0/29</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>172.16.0.8/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n    </VirtualNetworkSites>\r\n  </VirtualNetworkConfiguration>\r\n</NetworkConfiguration>", { 'cache-control': 'no-cache',
+  'content-length': '4118',
+  'content-type': 'text/plain',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth2',
+  'x-ms-request-id': '439837bfca2933cd99371643e00e1f0a',
+  date: 'Thu, 04 Dec 2014 09:46:45 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services?service=sqlserver&action=register')
+  .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
+  'content-length': '193',
+  'content-type': 'application/xml; charset=utf-8',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth2',
+  'x-ms-request-id': 'bd4cd10d8c343acfbb3fe9e1ff86cadd',
+  date: 'Thu, 04 Dec 2014 09:46:48 GMT' });
  return result; },
 function (nock) { 
 var result = 
@@ -483,10 +856,10 @@ nock('https://management.core.windows.net:443')
 .put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services/networking/media', '*')
   .reply(202, "", { 'cache-control': 'no-cache',
   'content-length': '0',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
   'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': '04ca986b5ec1324b87f2ab195c61e752',
-  date: 'Tue, 18 Nov 2014 06:53:12 GMT' });
+  'x-ms-request-id': '13f3beef96ec333d9439cbecb7f75ac0',
+  date: 'Thu, 04 Dec 2014 09:46:51 GMT' });
  return result; },
 function (nock) { 
 var result = 
@@ -495,22 +868,32 @@ nock('https://management.core.windows.net:443')
   .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
   'content-length': '193',
   'content-type': 'application/xml; charset=utf-8',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
   'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': '8850668a9f7c3e71873510ce6a68d108',
-  date: 'Tue, 18 Nov 2014 06:53:44 GMT' });
+  'x-ms-request-id': '929cdd5092dc36e3a752732fec083433',
+  date: 'Thu, 04 Dec 2014 09:47:25 GMT' });
  return result; },
 function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
-  .get('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/operations/04ca986b5ec1324b87f2ab195c61e752')
-  .reply(200, "<Operation xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><ID>04ca986b-5ec1-324b-87f2-ab195c61e752</ID><Status>Succeeded</Status><HttpStatusCode>200</HttpStatusCode></Operation>", { 'cache-control': 'no-cache',
+  .get('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/operations/13f3beef96ec333d9439cbecb7f75ac0')
+  .reply(307, "", { 'content-length': '0',
+  location: 'https://ussouth.management.core.windows.net/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/operations/13f3beef96ec333d9439cbecb7f75ac0',
+  server: 'Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth2',
+  date: 'Thu, 04 Dec 2014 09:47:28 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://ussouth.management.core.windows.net:443')
+  .get('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/operations/13f3beef96ec333d9439cbecb7f75ac0')
+  .reply(200, "<Operation xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><ID>13f3beef-96ec-333d-9439-cbecb7f75ac0</ID><Status>Succeeded</Status><HttpStatusCode>200</HttpStatusCode></Operation>", { 'cache-control': 'no-cache',
   'content-length': '232',
   'content-type': 'application/xml; charset=utf-8',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
-  'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': 'ed56ccd50cf33453b75e5c3bce110e38',
-  date: 'Tue, 18 Nov 2014 06:53:46 GMT' });
+  server: '1.0.6198.167 (rd_rdfe_stable.141203-1417) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth',
+  'x-ms-request-id': 'e25a355d5f8537a8961afc280b309df5',
+  date: 'Thu, 04 Dec 2014 09:47:31 GMT' });
  return result; },
 function (nock) { 
 var result = 
@@ -519,22 +902,152 @@ nock('https://management.core.windows.net:443')
   .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
   'content-length': '193',
   'content-type': 'application/xml; charset=utf-8',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
   'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': '77d96312e0b33ec9b60dd26d2a8285e2',
-  date: 'Tue, 18 Nov 2014 06:53:49 GMT' });
+  'x-ms-request-id': '381d328858643ae9bc5fdd968cb8f1f0',
+  date: 'Thu, 04 Dec 2014 09:47:35 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .get('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services/networking/media')
+  .reply(200, "﻿<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<NetworkConfiguration xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://schemas.microsoft.com/ServiceHosting/2011/07/NetworkConfiguration\">\r\n  <VirtualNetworkConfiguration>\r\n    <Dns>\r\n      <DnsServers>\r\n        <DnsServer name=\"demodns\" IPAddress=\"172.16.77.66\" />\r\n        <DnsServer name=\"dns-cli-0\" IPAddress=\"66.77.88.99\" />\r\n        <DnsServer name=\"googledns\" IPAddress=\"8.8.8.8\" />\r\n      </DnsServers>\r\n    </Dns>\r\n    <VirtualNetworkSites>\r\n      <VirtualNetworkSite name=\"googlednssvnet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/26</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"subnet-1\">\r\n            <AddressPrefix>10.0.0.0/27</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"googledns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"mynetwork\" AffinityGroup=\"affinity1\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.4.0.0/16</AddressPrefix>\r\n          <AddressPrefix>10.1.0.0/16</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.4.2.0/19</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>10.4.32.0/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"ne@@wvnet$$%10\" AffinityGroup=\"NewAffinityGroup01\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.8.7/24</AddressPrefix>\r\n        </AddressSpace>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"newnet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/20</AddressPrefix>\r\n          <AddressPrefix>10.0.16.0/20</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/23</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"Subnet-2\">\r\n            <AddressPrefix>10.0.2.0/23</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"Subnet-3\">\r\n            <AddressPrefix>10.0.16.0/23</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"demodns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"newvnet$$%10\" AffinityGroup=\"NewAffinityGroup01\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.8.7/24</AddressPrefix>\r\n        </AddressSpace>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"testvnet\" Location=\"North Europe\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/8</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/11</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"testy\" AffinityGroup=\"affinity1\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.11/8</AddressPrefix>\r\n          <AddressPrefix>172.16.77.0/12</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/11</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>10.32.0.0/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"Vnet\" AffinityGroup=\"EastAsia\">\r\n        <AddressSpace>\r\n          <AddressPrefix>172.16.0.0/28</AddressPrefix>\r\n          <AddressPrefix>192.168.29.0/24</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>172.16.0.0/29</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>172.16.0.8/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n    </VirtualNetworkSites>\r\n  </VirtualNetworkConfiguration>\r\n</NetworkConfiguration>", { 'cache-control': 'no-cache',
+  'content-length': '4182',
+  'content-type': 'text/plain',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth2',
+  'x-ms-request-id': '2583e5b93eba3b8fa2e8e70dc9a3a5a0',
+  date: 'Thu, 04 Dec 2014 09:47:37 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services?service=sqlserver&action=register')
+  .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
+  'content-length': '193',
+  'content-type': 'application/xml; charset=utf-8',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth2',
+  'x-ms-request-id': '2a812776741e39af81b6d7122ac93c4b',
+  date: 'Thu, 04 Dec 2014 09:47:42 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .get('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services/networking/media')
+  .reply(200, "﻿<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<NetworkConfiguration xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://schemas.microsoft.com/ServiceHosting/2011/07/NetworkConfiguration\">\r\n  <VirtualNetworkConfiguration>\r\n    <Dns>\r\n      <DnsServers>\r\n        <DnsServer name=\"demodns\" IPAddress=\"172.16.77.66\" />\r\n        <DnsServer name=\"dns-cli-0\" IPAddress=\"66.77.88.99\" />\r\n        <DnsServer name=\"googledns\" IPAddress=\"8.8.8.8\" />\r\n      </DnsServers>\r\n    </Dns>\r\n    <VirtualNetworkSites>\r\n      <VirtualNetworkSite name=\"googlednssvnet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/26</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"subnet-1\">\r\n            <AddressPrefix>10.0.0.0/27</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"googledns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"mynetwork\" AffinityGroup=\"affinity1\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.4.0.0/16</AddressPrefix>\r\n          <AddressPrefix>10.1.0.0/16</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.4.2.0/19</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>10.4.32.0/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"ne@@wvnet$$%10\" AffinityGroup=\"NewAffinityGroup01\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.8.7/24</AddressPrefix>\r\n        </AddressSpace>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"newnet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/20</AddressPrefix>\r\n          <AddressPrefix>10.0.16.0/20</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/23</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"Subnet-2\">\r\n            <AddressPrefix>10.0.2.0/23</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"Subnet-3\">\r\n            <AddressPrefix>10.0.16.0/23</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"demodns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"newvnet$$%10\" AffinityGroup=\"NewAffinityGroup01\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.8.7/24</AddressPrefix>\r\n        </AddressSpace>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"testvnet\" Location=\"North Europe\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/8</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/11</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"testy\" AffinityGroup=\"affinity1\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.11/8</AddressPrefix>\r\n          <AddressPrefix>172.16.77.0/12</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/11</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>10.32.0.0/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"Vnet\" AffinityGroup=\"EastAsia\">\r\n        <AddressSpace>\r\n          <AddressPrefix>172.16.0.0/28</AddressPrefix>\r\n          <AddressPrefix>192.168.29.0/24</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>172.16.0.0/29</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>172.16.0.8/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n    </VirtualNetworkSites>\r\n  </VirtualNetworkConfiguration>\r\n</NetworkConfiguration>", { 'cache-control': 'no-cache',
+  'content-length': '4182',
+  'content-type': 'text/plain',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth2',
+  'x-ms-request-id': 'bf7251f10a4a31268f29096c536bac79',
+  date: 'Thu, 04 Dec 2014 09:47:45 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services?service=sqlserver&action=register')
+  .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
+  'content-length': '193',
+  'content-type': 'application/xml; charset=utf-8',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth2',
+  'x-ms-request-id': 'd2316d37151c3facae481286df664a7e',
+  date: 'Thu, 04 Dec 2014 09:47:51 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .get('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/locations')
+  .reply(200, "<Locations xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Location><Name>North Europe</Name><DisplayName>North Europe</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>A8</RoleSize><RoleSize>A9</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>A8</RoleSize><RoleSize>A9</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location><Location><Name>West Europe</Name><DisplayName>West Europe</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>A8</RoleSize><RoleSize>A9</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>A8</RoleSize><RoleSize>A9</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location><Location><Name>East US 2</Name><DisplayName>East US 2</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location><Location><Name>Central US</Name><DisplayName>Central US</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location><Location><Name>South Central US</Name><DisplayName>South Central US</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>A8</RoleSize><RoleSize>A9</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>A8</RoleSize><RoleSize>A9</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location><Location><Name>West US</Name><DisplayName>West US</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>A8</RoleSize><RoleSize>A9</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>A8</RoleSize><RoleSize>A9</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location><Location><Name>North Central US</Name><DisplayName>North Central US</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>A8</RoleSize><RoleSize>A9</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>A8</RoleSize><RoleSize>A9</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location><Location><Name>East US</Name><DisplayName>East US</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>A8</RoleSize><RoleSize>A9</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>A8</RoleSize><RoleSize>A9</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location><Location><Name>Southeast Asia</Name><DisplayName>Southeast Asia</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location><Location><Name>East Asia</Name><DisplayName>East Asia</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location><Location><Name>Japan West</Name><DisplayName>Japan West</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location><Location><Name>Japan East</Name><DisplayName>Japan East</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>A8</RoleSize><RoleSize>A9</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>A8</RoleSize><RoleSize>A9</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location><Location><Name>Brazil South</Name><DisplayName>Brazil South</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location><Location><Name>Australia Southeast</Name><DisplayName>Australia Southeast</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location><Location><Name>Australia East</Name><DisplayName>Australia East</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location></Locations>", { 'cache-control': 'no-cache',
+  'content-length': '21691',
+  'content-type': 'application/xml; charset=utf-8',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth2',
+  'x-ms-request-id': 'f2d2f051e51f3383a8658221b7195de8',
+  date: 'Thu, 04 Dec 2014 09:47:54 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services?service=sqlserver&action=register')
+  .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
+  'content-length': '193',
+  'content-type': 'application/xml; charset=utf-8',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth2',
+  'x-ms-request-id': '7be1460feb1a369da0ab697c2238086b',
+  date: 'Thu, 04 Dec 2014 09:47:57 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .filteringRequestBody(function (path) { return '*';})
+.put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services/networking/media', '*')
+  .reply(202, "", { 'cache-control': 'no-cache',
+  'content-length': '0',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth2',
+  'x-ms-request-id': '530828d8531539b69e43bae0c3161ea3',
+  date: 'Thu, 04 Dec 2014 09:48:00 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services?service=sqlserver&action=register')
+  .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
+  'content-length': '193',
+  'content-type': 'application/xml; charset=utf-8',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth2',
+  'x-ms-request-id': '10e0ba0bd17034548d40c79f826fbbbf',
+  date: 'Thu, 04 Dec 2014 09:48:33 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .get('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/operations/530828d8531539b69e43bae0c3161ea3')
+  .reply(307, "", { 'content-length': '0',
+  location: 'https://ussouth.management.core.windows.net/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/operations/530828d8531539b69e43bae0c3161ea3',
+  server: 'Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth2',
+  date: 'Thu, 04 Dec 2014 09:48:36 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://ussouth.management.core.windows.net:443')
+  .get('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/operations/530828d8531539b69e43bae0c3161ea3')
+  .reply(200, "<Operation xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><ID>530828d8-5315-39b6-9e43-bae0c3161ea3</ID><Status>Succeeded</Status><HttpStatusCode>200</HttpStatusCode></Operation>", { 'cache-control': 'no-cache',
+  'content-length': '232',
+  'content-type': 'application/xml; charset=utf-8',
+  server: '1.0.6198.167 (rd_rdfe_stable.141203-1417) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth',
+  'x-ms-request-id': '9d159606f75a37bc89c3bee646c635c1',
+  date: 'Thu, 04 Dec 2014 09:48:39 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services?service=sqlserver&action=register')
+  .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
+  'content-length': '193',
+  'content-type': 'application/xml; charset=utf-8',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth2',
+  'x-ms-request-id': 'e8bdae3e5f183d938c683001ae8d99c0',
+  date: 'Thu, 04 Dec 2014 09:48:41 GMT' });
  return result; },
 function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
   .get('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services/networking/virtualnetwork')
-  .reply(200, "<VirtualNetworkSites xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><VirtualNetworkSite><Name>googlednssvnet</Name><Id>67ece927-3976-4d3f-a004-5e5174260a21</Id><State>Created</State><InUse>true</InUse><AddressSpace><AddressPrefixes><AddressPrefix>10.0.0.0/26</AddressPrefix></AddressPrefixes></AddressSpace><Subnets><Subnet><Name>Subnet-1</Name><AddressPrefix>10.0.0.0/27</AddressPrefix></Subnet></Subnets><Dns><DnsServers><DnsServer><Name>googledns</Name><Address>8.8.8.8</Address></DnsServer></DnsServers></Dns><Location>West US</Location></VirtualNetworkSite><VirtualNetworkSite><Name>Group SampleCRP-RP SampleCRP-VNet</Name><Id>0a1354ee-4fd7-45b2-b858-2c648ad2b73c</Id><State>Created</State><AddressSpace><AddressPrefixes><AddressPrefix>192.168.30.0/24</AddressPrefix></AddressPrefixes></AddressSpace><Subnets><Subnet><Name>Subnet-1</Name><AddressPrefix>192.168.30.0/24</AddressPrefix></Subnet></Subnets><Location>West US</Location></VirtualNetworkSite><VirtualNetworkSite><Name>mynetwork</Name><Id>386452bd-5cef-4eea-a889-a6e5d0635381</Id><AffinityGroup>affinity1</AffinityGroup><State>Created</State><InUse>true</InUse><AddressSpace><AddressPrefixes><AddressPrefix>10.4.0.0/16</AddressPrefix><AddressPrefix>10.1.0.0/16</AddressPrefix></AddressPrefixes></AddressSpace><Subnets><Subnet><Name>Subnet-1</Name><AddressPrefix>10.4.2.0/19</AddressPrefix></Subnet><Subnet><Name>GatewaySubnet</Name><AddressPrefix>10.4.32.0/29</AddressPrefix></Subnet></Subnets></VirtualNetworkSite><VirtualNetworkSite><Name>ne@@wvnet$$%10</Name><Id>c27720fe-1c7c-429b-85ec-09cf605307e2</Id><AffinityGroup>NewAffinityGroup01</AffinityGroup><State>Creating</State><AddressSpace><AddressPrefixes><AddressPrefix>10.0.8.7/24</AddressPrefix></AddressPrefixes></AddressSpace><Subnets/></VirtualNetworkSite><VirtualNetworkSite><Name>nenet</Name><Id>8da0f5de-21d4-4a4f-baa0-8bde037d5f0f</Id><State>Created</State><AddressSpace><AddressPrefixes><AddressPrefix>10.0.0.0/20</AddressPrefix></AddressPrefixes></AddressSpace><Subnets><Subnet><Name>Subnet-1</Name><AddressPrefix>10.0.0.0/23</AddressPrefix></Subnet></Subnets><Dns><DnsServers><DnsServer><Name>demodns</Name><Address>172.16.77.66</Address></DnsServer></DnsServers></Dns><Location>West US</Location></VirtualNetworkSite><VirtualNetworkSite><Name>newnet</Name><Id>896573a5-9904-4d66-99ca-580645fd98be</Id><State>Created</State><AddressSpace><AddressPrefixes><AddressPrefix>10.0.0.0/20</AddressPrefix></AddressPrefixes></AddressSpace><Subnets><Subnet><Name>Subnet-1</Name><AddressPrefix>10.0.0.0/23</AddressPrefix></Subnet><Subnet><Name>Subnet-2</Name><AddressPrefix>10.0.2.0/23</AddressPrefix></Subnet></Subnets><Dns><DnsServers><DnsServer><Name>demodns</Name><Address>172.16.77.66</Address></DnsServer></DnsServers></Dns><Location>West US</Location></VirtualNetworkSite><VirtualNetworkSite><Name>newvnet$$%10</Name><Id>1e045b27-4b5a-42f6-8399-23a85df51702</Id><AffinityGroup>NewAffinityGroup01</AffinityGroup><State>Creating</State><AddressSpace><AddressPrefixes><AddressPrefix>10.0.8.7/24</AddressPrefix></AddressPrefixes></AddressSpace><Subnets/></VirtualNetworkSite><VirtualNetworkSite><Name>testy</Name><Id>06bb8c56-83da-499e-8585-2609db606247</Id><AffinityGroup>affinity1</AffinityGroup><State>Created</State><InUse>true</InUse><AddressSpace><AddressPrefixes><AddressPrefix>10.0.0.11/8</AddressPrefix><AddressPrefix>172.16.77.0/12</AddressPrefix></AddressPrefixes></AddressSpace><Subnets><Subnet><Name>Subnet-1</Name><AddressPrefix>10.0.0.0/11</AddressPrefix></Subnet><Subnet><Name>GatewaySubnet</Name><AddressPrefix>10.32.0.0/29</AddressPrefix></Subnet></Subnets></VirtualNetworkSite><VirtualNetworkSite><Name>Vnet</Name><Id>a9001b93-75cc-4580-94b4-a200654da28e</Id><AffinityGroup>EastAsia</AffinityGroup><State>Created</State><InUse>true</InUse><AddressSpace><AddressPrefixes><AddressPrefix>172.16.0.0/28</AddressPrefix><AddressPrefix>192.168.29.0/24</AddressPrefix></AddressPrefixes></AddressSpace><Subnets><Subnet><Name>Subnet-1</Name><AddressPrefix>172.16.0.0/29</AddressPrefix></Subnet><Subnet><Name>GatewaySubnet</Name><AddressPrefix>172.16.0.8/29</AddressPrefix></Subnet></Subnets></VirtualNetworkSite><VirtualNetworkSite><Name>vnet1</Name><Id>1c63e62c-b229-413a-8697-7b81adbcdb88</Id><AffinityGroup>AG-CLI-c6fcfaefea4a1f76</AffinityGroup><State>Created</State><AddressSpace><AddressPrefixes><AddressPrefix>10.0.0.0/8</AddressPrefix></AddressPrefixes></AddressSpace><Subnets><Subnet><Name>Subnet-1</Name><AddressPrefix>10.0.0.0/11</AddressPrefix></Subnet></Subnets></VirtualNetworkSite></VirtualNetworkSites>", { 'cache-control': 'no-cache',
-  'content-length': '4605',
+  .reply(200, "<VirtualNetworkSites xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><VirtualNetworkSite><Name>googlednssvnet</Name><Id>67ece927-3976-4d3f-a004-5e5174260a21</Id><State>Created</State><AddressSpace><AddressPrefixes><AddressPrefix>10.0.0.0/26</AddressPrefix></AddressPrefixes></AddressSpace><Subnets><Subnet><Name>subnet-1</Name><AddressPrefix>10.0.0.0/27</AddressPrefix></Subnet></Subnets><Dns><DnsServers><DnsServer><Name>googledns</Name><Address>8.8.8.8</Address></DnsServer></DnsServers></Dns><Location>West US</Location></VirtualNetworkSite><VirtualNetworkSite><Name>mynetwork</Name><Id>386452bd-5cef-4eea-a889-a6e5d0635381</Id><AffinityGroup>affinity1</AffinityGroup><State>Created</State><InUse>true</InUse><AddressSpace><AddressPrefixes><AddressPrefix>10.4.0.0/16</AddressPrefix><AddressPrefix>10.1.0.0/16</AddressPrefix></AddressPrefixes></AddressSpace><Subnets><Subnet><Name>Subnet-1</Name><AddressPrefix>10.4.2.0/19</AddressPrefix></Subnet><Subnet><Name>GatewaySubnet</Name><AddressPrefix>10.4.32.0/29</AddressPrefix></Subnet></Subnets></VirtualNetworkSite><VirtualNetworkSite><Name>ne@@wvnet$$%10</Name><Id>c27720fe-1c7c-429b-85ec-09cf605307e2</Id><AffinityGroup>NewAffinityGroup01</AffinityGroup><State>Creating</State><AddressSpace><AddressPrefixes><AddressPrefix>10.0.8.7/24</AddressPrefix></AddressPrefixes></AddressSpace><Subnets/></VirtualNetworkSite><VirtualNetworkSite><Name>newnet</Name><Id>896573a5-9904-4d66-99ca-580645fd98be</Id><State>Created</State><AddressSpace><AddressPrefixes><AddressPrefix>10.0.0.0/20</AddressPrefix><AddressPrefix>10.0.16.0/20</AddressPrefix></AddressPrefixes></AddressSpace><Subnets><Subnet><Name>Subnet-1</Name><AddressPrefix>10.0.0.0/23</AddressPrefix></Subnet><Subnet><Name>Subnet-2</Name><AddressPrefix>10.0.2.0/23</AddressPrefix></Subnet><Subnet><Name>Subnet-3</Name><AddressPrefix>10.0.16.0/23</AddressPrefix></Subnet></Subnets><Dns><DnsServers><DnsServer><Name>demodns</Name><Address>172.16.77.66</Address></DnsServer></DnsServers></Dns><Location>West US</Location></VirtualNetworkSite><VirtualNetworkSite><Name>newvnet$$%10</Name><Id>1e045b27-4b5a-42f6-8399-23a85df51702</Id><AffinityGroup>NewAffinityGroup01</AffinityGroup><State>Creating</State><AddressSpace><AddressPrefixes><AddressPrefix>10.0.8.7/24</AddressPrefix></AddressPrefixes></AddressSpace><Subnets/></VirtualNetworkSite><VirtualNetworkSite><Name>testvnet</Name><Id>f7198058-3da1-4d26-973c-1dad914de0a0</Id><State>Created</State><AddressSpace><AddressPrefixes><AddressPrefix>10.0.0.0/8</AddressPrefix></AddressPrefixes></AddressSpace><Subnets><Subnet><Name>Subnet-1</Name><AddressPrefix>10.0.0.0/11</AddressPrefix></Subnet></Subnets><Location>North Europe</Location></VirtualNetworkSite><VirtualNetworkSite><Name>testy</Name><Id>06bb8c56-83da-499e-8585-2609db606247</Id><AffinityGroup>affinity1</AffinityGroup><State>Created</State><InUse>true</InUse><AddressSpace><AddressPrefixes><AddressPrefix>10.0.0.11/8</AddressPrefix><AddressPrefix>172.16.77.0/12</AddressPrefix></AddressPrefixes></AddressSpace><Subnets><Subnet><Name>Subnet-1</Name><AddressPrefix>10.0.0.0/11</AddressPrefix></Subnet><Subnet><Name>GatewaySubnet</Name><AddressPrefix>10.32.0.0/29</AddressPrefix></Subnet></Subnets></VirtualNetworkSite><VirtualNetworkSite><Name>Vnet</Name><Id>a9001b93-75cc-4580-94b4-a200654da28e</Id><AffinityGroup>EastAsia</AffinityGroup><State>Created</State><InUse>true</InUse><AddressSpace><AddressPrefixes><AddressPrefix>172.16.0.0/28</AddressPrefix><AddressPrefix>192.168.29.0/24</AddressPrefix></AddressPrefixes></AddressSpace><Subnets><Subnet><Name>Subnet-1</Name><AddressPrefix>172.16.0.0/29</AddressPrefix></Subnet><Subnet><Name>GatewaySubnet</Name><AddressPrefix>172.16.0.8/29</AddressPrefix></Subnet></Subnets></VirtualNetworkSite><VirtualNetworkSite><Name>vnet1</Name><Id>ca380b18-cd93-4144-803f-335f9a879cc6</Id><State>Created</State><AddressSpace><AddressPrefixes><AddressPrefix>10.0.0.0/8</AddressPrefix></AddressPrefixes></AddressSpace><Subnets><Subnet><Name>Subnet-1</Name><AddressPrefix>10.0.0.0/11</AddressPrefix></Subnet></Subnets><Dns><DnsServers><DnsServer><Name>dns-cli-0</Name><Address>66.77.88.99</Address></DnsServer></DnsServers></Dns><Location>West US</Location></VirtualNetworkSite></VirtualNetworkSites>", { 'cache-control': 'no-cache',
+  'content-length': '4297',
   'content-type': 'application/xml; charset=utf-8',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
   'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': '281b85c60dde37a9b0aa92773be7c474',
-  date: 'Tue, 18 Nov 2014 06:53:51 GMT' });
+  'x-ms-request-id': 'a09276df01293c44a14303cf70416441',
+  date: 'Thu, 04 Dec 2014 09:48:44 GMT' });
  return result; },
 function (nock) { 
 var result = 
@@ -543,22 +1056,70 @@ nock('https://management.core.windows.net:443')
   .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
   'content-length': '193',
   'content-type': 'application/xml; charset=utf-8',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
   'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': 'ade7511690f73833883cffc634e21a95',
-  date: 'Tue, 18 Nov 2014 06:53:53 GMT' });
+  'x-ms-request-id': 'f6fd033e89bf36b28b98cb58f9553b3a',
+  date: 'Thu, 04 Dec 2014 09:48:47 GMT' });
  return result; },
 function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
   .get('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services/networking/media')
-  .reply(200, "﻿<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<NetworkConfiguration xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://schemas.microsoft.com/ServiceHosting/2011/07/NetworkConfiguration\">\r\n  <VirtualNetworkConfiguration>\r\n    <Dns>\r\n      <DnsServers>\r\n        <DnsServer name=\"demodns\" IPAddress=\"172.16.77.66\" />\r\n        <DnsServer name=\"googledns\" IPAddress=\"8.8.8.8\" />\r\n      </DnsServers>\r\n    </Dns>\r\n    <VirtualNetworkSites>\r\n      <VirtualNetworkSite name=\"googlednssvnet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/26</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/27</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"googledns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"Group SampleCRP-RP SampleCRP-VNet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>192.168.30.0/24</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>192.168.30.0/24</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"mynetwork\" AffinityGroup=\"affinity1\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.4.0.0/16</AddressPrefix>\r\n          <AddressPrefix>10.1.0.0/16</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.4.2.0/19</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>10.4.32.0/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"ne@@wvnet$$%10\" AffinityGroup=\"NewAffinityGroup01\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.8.7/24</AddressPrefix>\r\n        </AddressSpace>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"nenet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/20</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/23</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"demodns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"newnet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/20</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/23</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"Subnet-2\">\r\n            <AddressPrefix>10.0.2.0/23</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"demodns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"newvnet$$%10\" AffinityGroup=\"NewAffinityGroup01\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.8.7/24</AddressPrefix>\r\n        </AddressSpace>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"testy\" AffinityGroup=\"affinity1\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.11/8</AddressPrefix>\r\n          <AddressPrefix>172.16.77.0/12</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/11</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>10.32.0.0/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"Vnet\" AffinityGroup=\"EastAsia\">\r\n        <AddressSpace>\r\n          <AddressPrefix>172.16.0.0/28</AddressPrefix>\r\n          <AddressPrefix>192.168.29.0/24</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>172.16.0.0/29</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>172.16.0.8/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"vnet1\" AffinityGroup=\"AG-CLI-c6fcfaefea4a1f76\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/8</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/11</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n    </VirtualNetworkSites>\r\n  </VirtualNetworkConfiguration>\r\n</NetworkConfiguration>", { 'cache-control': 'no-cache',
-  'content-length': '4780',
+  .reply(200, "﻿<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<NetworkConfiguration xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://schemas.microsoft.com/ServiceHosting/2011/07/NetworkConfiguration\">\r\n  <VirtualNetworkConfiguration>\r\n    <Dns>\r\n      <DnsServers>\r\n        <DnsServer name=\"demodns\" IPAddress=\"172.16.77.66\" />\r\n        <DnsServer name=\"dns-cli-0\" IPAddress=\"66.77.88.99\" />\r\n        <DnsServer name=\"googledns\" IPAddress=\"8.8.8.8\" />\r\n      </DnsServers>\r\n    </Dns>\r\n    <VirtualNetworkSites>\r\n      <VirtualNetworkSite name=\"googlednssvnet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/26</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"subnet-1\">\r\n            <AddressPrefix>10.0.0.0/27</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"googledns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"mynetwork\" AffinityGroup=\"affinity1\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.4.0.0/16</AddressPrefix>\r\n          <AddressPrefix>10.1.0.0/16</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.4.2.0/19</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>10.4.32.0/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"ne@@wvnet$$%10\" AffinityGroup=\"NewAffinityGroup01\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.8.7/24</AddressPrefix>\r\n        </AddressSpace>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"newnet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/20</AddressPrefix>\r\n          <AddressPrefix>10.0.16.0/20</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/23</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"Subnet-2\">\r\n            <AddressPrefix>10.0.2.0/23</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"Subnet-3\">\r\n            <AddressPrefix>10.0.16.0/23</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"demodns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"newvnet$$%10\" AffinityGroup=\"NewAffinityGroup01\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.8.7/24</AddressPrefix>\r\n        </AddressSpace>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"testvnet\" Location=\"North Europe\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/8</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/11</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"testy\" AffinityGroup=\"affinity1\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.11/8</AddressPrefix>\r\n          <AddressPrefix>172.16.77.0/12</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/11</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>10.32.0.0/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"Vnet\" AffinityGroup=\"EastAsia\">\r\n        <AddressSpace>\r\n          <AddressPrefix>172.16.0.0/28</AddressPrefix>\r\n          <AddressPrefix>192.168.29.0/24</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>172.16.0.0/29</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>172.16.0.8/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"vnet1\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/8</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/11</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"dns-cli-0\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n    </VirtualNetworkSites>\r\n  </VirtualNetworkConfiguration>\r\n</NetworkConfiguration>", { 'cache-control': 'no-cache',
+  'content-length': '4621',
   'content-type': 'text/plain',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
   'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': '6ec40358f4853481af9d825cf1e9906c',
-  date: 'Tue, 18 Nov 2014 06:53:55 GMT' });
+  'x-ms-request-id': '036d64a6618f3a20a9924b6e874e711d',
+  date: 'Thu, 04 Dec 2014 09:48:48 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services?service=sqlserver&action=register')
+  .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
+  'content-length': '193',
+  'content-type': 'application/xml; charset=utf-8',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth2',
+  'x-ms-request-id': '3d57e7121e12391fbb7f885ac555103c',
+  date: 'Thu, 04 Dec 2014 09:48:50 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .filteringRequestBody(function (path) { return '*';})
+.put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services/networking/media', '*')
+  .reply(202, "", { 'cache-control': 'no-cache',
+  'content-length': '0',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth2',
+  'x-ms-request-id': 'f333229a80d03583830ecfef68704134',
+  date: 'Thu, 04 Dec 2014 09:48:53 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services?service=sqlserver&action=register')
+  .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
+  'content-length': '193',
+  'content-type': 'application/xml; charset=utf-8',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth2',
+  'x-ms-request-id': '5e12174091dc330281b849e2fb725915',
+  date: 'Thu, 04 Dec 2014 09:49:25 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .get('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/operations/f333229a80d03583830ecfef68704134')
+  .reply(200, "<Operation xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><ID>f333229a-80d0-3583-830e-cfef68704134</ID><Status>Succeeded</Status><HttpStatusCode>200</HttpStatusCode></Operation>", { 'cache-control': 'no-cache',
+  'content-length': '232',
+  'content-type': 'application/xml; charset=utf-8',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth2',
+  'x-ms-request-id': 'ebfb9412fe883f34a069a95a7a52432d',
+  date: 'Thu, 04 Dec 2014 09:49:27 GMT' });
  return result; },
 function (nock) { 
 var result = 
@@ -568,7 +1129,7 @@ nock('https://management.core.windows.net:443')
   location: 'https://ussouth.management.core.windows.net/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services?service=sqlserver&action=register',
   server: 'Microsoft-HTTPAPI/2.0',
   'x-ms-servedbyregion': 'ussouth2',
-  date: 'Tue, 18 Nov 2014 06:53:58 GMT' });
+  date: 'Thu, 04 Dec 2014 09:49:30 GMT' });
  return result; },
 function (nock) { 
 var result = 
@@ -577,10 +1138,34 @@ nock('https://ussouth.management.core.windows.net:443')
   .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
   'content-length': '193',
   'content-type': 'application/xml; charset=utf-8',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
+  server: '1.0.6198.167 (rd_rdfe_stable.141203-1417) Microsoft-HTTPAPI/2.0',
   'x-ms-servedbyregion': 'ussouth',
-  'x-ms-request-id': '65d390553c4e3429b6c27a3ff2496945',
-  date: 'Tue, 18 Nov 2014 06:54:01 GMT' });
+  'x-ms-request-id': 'bba710ea18b13b5f8c361e24b19f9663',
+  date: 'Thu, 04 Dec 2014 09:49:33 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .get('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services/networking/media')
+  .reply(200, "﻿<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<NetworkConfiguration xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://schemas.microsoft.com/ServiceHosting/2011/07/NetworkConfiguration\">\r\n  <VirtualNetworkConfiguration>\r\n    <Dns>\r\n      <DnsServers>\r\n        <DnsServer name=\"demodns\" IPAddress=\"172.16.77.66\" />\r\n        <DnsServer name=\"dns-cli-0\" IPAddress=\"66.77.88.99\" />\r\n        <DnsServer name=\"googledns\" IPAddress=\"8.8.8.8\" />\r\n      </DnsServers>\r\n    </Dns>\r\n    <VirtualNetworkSites>\r\n      <VirtualNetworkSite name=\"googlednssvnet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/26</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"subnet-1\">\r\n            <AddressPrefix>10.0.0.0/27</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"googledns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"mynetwork\" AffinityGroup=\"affinity1\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.4.0.0/16</AddressPrefix>\r\n          <AddressPrefix>10.1.0.0/16</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.4.2.0/19</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>10.4.32.0/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"ne@@wvnet$$%10\" AffinityGroup=\"NewAffinityGroup01\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.8.7/24</AddressPrefix>\r\n        </AddressSpace>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"newnet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/20</AddressPrefix>\r\n          <AddressPrefix>10.0.16.0/20</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/23</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"Subnet-2\">\r\n            <AddressPrefix>10.0.2.0/23</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"Subnet-3\">\r\n            <AddressPrefix>10.0.16.0/23</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"demodns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"newvnet$$%10\" AffinityGroup=\"NewAffinityGroup01\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.8.7/24</AddressPrefix>\r\n        </AddressSpace>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"testvnet\" Location=\"North Europe\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/8</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/11</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"testy\" AffinityGroup=\"affinity1\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.11/8</AddressPrefix>\r\n          <AddressPrefix>172.16.77.0/12</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/11</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>10.32.0.0/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"Vnet\" AffinityGroup=\"EastAsia\">\r\n        <AddressSpace>\r\n          <AddressPrefix>172.16.0.0/28</AddressPrefix>\r\n          <AddressPrefix>192.168.29.0/24</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>172.16.0.0/29</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>172.16.0.8/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n    </VirtualNetworkSites>\r\n  </VirtualNetworkConfiguration>\r\n</NetworkConfiguration>", { 'cache-control': 'no-cache',
+  'content-length': '4182',
+  'content-type': 'text/plain',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth2',
+  'x-ms-request-id': '718167e441813429aba5c334206e33cd',
+  date: 'Thu, 04 Dec 2014 09:49:36 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services?service=sqlserver&action=register')
+  .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
+  'content-length': '193',
+  'content-type': 'application/xml; charset=utf-8',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth2',
+  'x-ms-request-id': 'bfbb8f3da97c3056a8ebd9578827d62a',
+  date: 'Thu, 04 Dec 2014 09:49:38 GMT' });
  return result; },
 function (nock) { 
 var result = 
@@ -589,10 +1174,10 @@ nock('https://management.core.windows.net:443')
 .put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services/networking/media', '*')
   .reply(202, "", { 'cache-control': 'no-cache',
   'content-length': '0',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
   'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': '73734dde5b5f3484a8bc01fe0cd1ca3d',
-  date: 'Tue, 18 Nov 2014 06:54:02 GMT' });
+  'x-ms-request-id': 'e892052cbbd137fa814d825b8cbd74ea',
+  date: 'Thu, 04 Dec 2014 09:49:50 GMT' });
  return result; },
 function (nock) { 
 var result = 
@@ -601,414 +1186,44 @@ nock('https://management.core.windows.net:443')
   .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
   'content-length': '193',
   'content-type': 'application/xml; charset=utf-8',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
   'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': '3dd176a8f3f8396cb816b746c4ea8e02',
-  date: 'Tue, 18 Nov 2014 06:54:34 GMT' });
+  'x-ms-request-id': '0599a0e0dee739c2a1f1dd91844036d3',
+  date: 'Thu, 04 Dec 2014 09:50:23 GMT' });
  return result; },
 function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
-  .get('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/operations/73734dde5b5f3484a8bc01fe0cd1ca3d')
-  .reply(200, "<Operation xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><ID>73734dde-5b5f-3484-a8bc-01fe0cd1ca3d</ID><Status>Succeeded</Status><HttpStatusCode>200</HttpStatusCode></Operation>", { 'cache-control': 'no-cache',
+  .get('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/operations/e892052cbbd137fa814d825b8cbd74ea')
+  .reply(200, "<Operation xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><ID>e892052c-bbd1-37fa-814d-825b8cbd74ea</ID><Status>Succeeded</Status><HttpStatusCode>200</HttpStatusCode></Operation>", { 'cache-control': 'no-cache',
   'content-length': '232',
   'content-type': 'application/xml; charset=utf-8',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
   'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': 'a1942514a6853368963b49de14ca8320',
-  date: 'Tue, 18 Nov 2014 06:54:36 GMT' });
- return result; }],
-[function (nock) { 
+  'x-ms-request-id': 'a68086f838e637b8be6fad7db0d98dd7',
+  date: 'Thu, 04 Dec 2014 09:50:24 GMT' });
+ return result; },
+function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
   .put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services?service=sqlserver&action=register')
   .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
   'content-length': '193',
   'content-type': 'application/xml; charset=utf-8',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
   'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': '31e05de5dc853f7cb4a5c186a3ea7e4c',
-  date: 'Tue, 18 Nov 2014 06:54:37 GMT' });
+  'x-ms-request-id': '2f3b524655d937e0a747b037a9dd0a08',
+  date: 'Thu, 04 Dec 2014 09:50:27 GMT' });
  return result; },
 function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
   .get('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services/networking/media')
-  .reply(200, "﻿<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<NetworkConfiguration xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://schemas.microsoft.com/ServiceHosting/2011/07/NetworkConfiguration\">\r\n  <VirtualNetworkConfiguration>\r\n    <Dns>\r\n      <DnsServers>\r\n        <DnsServer name=\"demodns\" IPAddress=\"172.16.77.66\" />\r\n        <DnsServer name=\"googledns\" IPAddress=\"8.8.8.8\" />\r\n      </DnsServers>\r\n    </Dns>\r\n    <VirtualNetworkSites>\r\n      <VirtualNetworkSite name=\"googlednssvnet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/26</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/27</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"googledns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"Group SampleCRP-RP SampleCRP-VNet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>192.168.30.0/24</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>192.168.30.0/24</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"mynetwork\" AffinityGroup=\"affinity1\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.4.0.0/16</AddressPrefix>\r\n          <AddressPrefix>10.1.0.0/16</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.4.2.0/19</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>10.4.32.0/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"ne@@wvnet$$%10\" AffinityGroup=\"NewAffinityGroup01\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.8.7/24</AddressPrefix>\r\n        </AddressSpace>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"nenet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/20</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/23</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"demodns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"newnet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/20</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/23</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"Subnet-2\">\r\n            <AddressPrefix>10.0.2.0/23</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"demodns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"newvnet$$%10\" AffinityGroup=\"NewAffinityGroup01\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.8.7/24</AddressPrefix>\r\n        </AddressSpace>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"testy\" AffinityGroup=\"affinity1\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.11/8</AddressPrefix>\r\n          <AddressPrefix>172.16.77.0/12</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/11</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>10.32.0.0/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"Vnet\" AffinityGroup=\"EastAsia\">\r\n        <AddressSpace>\r\n          <AddressPrefix>172.16.0.0/28</AddressPrefix>\r\n          <AddressPrefix>192.168.29.0/24</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>172.16.0.0/29</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>172.16.0.8/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n    </VirtualNetworkSites>\r\n  </VirtualNetworkConfiguration>\r\n</NetworkConfiguration>", { 'cache-control': 'no-cache',
-  'content-length': '4416',
+  .reply(200, "﻿<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<NetworkConfiguration xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://schemas.microsoft.com/ServiceHosting/2011/07/NetworkConfiguration\">\r\n  <VirtualNetworkConfiguration>\r\n    <Dns>\r\n      <DnsServers>\r\n        <DnsServer name=\"demodns\" IPAddress=\"172.16.77.66\" />\r\n        <DnsServer name=\"googledns\" IPAddress=\"8.8.8.8\" />\r\n      </DnsServers>\r\n    </Dns>\r\n    <VirtualNetworkSites>\r\n      <VirtualNetworkSite name=\"googlednssvnet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/26</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"subnet-1\">\r\n            <AddressPrefix>10.0.0.0/27</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"googledns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"mynetwork\" AffinityGroup=\"affinity1\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.4.0.0/16</AddressPrefix>\r\n          <AddressPrefix>10.1.0.0/16</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.4.2.0/19</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>10.4.32.0/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"ne@@wvnet$$%10\" AffinityGroup=\"NewAffinityGroup01\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.8.7/24</AddressPrefix>\r\n        </AddressSpace>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"newnet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/20</AddressPrefix>\r\n          <AddressPrefix>10.0.16.0/20</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/23</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"Subnet-2\">\r\n            <AddressPrefix>10.0.2.0/23</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"Subnet-3\">\r\n            <AddressPrefix>10.0.16.0/23</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"demodns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"newvnet$$%10\" AffinityGroup=\"NewAffinityGroup01\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.8.7/24</AddressPrefix>\r\n        </AddressSpace>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"testvnet\" Location=\"North Europe\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/8</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/11</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"testy\" AffinityGroup=\"affinity1\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.11/8</AddressPrefix>\r\n          <AddressPrefix>172.16.77.0/12</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/11</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>10.32.0.0/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"Vnet\" AffinityGroup=\"EastAsia\">\r\n        <AddressSpace>\r\n          <AddressPrefix>172.16.0.0/28</AddressPrefix>\r\n          <AddressPrefix>192.168.29.0/24</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>172.16.0.0/29</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>172.16.0.8/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n    </VirtualNetworkSites>\r\n  </VirtualNetworkConfiguration>\r\n</NetworkConfiguration>", { 'cache-control': 'no-cache',
+  'content-length': '4118',
   'content-type': 'text/plain',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
+  server: '1.0.6198.165 (rd_rdfe_stable.141121-1215) Microsoft-HTTPAPI/2.0',
   'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': 'b04ef502e6473723b0165084c14f5661',
-  date: 'Tue, 18 Nov 2014 06:54:39 GMT' });
- return result; },
-function (nock) { 
-var result = 
-nock('https://management.core.windows.net:443')
-  .put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services?service=sqlserver&action=register')
-  .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '193',
-  'content-type': 'application/xml; charset=utf-8',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
-  'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': 'f921109c3ba03f80aa36c691b616f883',
-  date: 'Tue, 18 Nov 2014 06:54:42 GMT' });
- return result; },
-function (nock) { 
-var result = 
-nock('https://management.core.windows.net:443')
-  .filteringRequestBody(function (path) { return '*';})
-.put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services/networking/media', '*')
-  .reply(202, "", { 'cache-control': 'no-cache',
-  'content-length': '0',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
-  'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': 'c14952be210432c7a644e38d661d595f',
-  date: 'Tue, 18 Nov 2014 06:54:43 GMT' });
- return result; },
-function (nock) { 
-var result = 
-nock('https://management.core.windows.net:443')
-  .put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services?service=sqlserver&action=register')
-  .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '193',
-  'content-type': 'application/xml; charset=utf-8',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
-  'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': '3ba9c8095d6238d8a20bce760a5029c7',
-  date: 'Tue, 18 Nov 2014 06:55:16 GMT' });
- return result; },
-function (nock) { 
-var result = 
-nock('https://management.core.windows.net:443')
-  .get('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/operations/c14952be210432c7a644e38d661d595f')
-  .reply(200, "<Operation xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><ID>c14952be-2104-32c7-a644-e38d661d595f</ID><Status>Succeeded</Status><HttpStatusCode>200</HttpStatusCode></Operation>", { 'cache-control': 'no-cache',
-  'content-length': '232',
-  'content-type': 'application/xml; charset=utf-8',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
-  'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': '5c0455c4a7213281ae99c921a911dd3a',
-  date: 'Tue, 18 Nov 2014 06:55:17 GMT' });
- return result; },
-function (nock) { 
-var result = 
-nock('https://management.core.windows.net:443')
-  .put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services?service=sqlserver&action=register')
-  .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '193',
-  'content-type': 'application/xml; charset=utf-8',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
-  'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': 'bf3d326c1def34b2ba46407d83a6e720',
-  date: 'Tue, 18 Nov 2014 06:55:20 GMT' });
- return result; },
-function (nock) { 
-var result = 
-nock('https://management.core.windows.net:443')
-  .get('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services/networking/media')
-  .reply(200, "﻿<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<NetworkConfiguration xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://schemas.microsoft.com/ServiceHosting/2011/07/NetworkConfiguration\">\r\n  <VirtualNetworkConfiguration>\r\n    <Dns>\r\n      <DnsServers>\r\n        <DnsServer name=\"demodns\" IPAddress=\"172.16.77.66\" />\r\n        <DnsServer name=\"dns-cli-0\" IPAddress=\"66.77.88.99\" />\r\n        <DnsServer name=\"googledns\" IPAddress=\"8.8.8.8\" />\r\n      </DnsServers>\r\n    </Dns>\r\n    <VirtualNetworkSites>\r\n      <VirtualNetworkSite name=\"googlednssvnet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/26</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/27</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"googledns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"Group SampleCRP-RP SampleCRP-VNet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>192.168.30.0/24</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>192.168.30.0/24</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"mynetwork\" AffinityGroup=\"affinity1\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.4.0.0/16</AddressPrefix>\r\n          <AddressPrefix>10.1.0.0/16</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.4.2.0/19</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>10.4.32.0/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"ne@@wvnet$$%10\" AffinityGroup=\"NewAffinityGroup01\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.8.7/24</AddressPrefix>\r\n        </AddressSpace>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"nenet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/20</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/23</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"demodns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"newnet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/20</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/23</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"Subnet-2\">\r\n            <AddressPrefix>10.0.2.0/23</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"demodns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"newvnet$$%10\" AffinityGroup=\"NewAffinityGroup01\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.8.7/24</AddressPrefix>\r\n        </AddressSpace>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"testy\" AffinityGroup=\"affinity1\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.11/8</AddressPrefix>\r\n          <AddressPrefix>172.16.77.0/12</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/11</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>10.32.0.0/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"Vnet\" AffinityGroup=\"EastAsia\">\r\n        <AddressSpace>\r\n          <AddressPrefix>172.16.0.0/28</AddressPrefix>\r\n          <AddressPrefix>192.168.29.0/24</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>172.16.0.0/29</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>172.16.0.8/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n    </VirtualNetworkSites>\r\n  </VirtualNetworkConfiguration>\r\n</NetworkConfiguration>", { 'cache-control': 'no-cache',
-  'content-length': '4480',
-  'content-type': 'text/plain',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
-  'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': 'ea64c9c62fdd3e61ad52de18b716c6f0',
-  date: 'Tue, 18 Nov 2014 06:55:21 GMT' });
- return result; },
-function (nock) { 
-var result = 
-nock('https://management.core.windows.net:443')
-  .put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services?service=sqlserver&action=register')
-  .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '193',
-  'content-type': 'application/xml; charset=utf-8',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
-  'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': '02b0bf7d5747380291d250405212ff45',
-  date: 'Tue, 18 Nov 2014 06:55:26 GMT' });
- return result; },
-function (nock) { 
-var result = 
-nock('https://management.core.windows.net:443')
-  .get('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services/networking/media')
-  .reply(200, "﻿<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<NetworkConfiguration xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://schemas.microsoft.com/ServiceHosting/2011/07/NetworkConfiguration\">\r\n  <VirtualNetworkConfiguration>\r\n    <Dns>\r\n      <DnsServers>\r\n        <DnsServer name=\"demodns\" IPAddress=\"172.16.77.66\" />\r\n        <DnsServer name=\"dns-cli-0\" IPAddress=\"66.77.88.99\" />\r\n        <DnsServer name=\"googledns\" IPAddress=\"8.8.8.8\" />\r\n      </DnsServers>\r\n    </Dns>\r\n    <VirtualNetworkSites>\r\n      <VirtualNetworkSite name=\"googlednssvnet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/26</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/27</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"googledns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"Group SampleCRP-RP SampleCRP-VNet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>192.168.30.0/24</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>192.168.30.0/24</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"mynetwork\" AffinityGroup=\"affinity1\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.4.0.0/16</AddressPrefix>\r\n          <AddressPrefix>10.1.0.0/16</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.4.2.0/19</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>10.4.32.0/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"ne@@wvnet$$%10\" AffinityGroup=\"NewAffinityGroup01\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.8.7/24</AddressPrefix>\r\n        </AddressSpace>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"nenet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/20</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/23</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"demodns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"newnet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/20</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/23</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"Subnet-2\">\r\n            <AddressPrefix>10.0.2.0/23</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"demodns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"newvnet$$%10\" AffinityGroup=\"NewAffinityGroup01\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.8.7/24</AddressPrefix>\r\n        </AddressSpace>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"testy\" AffinityGroup=\"affinity1\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.11/8</AddressPrefix>\r\n          <AddressPrefix>172.16.77.0/12</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/11</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>10.32.0.0/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"Vnet\" AffinityGroup=\"EastAsia\">\r\n        <AddressSpace>\r\n          <AddressPrefix>172.16.0.0/28</AddressPrefix>\r\n          <AddressPrefix>192.168.29.0/24</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>172.16.0.0/29</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>172.16.0.8/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n    </VirtualNetworkSites>\r\n  </VirtualNetworkConfiguration>\r\n</NetworkConfiguration>", { 'cache-control': 'no-cache',
-  'content-length': '4480',
-  'content-type': 'text/plain',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
-  'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': '324083bd9ca23fe290866eb4c8ab91ed',
-  date: 'Tue, 18 Nov 2014 06:55:28 GMT' });
- return result; },
-function (nock) { 
-var result = 
-nock('https://management.core.windows.net:443')
-  .put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services?service=sqlserver&action=register')
-  .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '193',
-  'content-type': 'application/xml; charset=utf-8',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
-  'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': '558b7beadf8b363daf4ee06fe39aef98',
-  date: 'Tue, 18 Nov 2014 06:55:30 GMT' });
- return result; },
-function (nock) { 
-var result = 
-nock('https://management.core.windows.net:443')
-  .get('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/locations')
-  .reply(200, "<Locations xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Location><Name>North Europe</Name><DisplayName>North Europe</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>A8</RoleSize><RoleSize>A9</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>A8</RoleSize><RoleSize>A9</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location><Location><Name>West Europe</Name><DisplayName>West Europe</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>A8</RoleSize><RoleSize>A9</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>A8</RoleSize><RoleSize>A9</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location><Location><Name>East US 2</Name><DisplayName>East US 2</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location><Location><Name>Central US</Name><DisplayName>Central US</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location><Location><Name>South Central US</Name><DisplayName>South Central US</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>A8</RoleSize><RoleSize>A9</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>A8</RoleSize><RoleSize>A9</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location><Location><Name>West US</Name><DisplayName>West US</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>A8</RoleSize><RoleSize>A9</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>A8</RoleSize><RoleSize>A9</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location><Location><Name>North Central US</Name><DisplayName>North Central US</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>A8</RoleSize><RoleSize>A9</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>A8</RoleSize><RoleSize>A9</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location><Location><Name>East US</Name><DisplayName>East US</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>A8</RoleSize><RoleSize>A9</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>A8</RoleSize><RoleSize>A9</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location><Location><Name>Southeast Asia</Name><DisplayName>Southeast Asia</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location><Location><Name>East Asia</Name><DisplayName>East Asia</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location><Location><Name>Japan West</Name><DisplayName>Japan West</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize><RoleSize>Standard_D1</RoleSize><RoleSize>Standard_D11</RoleSize><RoleSize>Standard_D12</RoleSize><RoleSize>Standard_D13</RoleSize><RoleSize>Standard_D14</RoleSize><RoleSize>Standard_D2</RoleSize><RoleSize>Standard_D3</RoleSize><RoleSize>Standard_D4</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location><Location><Name>Japan East</Name><DisplayName>Japan East</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>A8</RoleSize><RoleSize>A9</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>A8</RoleSize><RoleSize>A9</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location><Location><Name>Brazil South</Name><DisplayName>Brazil South</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location><Location><Name>Australia Southeast</Name><DisplayName>Australia Southeast</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location><Location><Name>Australia East</Name><DisplayName>Australia East</DisplayName><AvailableServices><AvailableService>Compute</AvailableService><AvailableService>Storage</AvailableService><AvailableService>PersistentVMRole</AvailableService><AvailableService>HighMemory</AvailableService></AvailableServices><ComputeCapabilities><WebWorkerRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize></WebWorkerRoleSizes><VirtualMachinesRoleSizes><RoleSize>A5</RoleSize><RoleSize>A6</RoleSize><RoleSize>A7</RoleSize><RoleSize>Basic_A0</RoleSize><RoleSize>Basic_A1</RoleSize><RoleSize>Basic_A2</RoleSize><RoleSize>Basic_A3</RoleSize><RoleSize>Basic_A4</RoleSize><RoleSize>ExtraLarge</RoleSize><RoleSize>ExtraSmall</RoleSize><RoleSize>Large</RoleSize><RoleSize>Medium</RoleSize><RoleSize>Small</RoleSize></VirtualMachinesRoleSizes></ComputeCapabilities></Location></Locations>", { 'cache-control': 'no-cache',
-  'content-length': '21691',
-  'content-type': 'application/xml; charset=utf-8',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
-  'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': '04f283fc14a8390b867456dbfce9e741',
-  date: 'Tue, 18 Nov 2014 06:55:32 GMT' });
- return result; },
-function (nock) { 
-var result = 
-nock('https://management.core.windows.net:443')
-  .put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services?service=sqlserver&action=register')
-  .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '193',
-  'content-type': 'application/xml; charset=utf-8',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
-  'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': '6762a08dff1832eea2b6517b442b41f1',
-  date: 'Tue, 18 Nov 2014 06:55:35 GMT' });
- return result; },
-function (nock) { 
-var result = 
-nock('https://management.core.windows.net:443')
-  .filteringRequestBody(function (path) { return '*';})
-.put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services/networking/media', '*')
-  .reply(202, "", { 'cache-control': 'no-cache',
-  'content-length': '0',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
-  'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': 'bb8fe130923b3c68ad2dd90061d57762',
-  date: 'Tue, 18 Nov 2014 06:55:36 GMT' });
- return result; },
-function (nock) { 
-var result = 
-nock('https://management.core.windows.net:443')
-  .put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services?service=sqlserver&action=register')
-  .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '193',
-  'content-type': 'application/xml; charset=utf-8',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
-  'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': '539df2e9707a3f1eaaf5ac717b079ba4',
-  date: 'Tue, 18 Nov 2014 06:56:09 GMT' });
- return result; },
-function (nock) { 
-var result = 
-nock('https://management.core.windows.net:443')
-  .get('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/operations/bb8fe130923b3c68ad2dd90061d57762')
-  .reply(200, "<Operation xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><ID>bb8fe130-923b-3c68-ad2d-d90061d57762</ID><Status>Succeeded</Status><HttpStatusCode>200</HttpStatusCode></Operation>", { 'cache-control': 'no-cache',
-  'content-length': '232',
-  'content-type': 'application/xml; charset=utf-8',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
-  'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': '5b19e423372e3a12ab1864fc8a5316fc',
-  date: 'Tue, 18 Nov 2014 06:56:12 GMT' });
- return result; },
-function (nock) { 
-var result = 
-nock('https://management.core.windows.net:443')
-  .put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services?service=sqlserver&action=register')
-  .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '193',
-  'content-type': 'application/xml; charset=utf-8',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
-  'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': '273c92d600af303a9fbc723f355784a7',
-  date: 'Tue, 18 Nov 2014 06:56:14 GMT' });
- return result; },
-function (nock) { 
-var result = 
-nock('https://management.core.windows.net:443')
-  .get('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services/networking/virtualnetwork')
-  .reply(200, "<VirtualNetworkSites xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><VirtualNetworkSite><Name>googlednssvnet</Name><Id>67ece927-3976-4d3f-a004-5e5174260a21</Id><State>Created</State><InUse>true</InUse><AddressSpace><AddressPrefixes><AddressPrefix>10.0.0.0/26</AddressPrefix></AddressPrefixes></AddressSpace><Subnets><Subnet><Name>Subnet-1</Name><AddressPrefix>10.0.0.0/27</AddressPrefix></Subnet></Subnets><Dns><DnsServers><DnsServer><Name>googledns</Name><Address>8.8.8.8</Address></DnsServer></DnsServers></Dns><Location>West US</Location></VirtualNetworkSite><VirtualNetworkSite><Name>Group SampleCRP-RP SampleCRP-VNet</Name><Id>0a1354ee-4fd7-45b2-b858-2c648ad2b73c</Id><State>Created</State><AddressSpace><AddressPrefixes><AddressPrefix>192.168.30.0/24</AddressPrefix></AddressPrefixes></AddressSpace><Subnets><Subnet><Name>Subnet-1</Name><AddressPrefix>192.168.30.0/24</AddressPrefix></Subnet></Subnets><Location>West US</Location></VirtualNetworkSite><VirtualNetworkSite><Name>mynetwork</Name><Id>386452bd-5cef-4eea-a889-a6e5d0635381</Id><AffinityGroup>affinity1</AffinityGroup><State>Created</State><InUse>true</InUse><AddressSpace><AddressPrefixes><AddressPrefix>10.4.0.0/16</AddressPrefix><AddressPrefix>10.1.0.0/16</AddressPrefix></AddressPrefixes></AddressSpace><Subnets><Subnet><Name>Subnet-1</Name><AddressPrefix>10.4.2.0/19</AddressPrefix></Subnet><Subnet><Name>GatewaySubnet</Name><AddressPrefix>10.4.32.0/29</AddressPrefix></Subnet></Subnets></VirtualNetworkSite><VirtualNetworkSite><Name>ne@@wvnet$$%10</Name><Id>c27720fe-1c7c-429b-85ec-09cf605307e2</Id><AffinityGroup>NewAffinityGroup01</AffinityGroup><State>Creating</State><AddressSpace><AddressPrefixes><AddressPrefix>10.0.8.7/24</AddressPrefix></AddressPrefixes></AddressSpace><Subnets/></VirtualNetworkSite><VirtualNetworkSite><Name>nenet</Name><Id>8da0f5de-21d4-4a4f-baa0-8bde037d5f0f</Id><State>Created</State><AddressSpace><AddressPrefixes><AddressPrefix>10.0.0.0/20</AddressPrefix></AddressPrefixes></AddressSpace><Subnets><Subnet><Name>Subnet-1</Name><AddressPrefix>10.0.0.0/23</AddressPrefix></Subnet></Subnets><Dns><DnsServers><DnsServer><Name>demodns</Name><Address>172.16.77.66</Address></DnsServer></DnsServers></Dns><Location>West US</Location></VirtualNetworkSite><VirtualNetworkSite><Name>newnet</Name><Id>896573a5-9904-4d66-99ca-580645fd98be</Id><State>Created</State><AddressSpace><AddressPrefixes><AddressPrefix>10.0.0.0/20</AddressPrefix></AddressPrefixes></AddressSpace><Subnets><Subnet><Name>Subnet-1</Name><AddressPrefix>10.0.0.0/23</AddressPrefix></Subnet><Subnet><Name>Subnet-2</Name><AddressPrefix>10.0.2.0/23</AddressPrefix></Subnet></Subnets><Dns><DnsServers><DnsServer><Name>demodns</Name><Address>172.16.77.66</Address></DnsServer></DnsServers></Dns><Location>West US</Location></VirtualNetworkSite><VirtualNetworkSite><Name>newvnet$$%10</Name><Id>1e045b27-4b5a-42f6-8399-23a85df51702</Id><AffinityGroup>NewAffinityGroup01</AffinityGroup><State>Creating</State><AddressSpace><AddressPrefixes><AddressPrefix>10.0.8.7/24</AddressPrefix></AddressPrefixes></AddressSpace><Subnets/></VirtualNetworkSite><VirtualNetworkSite><Name>testy</Name><Id>06bb8c56-83da-499e-8585-2609db606247</Id><AffinityGroup>affinity1</AffinityGroup><State>Created</State><InUse>true</InUse><AddressSpace><AddressPrefixes><AddressPrefix>10.0.0.11/8</AddressPrefix><AddressPrefix>172.16.77.0/12</AddressPrefix></AddressPrefixes></AddressSpace><Subnets><Subnet><Name>Subnet-1</Name><AddressPrefix>10.0.0.0/11</AddressPrefix></Subnet><Subnet><Name>GatewaySubnet</Name><AddressPrefix>10.32.0.0/29</AddressPrefix></Subnet></Subnets></VirtualNetworkSite><VirtualNetworkSite><Name>Vnet</Name><Id>a9001b93-75cc-4580-94b4-a200654da28e</Id><AffinityGroup>EastAsia</AffinityGroup><State>Created</State><InUse>true</InUse><AddressSpace><AddressPrefixes><AddressPrefix>172.16.0.0/28</AddressPrefix><AddressPrefix>192.168.29.0/24</AddressPrefix></AddressPrefixes></AddressSpace><Subnets><Subnet><Name>Subnet-1</Name><AddressPrefix>172.16.0.0/29</AddressPrefix></Subnet><Subnet><Name>GatewaySubnet</Name><AddressPrefix>172.16.0.8/29</AddressPrefix></Subnet></Subnets></VirtualNetworkSite><VirtualNetworkSite><Name>vnet1</Name><Id>57084064-9303-455f-8ed3-36147a70feb1</Id><State>Created</State><AddressSpace><AddressPrefixes><AddressPrefix>10.0.0.0/8</AddressPrefix></AddressPrefixes></AddressSpace><Subnets><Subnet><Name>Subnet-1</Name><AddressPrefix>10.0.0.0/11</AddressPrefix></Subnet></Subnets><Dns><DnsServers><DnsServer><Name>dns-cli-0</Name><Address>66.77.88.99</Address></DnsServer></DnsServers></Dns><Location>West US</Location></VirtualNetworkSite></VirtualNetworkSites>", { 'cache-control': 'no-cache',
-  'content-length': '4690',
-  'content-type': 'application/xml; charset=utf-8',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
-  'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': 'c1dfd266b58d364eaa96d5e523271fd5',
-  date: 'Tue, 18 Nov 2014 06:56:16 GMT' });
- return result; },
-function (nock) { 
-var result = 
-nock('https://management.core.windows.net:443')
-  .put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services?service=sqlserver&action=register')
-  .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '193',
-  'content-type': 'application/xml; charset=utf-8',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
-  'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': '7f0b6c7a91873237af0f9dc4ae3db456',
-  date: 'Tue, 18 Nov 2014 06:56:18 GMT' });
- return result; },
-function (nock) { 
-var result = 
-nock('https://management.core.windows.net:443')
-  .get('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services/networking/media')
-  .reply(200, "﻿<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<NetworkConfiguration xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://schemas.microsoft.com/ServiceHosting/2011/07/NetworkConfiguration\">\r\n  <VirtualNetworkConfiguration>\r\n    <Dns>\r\n      <DnsServers>\r\n        <DnsServer name=\"demodns\" IPAddress=\"172.16.77.66\" />\r\n        <DnsServer name=\"dns-cli-0\" IPAddress=\"66.77.88.99\" />\r\n        <DnsServer name=\"googledns\" IPAddress=\"8.8.8.8\" />\r\n      </DnsServers>\r\n    </Dns>\r\n    <VirtualNetworkSites>\r\n      <VirtualNetworkSite name=\"googlednssvnet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/26</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/27</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"googledns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"Group SampleCRP-RP SampleCRP-VNet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>192.168.30.0/24</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>192.168.30.0/24</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"mynetwork\" AffinityGroup=\"affinity1\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.4.0.0/16</AddressPrefix>\r\n          <AddressPrefix>10.1.0.0/16</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.4.2.0/19</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>10.4.32.0/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"ne@@wvnet$$%10\" AffinityGroup=\"NewAffinityGroup01\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.8.7/24</AddressPrefix>\r\n        </AddressSpace>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"nenet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/20</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/23</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"demodns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"newnet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/20</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/23</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"Subnet-2\">\r\n            <AddressPrefix>10.0.2.0/23</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"demodns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"newvnet$$%10\" AffinityGroup=\"NewAffinityGroup01\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.8.7/24</AddressPrefix>\r\n        </AddressSpace>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"testy\" AffinityGroup=\"affinity1\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.11/8</AddressPrefix>\r\n          <AddressPrefix>172.16.77.0/12</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/11</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>10.32.0.0/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"Vnet\" AffinityGroup=\"EastAsia\">\r\n        <AddressSpace>\r\n          <AddressPrefix>172.16.0.0/28</AddressPrefix>\r\n          <AddressPrefix>192.168.29.0/24</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>172.16.0.0/29</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>172.16.0.8/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"vnet1\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/8</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/11</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"dns-cli-0\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n    </VirtualNetworkSites>\r\n  </VirtualNetworkConfiguration>\r\n</NetworkConfiguration>", { 'cache-control': 'no-cache',
-  'content-length': '4919',
-  'content-type': 'text/plain',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
-  'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': 'a54d07e7aa4e37ef84ba1eefec9182e9',
-  date: 'Tue, 18 Nov 2014 06:56:20 GMT' });
- return result; },
-function (nock) { 
-var result = 
-nock('https://management.core.windows.net:443')
-  .put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services?service=sqlserver&action=register')
-  .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '193',
-  'content-type': 'application/xml; charset=utf-8',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
-  'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': '339cb008ffa13ca1998570cc637b4e3d',
-  date: 'Tue, 18 Nov 2014 06:56:22 GMT' });
- return result; },
-function (nock) { 
-var result = 
-nock('https://management.core.windows.net:443')
-  .filteringRequestBody(function (path) { return '*';})
-.put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services/networking/media', '*')
-  .reply(202, "", { 'cache-control': 'no-cache',
-  'content-length': '0',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
-  'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': '910b5ba4dee439fea880de730d0dac39',
-  date: 'Tue, 18 Nov 2014 06:56:24 GMT' });
- return result; },
-function (nock) { 
-var result = 
-nock('https://management.core.windows.net:443')
-  .put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services?service=sqlserver&action=register')
-  .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '193',
-  'content-type': 'application/xml; charset=utf-8',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
-  'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': 'a144760aef453d97af93dbc5a74afdff',
-  date: 'Tue, 18 Nov 2014 06:56:57 GMT' });
- return result; },
-function (nock) { 
-var result = 
-nock('https://management.core.windows.net:443')
-  .get('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/operations/910b5ba4dee439fea880de730d0dac39')
-  .reply(200, "<Operation xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><ID>910b5ba4-dee4-39fe-a880-de730d0dac39</ID><Status>Succeeded</Status><HttpStatusCode>200</HttpStatusCode></Operation>", { 'cache-control': 'no-cache',
-  'content-length': '232',
-  'content-type': 'application/xml; charset=utf-8',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
-  'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': '326ac5f554da30c8855fd26bf311a753',
-  date: 'Tue, 18 Nov 2014 06:56:59 GMT' });
- return result; },
-function (nock) { 
-var result = 
-nock('https://management.core.windows.net:443')
-  .put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services?service=sqlserver&action=register')
-  .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '193',
-  'content-type': 'application/xml; charset=utf-8',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
-  'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': '10c7faa15d46349aa66d5ab77f866016',
-  date: 'Tue, 18 Nov 2014 06:57:02 GMT' });
- return result; },
-function (nock) { 
-var result = 
-nock('https://management.core.windows.net:443')
-  .get('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services/networking/media')
-  .reply(200, "﻿<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<NetworkConfiguration xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://schemas.microsoft.com/ServiceHosting/2011/07/NetworkConfiguration\">\r\n  <VirtualNetworkConfiguration>\r\n    <Dns>\r\n      <DnsServers>\r\n        <DnsServer name=\"demodns\" IPAddress=\"172.16.77.66\" />\r\n        <DnsServer name=\"dns-cli-0\" IPAddress=\"66.77.88.99\" />\r\n        <DnsServer name=\"googledns\" IPAddress=\"8.8.8.8\" />\r\n      </DnsServers>\r\n    </Dns>\r\n    <VirtualNetworkSites>\r\n      <VirtualNetworkSite name=\"googlednssvnet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/26</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/27</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"googledns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"Group SampleCRP-RP SampleCRP-VNet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>192.168.30.0/24</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>192.168.30.0/24</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"mynetwork\" AffinityGroup=\"affinity1\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.4.0.0/16</AddressPrefix>\r\n          <AddressPrefix>10.1.0.0/16</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.4.2.0/19</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>10.4.32.0/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"ne@@wvnet$$%10\" AffinityGroup=\"NewAffinityGroup01\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.8.7/24</AddressPrefix>\r\n        </AddressSpace>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"nenet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/20</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/23</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"demodns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"newnet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/20</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/23</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"Subnet-2\">\r\n            <AddressPrefix>10.0.2.0/23</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"demodns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"newvnet$$%10\" AffinityGroup=\"NewAffinityGroup01\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.8.7/24</AddressPrefix>\r\n        </AddressSpace>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"testy\" AffinityGroup=\"affinity1\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.11/8</AddressPrefix>\r\n          <AddressPrefix>172.16.77.0/12</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/11</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>10.32.0.0/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"Vnet\" AffinityGroup=\"EastAsia\">\r\n        <AddressSpace>\r\n          <AddressPrefix>172.16.0.0/28</AddressPrefix>\r\n          <AddressPrefix>192.168.29.0/24</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>172.16.0.0/29</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>172.16.0.8/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n    </VirtualNetworkSites>\r\n  </VirtualNetworkConfiguration>\r\n</NetworkConfiguration>", { 'cache-control': 'no-cache',
-  'content-length': '4480',
-  'content-type': 'text/plain',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
-  'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': '541e1571a8b3370494b4fa76f4736d55',
-  date: 'Tue, 18 Nov 2014 06:57:03 GMT' });
- return result; },
-function (nock) { 
-var result = 
-nock('https://management.core.windows.net:443')
-  .put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services?service=sqlserver&action=register')
-  .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '193',
-  'content-type': 'application/xml; charset=utf-8',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
-  'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': 'c20f8e3a720730878455d3851dc3e4f3',
-  date: 'Tue, 18 Nov 2014 06:57:07 GMT' });
- return result; },
-function (nock) { 
-var result = 
-nock('https://management.core.windows.net:443')
-  .filteringRequestBody(function (path) { return '*';})
-.put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services/networking/media', '*')
-  .reply(202, "", { 'cache-control': 'no-cache',
-  'content-length': '0',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
-  'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': 'ab5bf84c3af33ec5af39eac7db5d4016',
-  date: 'Tue, 18 Nov 2014 06:57:08 GMT' });
- return result; },
-function (nock) { 
-var result = 
-nock('https://management.core.windows.net:443')
-  .put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services?service=sqlserver&action=register')
-  .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '193',
-  'content-type': 'application/xml; charset=utf-8',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
-  'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': '959a825489903afc8a48254ed4c91943',
-  date: 'Tue, 18 Nov 2014 06:57:40 GMT' });
- return result; },
-function (nock) { 
-var result = 
-nock('https://management.core.windows.net:443')
-  .get('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/operations/ab5bf84c3af33ec5af39eac7db5d4016')
-  .reply(307, "", { 'content-length': '0',
-  location: 'https://ussouth.management.core.windows.net/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/operations/ab5bf84c3af33ec5af39eac7db5d4016',
-  server: 'Microsoft-HTTPAPI/2.0',
-  'x-ms-servedbyregion': 'ussouth2',
-  date: 'Tue, 18 Nov 2014 06:57:42 GMT' });
- return result; },
-function (nock) { 
-var result = 
-nock('https://ussouth.management.core.windows.net:443')
-  .get('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/operations/ab5bf84c3af33ec5af39eac7db5d4016')
-  .reply(200, "<Operation xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><ID>ab5bf84c-3af3-3ec5-af39-eac7db5d4016</ID><Status>Succeeded</Status><HttpStatusCode>200</HttpStatusCode></Operation>", { 'cache-control': 'no-cache',
-  'content-length': '232',
-  'content-type': 'application/xml; charset=utf-8',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
-  'x-ms-servedbyregion': 'ussouth',
-  'x-ms-request-id': '7ccacf37284238b2a499126ed9ad133c',
-  date: 'Tue, 18 Nov 2014 06:57:46 GMT' });
- return result; },
-function (nock) { 
-var result = 
-nock('https://management.core.windows.net:443')
-  .put('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services?service=sqlserver&action=register')
-  .reply(404, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>ResourceNotFound</Code><Message>The service name is unknown.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '193',
-  'content-type': 'application/xml; charset=utf-8',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
-  'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': '259ac27c0b593be78d00c3d49fa7a71a',
-  date: 'Tue, 18 Nov 2014 06:57:48 GMT' });
- return result; },
-function (nock) { 
-var result = 
-nock('https://management.core.windows.net:443')
-  .get('/bfb5e0bf-124b-4d0c-9352-7c0a9f4d9948/services/networking/media')
-  .reply(200, "﻿<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<NetworkConfiguration xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://schemas.microsoft.com/ServiceHosting/2011/07/NetworkConfiguration\">\r\n  <VirtualNetworkConfiguration>\r\n    <Dns>\r\n      <DnsServers>\r\n        <DnsServer name=\"demodns\" IPAddress=\"172.16.77.66\" />\r\n        <DnsServer name=\"googledns\" IPAddress=\"8.8.8.8\" />\r\n      </DnsServers>\r\n    </Dns>\r\n    <VirtualNetworkSites>\r\n      <VirtualNetworkSite name=\"googlednssvnet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/26</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/27</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"googledns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"Group SampleCRP-RP SampleCRP-VNet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>192.168.30.0/24</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>192.168.30.0/24</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"mynetwork\" AffinityGroup=\"affinity1\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.4.0.0/16</AddressPrefix>\r\n          <AddressPrefix>10.1.0.0/16</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.4.2.0/19</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>10.4.32.0/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"ne@@wvnet$$%10\" AffinityGroup=\"NewAffinityGroup01\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.8.7/24</AddressPrefix>\r\n        </AddressSpace>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"nenet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/20</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/23</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"demodns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"newnet\" Location=\"West US\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.0/20</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/23</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"Subnet-2\">\r\n            <AddressPrefix>10.0.2.0/23</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n        <DnsServersRef>\r\n          <DnsServerRef name=\"demodns\" />\r\n        </DnsServersRef>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"newvnet$$%10\" AffinityGroup=\"NewAffinityGroup01\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.8.7/24</AddressPrefix>\r\n        </AddressSpace>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"testy\" AffinityGroup=\"affinity1\">\r\n        <AddressSpace>\r\n          <AddressPrefix>10.0.0.11/8</AddressPrefix>\r\n          <AddressPrefix>172.16.77.0/12</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>10.0.0.0/11</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>10.32.0.0/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n      <VirtualNetworkSite name=\"Vnet\" AffinityGroup=\"EastAsia\">\r\n        <AddressSpace>\r\n          <AddressPrefix>172.16.0.0/28</AddressPrefix>\r\n          <AddressPrefix>192.168.29.0/24</AddressPrefix>\r\n        </AddressSpace>\r\n        <Subnets>\r\n          <Subnet name=\"Subnet-1\">\r\n            <AddressPrefix>172.16.0.0/29</AddressPrefix>\r\n          </Subnet>\r\n          <Subnet name=\"GatewaySubnet\">\r\n            <AddressPrefix>172.16.0.8/29</AddressPrefix>\r\n          </Subnet>\r\n        </Subnets>\r\n      </VirtualNetworkSite>\r\n    </VirtualNetworkSites>\r\n  </VirtualNetworkConfiguration>\r\n</NetworkConfiguration>", { 'cache-control': 'no-cache',
-  'content-length': '4416',
-  'content-type': 'text/plain',
-  server: '1.0.6198.163 (rd_rdfe_stable.141113-1555) Microsoft-HTTPAPI/2.0',
-  'x-ms-servedbyregion': 'ussouth2',
-  'x-ms-request-id': '9301d5dce8d03092bb4d281539e05883',
-  date: 'Tue, 18 Nov 2014 06:57:49 GMT' });
+  'x-ms-request-id': '6248454bdeea353591fdb165d7205023',
+  date: 'Thu, 04 Dec 2014 09:50:31 GMT' });
  return result; }]];
