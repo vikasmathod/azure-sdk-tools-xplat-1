@@ -33,6 +33,7 @@ describe('cli', function() {
       username = 'azureuser',
       password = 'PassW0rd$',
       retry = 5,
+	  availabilityset = 'xplatavail',
       timeout, staticIpavail, staticIpToSet;
     testUtils.TIMEOUT_INTERVAL = 5000;
 
@@ -83,8 +84,8 @@ describe('cli', function() {
       it('Create a VM with static ip address', function(done) {
         getImageName('Windows', function(ImageName) {
           getVnet('Created', function(virtualnetName) {
-            var cmd = util.format('vm create --virtual-network-name %s %s %s %s %s --static-ip %s --json',
-              virtualnetName, vmName, ImageName, username, password, staticIpavail).split(' ');
+            var cmd = util.format('vm create --availability-set %s --virtual-network-name %s %s %s %s %s --static-ip %s --json',
+              availabilityset,virtualnetName, vmName, ImageName, username, password, staticIpavail).split(' ');
             testUtils.executeCommand(suite, retry, cmd, function(result) {
               result.exitStatus.should.equal(0);
               done();
